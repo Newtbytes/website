@@ -1,0 +1,55 @@
+p {
+    text-align: center;
+    color: white;
+}
+
+ul {
+    text-align: center;
+    color: whitesmoke;
+}
+
+li {
+    text-align: center;
+    color: white;
+}
+
+h1, h2 {
+    color: violet;
+    text-align: center;
+}
+
+h3 {
+    color: rgb(255, 0, 0);
+    text-align: center;
+}
+
+nav {
+    color: violet;
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    padding: 25px 100px 25px 100px;
+}
+
+body {
+    background-image: url('https://web.archive.org/web/20090829024533/http://www.geocities.com/poppyrulz1/bgstar.gif');
+}
+
+.topnav {
+    text-align: center;
+}
+
+.section {
+    background-color: azure;
+    border-color: blanchedalmond;
+    outline-style: dotted;
+    border-left-style: solid;
+    padding: 10px 20px;
+}
