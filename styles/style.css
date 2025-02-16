@@ -120,3 +120,15 @@ h2 {
 a {
 	color: blue;
 }
+
+.footer {
+	border-top: 6px ridge;
+	min-height: 64px;
+	background-image: url("../img/bg/purple_clouds.png");
+	text-align: center;
+
+	p {
+		color: aliceblue;
+		size: 32px;
+	}
+}
