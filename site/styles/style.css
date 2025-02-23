@@ -2,6 +2,7 @@ body, html {
 	padding: 0;
 	margin: 0;
 	height: 100%;
+	background-image: url('../img/bg/space.gif');
 	font-size: 12px;
 	font-family: Calibri, sans-serif;
 }
