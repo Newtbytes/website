@@ -1,0 +1,18 @@
+.page {
+	padding: 12px;
+	background: #FFF;
+}
+
+.box {
+    border-right: 6px ridge;
+    border-left: 6px ridge;
+    border-bottom: 6px ridge;
+    box-sizing: border-box;
+    padding: 12px;
+    background: papayawhip;
+}
+
+.title {
+    border: 6px ridge;
+    background: coral;
+}
