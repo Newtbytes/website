@@ -24,4 +24,4 @@ jobs:
           api_token: ${{ secrets.NEOCITIES_API_KEY }}
           cleanup: true
           preview_before_deploy: true
-          dist_dir: build/site
+          dist_dir: build
