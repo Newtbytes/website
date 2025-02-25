@@ -96,11 +96,12 @@ h2 {
 	background-position: bottom; 
 }
 
-.cat {
+.character {
   position: absolute;
-  top: 0;
-  right: 40px;
-  height: 140px;
+  top: 27px;
+  right: 50px;
+  height: 150px;
+  scale: 2;
 }
 
 .title {
