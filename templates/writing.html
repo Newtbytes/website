@@ -6,6 +6,8 @@
     {{ section.title }}
 </h1>
 
+{{ section.content | safe}}
+
 <link rel="stylesheet" type="text/css" href="/styles/writing.css">
 
 {% for page in section.pages %}
