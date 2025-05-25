@@ -1,4 +1,7 @@
-# Compilers: Query, Key, Value?
++++
+title = "Compilers: Query, Key, Value?"
+date = 2025-05-25
++++
 
 Compilers are very pointer heavy, as they often use linked lists for lists of operations, trees, graphs, and if they use it, single static assignment (SSA) form is riddled with pointers (SSA is a program representation where the result of an operation is a *pointer to that operation*, essentially meaning that a program in SSA is a graph with 'no' statements). This is a huge blow to performance, as compilers like LLVM (used in Clang) and GCC spend an enormous amount of time dereferencing pointers! Arrays are used, but heavy pointer use reigns supreme in compiler implementations.
 
