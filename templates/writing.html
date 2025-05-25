@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="title">
+    {{ section.title }}
+</h1>
+
+<link rel="stylesheet" type="text/css" href="/styles/writing.css">
+
+{% for page in section.pages %}
+<ul>
+    <div class="entry-title"> <b>{{ page.title }}</b> {{ page.date }} </div>
+    <div class="box">{{ page.content | safe }}</div>
+</ul>
+{% endfor %}
+
+{% endblock content %}

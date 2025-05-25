@@ -12,11 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install Requirements
-        run: pip install -r requirements.txt
+      - name: Install zola
+        run: sudo snap install --edge zola
 
       - name: Build
-        run: make
+        run: zola build
 
       - name: Deploy to neocities
         uses: bcomnes/deploy-to-neocities@v1
@@ -24,4 +24,4 @@ jobs:
           api_token: ${{ secrets.NEOCITIES_API_KEY }}
           cleanup: true
           preview_before_deploy: true
-          dist_dir: build
+          dist_dir: public
