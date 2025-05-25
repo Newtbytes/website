@@ -13,7 +13,8 @@ li {
     color: white;
 }
 
-h1, h2 {
+h1,
+h2 {
     color: violet;
     text-align: center;
 }
@@ -39,7 +40,7 @@ img {
 }
 
 body {
-    background-image: url('../img/bg/space.gif');
+    background-image: url('/img/bg/space.gif');
 }
 
 .topnav {

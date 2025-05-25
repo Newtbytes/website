@@ -1,6 +1,6 @@
 .page {
-	padding: 12px;
-	background: #FFF;
+    padding: 12px;
+    background: #FFF;
 }
 
 .box {
@@ -12,7 +12,9 @@
     background: papayawhip;
 }
 
-.title {
+.entry-title {
     border: 6px ridge;
     background: coral;
+    box-sizing: border-box;
+    width: auto;
 }
