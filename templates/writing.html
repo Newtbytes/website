@@ -12,8 +12,10 @@
 
 {% for page in section.pages %}
 <ul>
-    <div class="entry-title"> <b>{{ page.title }}</b> {{ page.date }} </div>
-    <div class="box">{{ page.content | safe }}</div>
+    <!-- <div class="box">{{ page.content | safe }}</div> -->
+    <li>
+        <p>{{ page.date }} <a href="{{ page.permalink | safe }}">{{ page.title }}</a> </p>
+    </li>
 </ul>
 {% endfor %}
 

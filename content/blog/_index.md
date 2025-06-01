@@ -1,8 +1,6 @@
 +++
-title = "my blog"
+title = "my blog (currently super WIP, not even a single complete first draft)"
 sort_by = "date"
 template = "writing.html"
 page_template = "writing-page.html"
 +++
-
-here are some [in progress drafts](@/blog/drafts/_index.md)
