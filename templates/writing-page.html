@@ -2,10 +2,31 @@
 
 {% block title %} {{ page.title }} {% endblock title %}
 
+{% block style %}
+<link rel="stylesheet" type="text/css" href="/styles/style.css">
+<link rel="stylesheet" type="text/css" href="/styles/writing.css">
+
+<!-- fonts -->
+
+<!-- Merriweather -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+    rel="stylesheet">
+
+<!-- Merriweather -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+{% endblock style %}
+
 {% block content %}
 <div class="title">
     <h2><b>{{ page.title }}</b></h2>
     <h3><em>{{ page.date }}</em></h3>
 </div>
-<div class="box">{{ page.content | safe }}</div>
+{{ page.content | safe }}
 {% endblock content %}

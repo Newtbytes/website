@@ -1,9 +1,86 @@
-.page {
+.content {
     padding: 12px;
-    background: #FFF;
 }
 
+h1 {
+    color: #f2007d;
+    border-bottom: 1px dashed;
+
+    font-family: "Merriweather", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+
+h2 {
+    color: #f2007d;
+
+    font-family: "Merriweather", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+
+}
+
+
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+
+    font-size: medium;
+}
+
+.footnote-definition {
+    .footnote-definition-label {
+        font-size: smaller;
+        margin: auto;
+        position: relative;
+    }
+
+    p {
+        font-size: smaller;
+        margin: auto;
+    }
+
+
+
+    .sup {
+        display: inline-block;
+        margin-right: 0.5em;
+        color: #ff2e88;
+        font-size: inherit;
+        font-weight: bold;
+        vertical-align: baseline;
+
+        &::before {
+            content: "[";
+        }
+
+        &::after {
+            content: "]";
+        }
+    }
+
+    p:first-of-type {
+        display: inline;
+    }
+
+    p:not(:first-of-type) {
+        margin-top: 0.5em;
+    }
+}
+
+
 .box {
+    border-top: 6px ridge;
     border-right: 6px ridge;
     border-left: 6px ridge;
     border-bottom: 6px ridge;

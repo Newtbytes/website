@@ -71,10 +71,6 @@ h2 {}
 	color: white;
 }
 
-.content {
-	flex-grow: 1;
-}
-
 .button {
 	display: block;
 	line-height: 40px;
