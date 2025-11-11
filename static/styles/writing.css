@@ -95,3 +95,95 @@ body {
     box-sizing: border-box;
     width: auto;
 }
+
+.clipboard-button {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 10;
+    background-color: transparent;
+    border: "#3D444D";
+    border-radius: 3px;
+
+    svg {
+        fill: #9198A1;
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.light .clipboard-button {
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.5);
+    background-color: #f3f3f3;
+}
+
+pre {
+    background-color: var(#282828) !important;
+    border-radius: 5px;
+    border: none;
+    line-height: 1.4;
+    padding: 1em;
+    position: relative;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    margin-left: 4em;
+    margin-right: 4em;
+
+    code {
+        background-color: transparent !important;
+        color: inherit;
+        border: none;
+        padding: 0 !important;
+
+        table td {
+            padding: 0.4em;
+        }
+    }
+}
+
+.light code table td {
+    color: #ffffff !important;
+}
+
+pre code table mark {
+    color: unset;
+    padding: 0;
+    background-color: #204e8a !important;
+    filter: brightness(1.1);
+}
+
+pre::-webkit-scrollbar {
+    height: 8px;
+}
+
+pre::-webkit-scrollbar-thumb {
+    background-color: #3D444D;
+    border-radius: 4px;
+}
+
+pre::-webkit-scrollbar-track {
+    background-color: #1E222A;
+}
+
+a {
+    code:hover {
+        background-color: transparent;
+        background: transparent !important;
+    }
+}
+
+code {
+    background-color: var(#282828);
+}
+
+code,
+pre,
+kbd,
+samp {
+    font-size: 1.05em;
+    /* slightly larger than the surrounding text */
+    line-height: 1.6;
+}
