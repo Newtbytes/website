@@ -7,5 +7,10 @@
     <h2><b>{{ page.title }}</b></h2>
     <h3><em>{{ page.date }}</em></h3>
 </div>
+
+{% if page.draft %}
+{{"### _**Notice**: This is a really really early DRAFT. Here be dragons._" | markdown | safe}}
+{% endif %}
+
 {{ page.content | safe }}
 {% endblock content %}

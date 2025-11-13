@@ -1,15 +1,15 @@
 +++
 title = "Mixture of Trackers (draft)"
 date = 2025-09-02
+draft = true
 +++
-
-### _**Notice**: This is a really really early DRAFT. Here be dragons._
 
 ## Draft Progress
 
 - [x] First draft
 - [ ] Second draft (cleanup & editing notes)
 - [ ] Third draft (fix notes?)
+
 ## Draft
 I've been playing a lot of VRChat recently, and one topic that keeps coming to mind is the immersion you can get from tracking the pose of your body. By default, for almost every virtual reality (VR) headset in existence, there are three trackers: your headset, and two controllers. That tells you very little about the player's pose; just the positions of the hands and the head. You can't really move your legs around, or your hips, or really anything at all. A lot of hardcore VRChat players invest in buying more trackers to fix this. Full Body Tracking (FBT) as it is known improves immersion significantly and makes it so much more fun to socialize! Some headsets have hand tracking, like the Meta Quest, and some even have eye and face tracking, the most exotic form of tracking in my opinion.
 

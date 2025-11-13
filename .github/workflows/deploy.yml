@@ -16,7 +16,7 @@ jobs:
         run: sudo snap install --edge zola
 
       - name: Build
-        run: zola build
+        run: zola build --drafts
 
       - name: Deploy to neocities
         uses: bcomnes/deploy-to-neocities@v3
