@@ -10,7 +10,7 @@ build_search_index = true
 [markdown.highlighting]
 theme = "catppuccin-frappe"
 
-taxonomies = [{ name = "tags" }]
+# TODO: figure out taxonomies
 
 [extra]
 # Put all your custom variables here
