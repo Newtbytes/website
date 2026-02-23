@@ -1,5 +1,21 @@
+@font-face {
+	font-family: 'PixelOperator';
+	src: url("../fonts/PixelOperator.ttf");
+}
+
+@font-face {
+	font-family: 'DTM Sans';
+	src: url("../fonts/dtm-sans.ttf");
+}
+
+:root {
+	--primary-font: 'PixelOperator', monospace;
+	--secondary-font: 'DTM Sans'
+}
+
 body,
 html {
+	font-family: var(--primary-font);
 	padding: 0;
 	margin: 0;
 	height: 100%;
@@ -56,7 +72,8 @@ img {
 	text-align: center;
 	font-weight: bold;
 	margin-bottom: 12px;
-	font-size: 17px;
+	font-family: var(--secondary-font);
+	font-size: 16px;
 	background-color: #e34262;
 	background-image: url("/img/bg/happy_stars.png");
 	border-radius: 5px;
