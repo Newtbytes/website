@@ -1,5 +1,5 @@
 +++
-title = "Bought a domain name"
+title = "New project! Writing a C Compiler"
 date = 2026-02-20
 +++
 
