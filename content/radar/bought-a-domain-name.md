@@ -1,6 +1,6 @@
 +++
 title = "Bought a domain name"
-date = 2026-2-22
+date = 2026-02-22
 +++
 
 Cloudflare is like the best thing ever btw

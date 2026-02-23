@@ -1,6 +1,6 @@
 +++
 title = "Bought a domain name"
-date = 2026-2-20
+date = 2026-02-20
 
 [taxonomies]
 tags=["compiler-construction", "projects"]
