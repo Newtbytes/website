@@ -1,0 +1,10 @@
+{
+    "css.styleSheets": [
+        "static/styles/*.css"
+    ],
+    "markdown.styles": [
+        "static/styles/base.css",
+        "static/styles/writing.css"
+    ],
+    "markdown.extension.toc.slugifyMode": "zola"
+}
