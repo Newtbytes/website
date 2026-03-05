@@ -35,17 +35,21 @@
         <p>
             {% if page.title %}
             <a class="entry-title" href="{{ page.permalink | safe }}"><b>{{ page.title }}</b></a>
-            {% endif %}
             · · ·
+            {% endif %}
             <span class="entry-date">{{ page.date }}</span>
             {% if page.updated %}
             <span class="entry-updated">(updated {{ page.updated }})</span>
             {% endif %}
         </p>
 
+        {% if section.extra | get(key="link_pages", default=true) %}
         {% if page.summary %}
         {{ page.summary | safe }}
         <a class="continue-reading-link" href="{{ page.permalink }}#continue-reading">Continue Reading...</a>
+        {% endif %}
+        {% else %}
+        {{ page.content | safe }}
         {% endif %}
     </li>
 </ol>
