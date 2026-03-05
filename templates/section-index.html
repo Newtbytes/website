@@ -2,14 +2,14 @@
 
 {% extends "base.html" %}
 
-{% block url %} {{ macros::meta_url(value=section.permalink | safe ) }} {% endblock url %}
+{% block url %} {{ macros::meta_url(url=section.permalink | safe ) }} {% endblock url %}
 
 {% if section.title %}
-{% block title %} {{ macros::meta_title(value=section.title) }} {% endblock title %}
+{% block title %} {{ macros::meta_title(title=section.title) }} {% endblock title %}
 {% endif %}
 
 {% if section.description %}
-{% block desc %} {{ macros::meta_desc(value=section.description) }} {% endblock desc %}
+{% block desc %} {{ macros::meta_desc(desc=section.description) }} {% endblock desc %}
 {% endif %}
 
 {% block content %}

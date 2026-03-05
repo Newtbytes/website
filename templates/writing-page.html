@@ -2,10 +2,10 @@
 
 {% extends "base.html" %}
 
-{% block url %} {{ macros::meta_url(value=page.permalink | safe) }} {% endblock url %}
+{% block url %} {{ macros::meta_url(url=page.permalink | safe) }} {% endblock url %}
 
 {% if page.title %}
-{% block title %} {{ macros::meta_title(value=page.title) }} {% endblock title %}
+{% block title %} {{ macros::meta_title(title=page.title) }} {% endblock title %}
 {% endif %}
 
 {% if page.authors %}
@@ -15,7 +15,7 @@
 {% endif %}
 
 {% if page.description %}
-{% block desc %} {{ macros::meta_desc(value=page.description) }} {% endblock desc %}
+{% block desc %} {{ macros::meta_desc(desc=page.description) }} {% endblock desc %}
 {% endif %}
 
 {% block opengraph %}

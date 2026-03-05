@@ -13,8 +13,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    {{ macros::meta_domain(value="newtbytes.cc") }}
-    {% block url %} {{ macros::meta_url(value="https://newtbytes.cc") }} {% endblock url %}
+    {{ macros::meta_domain(domain="newtbytes.cc") }}
+    {% block url %} {{ macros::meta_url(url="https://newtbytes.cc") }} {% endblock url %}
 
     {% block author %}
     <meta name="author" content="newtbytes">
@@ -22,7 +22,7 @@
 
     {% block title %} {% endblock title %}
     {% block desc %}
-    {{ macros::meta_desc(value="Newt's Cove is a personal website and blog by Ness Shannon, aka Newt,
+    {{ macros::meta_desc(desc="Newt's Cove is a personal website and blog by Ness Shannon, aka Newt,
     aka newbytes. It's a place where I share my passions for all things cool and weird on the web, including machine
     learning, game development, and more. This site is a work in progress, so stay tuned for creative musings and
     updates!") }}
