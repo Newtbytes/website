@@ -8,7 +8,33 @@
     <link rel="stylesheet" type="text/css" href="/styles/base.css">
     <link rel="stylesheet" type="text/css" href="/styles/writing.css">
     {% endblock style %}
-    <meta name="viewport" content="width=device-width, initial-scale=0.1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block metatags %}
+    <meta name="author" content="newtbytes">
+    <meta name="description"
+        content="Newt's Cove is a personal website and blog by Ness Shannon, aka Newt, aka newbytes. It's a place where I share my passions for all things cool and weird on the web, including machine learning, game development, and more. This site is a work in progress, so stay tuned for creative musings and updates!">
+    {% endblock metatags %}
+
+    <meta name="keywords"
+        content="Newt's Cove, Ness Shannon, newbytes, personal website, blog, machine learning, game development, creative writing, compiler, programming, web development, nerdy interests, WIP, under construction">
+
+    <meta name="language" content="English">
+
+    <meta property="og:url" content="https://newtbytes.cc/">
+    <meta property="og:site_name" content="newtbytes.cc">
+    <meta property="og:locale" content="en_US">
+
+    {% block opengraph %}
+    <meta property="og:type" content="website">
+    {% endblock opengraph %}
+
+    <meta property="og:image" content="{{ get_url(path='img/logo.png') }}">
+    <meta property="og:image:alt" content="Newt's Cove">
+
+    <link rel="canonical" href="https://newtbytes.cc/">
+
+    <meta name="robots" content="index, follow">
 
     <script type="text/javascript" src="scripts/cursor.js"></script>
 </head>

@@ -2,6 +2,12 @@
 
 {% block title %} {{ section.title }} {% endblock title %}
 
+{% block metatags %}
+{% if section.description %}
+<meta name="description" content="{{ section.description }}">
+{% endif %}
+{% endblock metatags %}
+
 {% block content %}
 
 <h1 class="title">
@@ -14,7 +20,6 @@
 
 {% for page in section.pages %}
 <ul>
-    <!-- <div class="box">{{ page.content | safe }}</div> -->
     <li>
         <p>{{ page.date }} <a href="{{ page.permalink | safe }}">{{ page.title }}</a> </p>
     </li>
