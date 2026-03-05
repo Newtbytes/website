@@ -1,13 +1,14 @@
 +++
 title = "New project! Writing a C Compiler"
 date = 2026-02-20
+updated = 2026-02-25
 +++
 
 Hey girlies and boyos!! Now that I’ve slowly started to return from a break I’ve been taking from Discord for the past few months, I’m going to (attempt) to start writing updates for projects I’m working on! First off…
 
-## Writing my own compiler for (a subset of) C!
-
 <!-- more -->
+
+## Writing my own compiler for (a subset of) C!
 
 ### What’s a compiler?
 

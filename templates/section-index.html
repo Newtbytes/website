@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 
+{% block style %}
+<link rel="stylesheet" type="text/css" href="/styles/section-index.css">
+{% endblock style %}
 {% block url %} {{ macros::meta_url(url=section.permalink | safe ) }} {% endblock url %}
 
 {% if section.title %}
@@ -24,19 +27,28 @@
 
 {{ section.description }}
 
-{{ section.content | safe}}
+{{ section.content | safe }}
 
 {% for page in section.pages %}
-<ul>
-    <li>
+<ol>
+    <li class="entry">
         <p>
-            {{ page.date }}
             {% if page.title %}
-            <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+            <a class="entry-title" href="{{ page.permalink | safe }}"><b>{{ page.title }}</b></a>
+            {% endif %}
+            · · ·
+            <span class="entry-date">{{ page.date }}</span>
+            {% if page.updated %}
+            <span class="entry-updated">(updated {{ page.updated }})</span>
             {% endif %}
         </p>
+
+        {% if page.summary %}
+        {{ page.summary | safe }}
+        <a class="continue-reading-link" href="{{ page.permalink }}#continue-reading">Continue Reading...</a>
+        {% endif %}
     </li>
-</ul>
+</ol>
 {% endfor %}
 
 {% endblock content %}

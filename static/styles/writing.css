@@ -5,7 +5,7 @@
 }
 
 h1 {
-    color: #f2007d;
+    color: var(--header-col);
     border-bottom: 1px dashed;
 
     font-family: var(--secondary-font);
@@ -17,7 +17,7 @@ h1 {
 }
 
 h2 {
-    color: #f2007d;
+    color: var(--header-col);
 
     font-family: var(--secondary-font);
     font-optical-sizing: auto;
@@ -83,13 +83,6 @@ body {
     box-sizing: border-box;
     padding: 12px;
     background: papayawhip;
-}
-
-.entry-title {
-    border: 6px ridge;
-    background: coral;
-    box-sizing: border-box;
-    width: auto;
 }
 
 .clipboard-button {

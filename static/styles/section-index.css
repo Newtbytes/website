@@ -1,0 +1,37 @@
+@import url("base.css");
+@import url("writing.css");
+
+.entry {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 36px;
+    margin-bottom: 64px;
+
+    background: var(--blue-readable-bg);
+    border: 6px ridge;
+    box-sizing: border-box;
+    padding: 12px;
+
+    p {
+        margin: 0;
+    }
+}
+
+ol {
+    padding-left: 1em;
+    padding-right: 1em;
+
+    list-style: none;
+}
+
+p.entry-date {
+    display: inline;
+}
+
+.entry-date+.entry-updated {
+    color: var(--lightmode-text-lightbg-muted);
+    font-style: italic;
+    font-size: smaller;
+    display: inline;
+}
