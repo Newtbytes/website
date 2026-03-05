@@ -14,10 +14,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     {{ macros::meta_domain(domain="newtbytes.cc") }}
-    {% block url %} {{ macros::meta_url(url="https://newtbytes.cc") }} {% endblock url %}
+    {% block url %} {{ macros::meta_url(url=config.base_url) }} {% endblock url %}
 
     {% block author %}
-    <meta name="author" content="newtbytes">
+    <meta name="author" content={{ config.author }}>
     {% endblock author %}
 
     {% block title %} {% endblock title %}
