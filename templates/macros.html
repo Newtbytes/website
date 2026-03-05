@@ -1,0 +1,42 @@
+{% macro meta_desc(desc) %}
+<meta name="description" content={{ desc }}>
+<meta property="og:description" content={{ desc }}>
+<meta name="twitter:description" content={{ desc }}>
+{% endmacro input %}
+
+
+{% macro meta_title(title) %}
+<title>Newt's Cove | {{ title }}</title>
+<meta property="og:title" content="Newt's Cove | {{ title }}">
+<meta name="twitter:title" content="Newt's Cove | {{ title }}">
+{% endmacro input %}
+
+
+{% macro meta_image(url, width, height, alt) %}
+<meta property="og:image" content="{{ url }}">
+<meta property="og:image:width" content="{{ width }}">
+<meta property="og:image:height" content="{{ height }}">
+<meta property="og:image:alt" content="{{ alt }}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{ url }}">
+{% endmacro input %}
+
+
+{% macro meta_domain(domain) %}
+<meta property="og:site_name" content="{{ domain }}">
+<meta property="twitter:domain" content="{{ domain }}">
+{% endmacro meta_domain %}
+
+
+{% macro meta_url(url) %}
+<meta property="twitter:url" content="{{ url }}">
+<meta property="og:url" content="{{ url }}">
+<link rel="canonical" href="{{ url }}">
+{% endmacro meta_url %}
+
+{% macro meta_lang(lang, code) %}
+<meta property="twitter:url" content="{{ url }}">
+<meta property="og:url" content="{{ url }}">
+<link rel="canonical" href="{{ url }}">
+{% endmacro meta_url %}

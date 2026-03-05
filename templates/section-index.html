@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
+{% block url %} {{ section.permalink | safe }} {% endblock url %}
+
+{% if section.title %}
 {% block title %} {{ section.title }} {% endblock title %}
-
-{% block metatags %}
-{% if section.description %}
-<meta name="description" content="{{ section.description }}">
 {% endif %}
-{% endblock metatags %}
 
-{% block canonical %} {{ section.permalink | safe }} {% endblock canonical %}
+{% if section.description %}
+{% block desc %} {{ section.description }} {% endblock desc %}
+{% endif %}
 
 {% block content %}
 

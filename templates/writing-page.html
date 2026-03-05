@@ -1,29 +1,38 @@
 {% extends "base.html" %}
 
+{% block url %} {{ page.permalink | safe }} {% endblock url %}
+
+{% if page.title %}
 {% block title %} {{ page.title }} {% endblock title %}
+{% endif %}
+
+{% if page.authors %}
+{% block author %} {{ page.authors | join(sep=", " ) }} {% endblock author %}
+{% endif %}
+
+{% if page.description %}
+{% block desc %} {{ page.description }} {% endblock desc %}
+{% endif %}
 
 {% block opengraph %}
 <meta property="og:type" content="article">
+
+{% if page.authors %}
 <meta property="og:article:author" content={{ page.authors | join(sep=", " ) }}>
+{% endif %}
+
 {% if page.description %}
 <meta property="og:article:description" content="{{ page.description }}">
 {% endif %}
+
 {% if page.date %}
 <meta property="og:article:published_time" content="{{ page.date | date(format=" %Y-%m-%dT%H:%M:%S%z") }}">
 {% endif %}
+
 {% if page.updated %}
 <meta property="og:article:modified_time" content="{{ page.updated | date(format=" %Y-%m-%dT%H:%M:%S%z") }}">
 {% endif %}
 {% endblock opengraph %}
-
-{% block metatags %}
-<meta name="author" content={{ page.authors | join(sep=", " ) }}>
-{% if page.description %}
-<meta name="description" content="{{ page.description }}">
-{% endif %}
-{% endblock metatags %}
-
-{% block canonical %} {{ page.permalink | safe }} {% endblock canonical %}
 
 {% block content %}
 <div class=" title">
