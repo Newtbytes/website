@@ -32,7 +32,7 @@
     <meta property="og:image" content="{{ get_url(path='img/logo.png') }}">
     <meta property="og:image:alt" content="Newt's Cove">
 
-    <link rel="canonical" href="https://newtbytes.cc/">
+    <link rel="canonical" href={% block canonical %} "https://newtbytes.cc" {% endblock canonical %}>
 
     <meta name="robots" content="index, follow">
 

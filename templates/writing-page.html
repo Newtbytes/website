@@ -23,6 +23,8 @@
 {% endif %}
 {% endblock metatags %}
 
+{% block canonical %} {{ page.permalink | safe }} {% endblock canonical %}
+
 {% block content %}
 <div class=" title">
     <h2><b>{{ page.title }}</b></h2>

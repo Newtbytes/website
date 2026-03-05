@@ -8,6 +8,8 @@
 {% endif %}
 {% endblock metatags %}
 
+{% block canonical %} {{ section.permalink | safe }} {% endblock canonical %}
+
 {% block content %}
 
 <h1 class="title">
