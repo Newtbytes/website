@@ -1,5 +1,5 @@
 +++
-title = "Bought a domain name"
+title = "Hosting on GitHub Pages now!"
 date = 2026-02-25
 +++
 

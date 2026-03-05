@@ -1,0 +1,30 @@
+{% extends "section-index.html" %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="/styles/radar.css">
+{% endblock style %}
+
+{% block content %}
+
+<h1 class="title">
+    {{ section.title }}
+</h1>
+
+{{ section.description }}
+
+{{ section.content | safe}}
+
+{# Twitter-style feed instead of an archive-style index of links, since this is a microblog #}
+{% for page in section.pages %}
+<ol>
+    <li>
+        <div class="radar-entry">
+            <p>{{ page.date }} <a href="{{ page.permalink | safe }}">{{ page.title }}</a> </p>
+            {{ page.description }}
+            {{ page.content | safe }}
+        </div>
+    </li>
+</ol>
+{% endfor %}
+
+{% endblock content %}
