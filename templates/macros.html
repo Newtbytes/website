@@ -12,15 +12,15 @@
 {% endmacro input %}
 
 
-{% macro meta_image(url, alt) %}
-{% set meta = get_image_metadata(path=url) %}
-<meta property="og:image" content="{{ url }}">
+{% macro meta_image(path, alt) %}
+{% set meta = get_image_metadata(path=path) %}
+<meta property="og:image" content="{{ get_url(path=path) }}">
 <meta property="og:image:width" content={{ meta.width }}>
 <meta property="og:image:height" content={{ meta.height }}>
 <meta property="og:image:alt" content="{{ alt }}">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="{{ url }}">
+<meta name="twitter:image" content="{{ get_url(path=path) }}">
 {% endmacro input %}
 
 
