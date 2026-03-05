@@ -4,19 +4,31 @@
 
 {% block url %} {{ macros::meta_url(url=page.permalink | safe) }} {% endblock url %}
 
+{% block title %}
 {% if page.title %}
-{% block title %} {{ macros::meta_title(title=page.title) }} {% endblock title %}
+{{ macros::meta_title(title=page.title) }}
+{% else %}
+{{ super() }}
 {% endif %}
+{% endblock title %}
 
-{% if page.authors %}
 {% block author %}
+{% if page.authors %}
 <meta name="author" content={{ page.authors | join(sep=", " ) }}>
+{% else %}
+{{ super() }}
+{% endif %}
 {% endblock author %}
-{% endif %}
 
+{% block desc %}
 {% if page.description %}
-{% block desc %} {{ macros::meta_desc(desc=page.description) }} {% endblock desc %}
+{{ macros::meta_desc(desc=page.description) }}
+{% elif page.summary %}
+{{ macros::meta_desc(desc=page.summary) }}
+{% else %}
+{{ super() }}
 {% endif %}
+{% endblock desc %}
 
 {% block opengraph %}
 <meta property="og:type" content="article">

@@ -1,5 +1,3 @@
-{% import "macros.html" as macros %}
-
 {% extends "base.html" %}
 
 {% block url %} {{ macros::meta_url(url=section.permalink | safe ) }} {% endblock url %}
@@ -8,9 +6,15 @@
 {% block title %} {{ macros::meta_title(title=section.title) }} {% endblock title %}
 {% endif %}
 
+{% block desc %}
 {% if section.description %}
-{% block desc %} {{ macros::meta_desc(desc=section.description) }} {% endblock desc %}
+{{ macros::meta_desc(desc=section.description) }}
+{% elif section.summary %}
+{{ macros::meta_desc(desc=section.summary) }}
+{% else %}
+{{ super() }}
 {% endif %}
+{% endblock desc %}
 
 {% block content %}
 

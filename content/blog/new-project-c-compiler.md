@@ -7,6 +7,8 @@ Hey girlies and boyos!! Now that I’ve slowly started to return from a break I�
 
 ## Writing my own compiler for (a subset of) C!
 
+<!-- more -->
+
 ### What’s a compiler?
 
 Programmers write computer programs using a well-defined, human-readable, human-understandable [programming language](https://en.wikipedia.org/wiki/Programming_language). However, computers don’t actually know how to *run* the code the human writes! Computers understand [machine code](https://en.wikipedia.org/wiki/Machine_code), a type of computer language that the computer can actually run. A [compiler](https://en.wikipedia.org/wiki/Compiler) is a computer program that translates from a program written in a human-readable programming language to machine code.
