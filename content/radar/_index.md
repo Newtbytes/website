@@ -4,4 +4,7 @@ description = "I hope to frequently write posts here. daily thoughts, updates, a
 sort_by = "date"
 template = "radar.html"
 page_template = "writing-page.html"
+
+[extra]
+update_frequency = "weekly"
 +++
