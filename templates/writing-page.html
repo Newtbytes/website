@@ -1,17 +1,21 @@
+{% import "macros.html" as macros %}
+
 {% extends "base.html" %}
 
-{% block url %} {{ page.permalink | safe }} {% endblock url %}
+{% block url %} {{ macros::meta_url(value={{ page.permalink | safe }}) }} {% endblock url %}
 
 {% if page.title %}
-{% block title %} {{ page.title }} {% endblock title %}
+{% block title %} {{ macros::meta_title(value={{ page.title }}) }} {% endblock title %}
 {% endif %}
 
 {% if page.authors %}
-{% block author %} {{ page.authors | join(sep=", " ) }} {% endblock author %}
+{% block author %}
+<meta name="author" content={{ page.authors | join(sep=", " ) }}>
+{% endblock author %}
 {% endif %}
 
 {% if page.description %}
-{% block desc %} {{ page.description }} {% endblock desc %}
+{% block desc %} {{ macros::meta_desc(value={{ page.description }}) }} {% endblock desc %}
 {% endif %}
 
 {% block opengraph %}
