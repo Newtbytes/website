@@ -5,11 +5,16 @@
 {% block title %} {{ macros::meta_title(title="Home") }} {% endblock title %}
 
 {% block opengraph %}
-<meta property="og:type" content="profile">
-<meta property="og:profile:first_name" content="Ness">
-<meta property="og:profile:last_name" content="Shannon">
-<meta property="og:profile:username" content="newtbytes">
-<meta property="og:profile:gender" content="female">
+{{ macros::meta_profile(
+first="Ness",
+last="Shannon",
+username="newtbytes",
+gender="female",
+email="ness@newtbytes.cc",
+url="https://newtbytes.cc",
+pfp="img/pfp.png",
+bday="2007-9-19")
+}}
 {% endblock opengraph %}
 
 {% block content %}

@@ -32,6 +32,10 @@ html {
 	background-image: url('/img/bg/space.gif');
 }
 
+.h-card {
+	visibility: hidden;
+}
+
 .page {
 	padding: 12px;
 	background: #FFF;

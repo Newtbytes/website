@@ -42,3 +42,25 @@
 <meta property="og:url" content="{{ url }}">
 <link rel="canonical" href="{{ url }}">
 {% endmacro meta_url %}
+
+{% macro meta_profile(first, last, username, gender, email, url, pfp, bday) %}
+<meta property="og:type" content="profile">
+<meta property="og:profile:first_name" content="{{ first }}">
+<meta property="og:profile:last_name" content="{{ last }}">
+<meta property="og:profile:username" content="{{ username }}">
+<meta property="og:profile:gender" content="{{ gender }}">
+
+<div class="h-card">
+    <span class="p-name">{{ first }} {{ last }}</span>
+    <span class="p-given-name">{{ first }}</span>
+    <span class="p-family-name">{{ first }}</span>
+    <span class="p-nickname">{{ username }}</span>
+
+    <time class="dt-bday">{{ bday }}</time> birthday
+
+    <a class="u-url" href="{{ url }}">{{ url }}"</a>
+    <a class="u-uid" href="{{ url }}">{{ url }}"</a>
+    <img class="u-logo" href="{{ pfp }}">{{ pfp }}"</img>
+    <a class="u-email" href="mailto:{{ email }}">{{ email }}</a>
+</div>
+{% endmacro meta_profile %}
