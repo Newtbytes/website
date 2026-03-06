@@ -51,16 +51,16 @@
 <meta property="og:profile:gender" content="{{ gender }}">
 
 <div class="h-card">
-    <span class="p-name">{{ first }} {{ last }}</span>
-    <span class="p-given-name">{{ first }}</span>
-    <span class="p-family-name">{{ last }}</span>
-    <span class="p-nickname">{{ username }}</span>
+    <data class="p-name">{{ first }} {{ last }}</data>
+    <data class="p-given-name">{{ first }}</data>
+    <data class="p-family-name">{{ last }}</data>
+    <data class="p-nickname">{{ username }}</data>
 
-    <time class="dt-bday">{{ bday }}</time> birthday
+    <data class="dt-bday">{{ bday }}</data> birthday
 
-    <a class="u-url" href="{{ url }}">{{ url }}"</a>
-    <a class="u-uid" href="{{ url }}">{{ url }}"</a>
-    <img class="u-logo" src="{{ pfp }}">{{ pfp }}"</img>
-    <a class="u-email" href="mailto:{{ email }}">{{ email }}</a>
+    <data class="u-url" value="{{ url }}">{{ url }}"</data>
+    <data class="u-uid" value="{{ url }}">{{ url }}"</data>
+    <data class="u-logo" value="{{ pfp }}">{{ pfp }}"</data>
+    <data class="u-email" value="mailto:{{ email }}">{{ email }}</data>
 </div>
 {% endmacro meta_profile %}
