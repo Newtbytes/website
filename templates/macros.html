@@ -87,3 +87,7 @@
     </a>
 </address>
 {% endmacro author_url %}
+
+{% macro time_published(pubdate) %}
+<time class="dt-published published" datetime="{{ pubdate | date(format='%Y-%m-%dT%H:%M:%SZ') }}">{{ pubdate }}</time>
+{% endmacro time_published %}
