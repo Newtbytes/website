@@ -26,6 +26,15 @@ jobs:
           zola_version: v0.22.0
           build_flags: --drafts
 
+      - name: Deploy to neocities
+        uses: bcomnes/deploy-to-neocities@v3
+        with:
+          api_key: ${{ secrets.NEOCITIES_API_TOKEN }}
+          cleanup: true
+          neocities_supporter: false
+          preview_before_deploy: true
+          dist_dir: public
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
