@@ -9,15 +9,21 @@
 first="Ness",
 last="Shannon",
 username="newtbytes",
+gender="female")
+}}
+{% endblock opengraph %}
+
+{% block content %}
+{{ macros::hcard_profile(
+first="Ness",
+last="Shannon",
+username="newtbytes",
 gender="female",
 email="ness@newtbytes.cc",
 url="https://newtbytes.cc/",
 pfp=get_url(path="img/pfp.png"),
 bday="2007-9-19")
 }}
-{% endblock opengraph %}
-
-{% block content %}
 
 <div>
     <h1>WELCOME TO NEWT'S COVE</h1>

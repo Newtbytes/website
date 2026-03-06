@@ -42,23 +42,36 @@
 {% endif %}
 
 {% if page.date %}
-<meta property="og:article:published_time" content="{{ page.date | date(format=" %Y-%m-%dT%H:%M:%S%z") }}">
+<meta property="og:article:published_time" content="{{ page.date | date(format='%Y-%m-%dT%H:%M:%SZ') }}">
 {% endif %}
 
 {% if page.updated %}
-<meta property="og:article:modified_time" content="{{ page.updated | date(format=" %Y-%m-%dT%H:%M:%S%z") }}">
+<meta property="og:article:modified_time" content="{{ page.date | date(format='%Y-%m-%dT%H:%M:%SZ') }}">
 {% endif %}
 {% endblock opengraph %}
 
 {% block content %}
-<div class=" title">
-    <h2><b>{{ page.title }}</b></h2>
-    <h3><em>{{ page.date }}</em></h3>
+<div class="h-entry">
+    <data class="u-url" value="{{ page.permalink }}"></data>
+
+    <h2>
+        <b>
+            <div class="title p-name">{{ page.title }}</div>
+        </b>
+    </h2>
+    <h3>
+        <em>
+            <time class="dt-published" datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%SZ') }}">{{ page.date
+                }}</time>
+        </em>
+    </h3>
+
+    <div class="e-content">
+        {% if page.draft %}
+        {{"### _**Notice**: This is a really really early DRAFT. Here be dragons._" | markdown | safe}}
+        {% endif %}
+
+        {{ page.content | safe }}
+    </div>
 </div>
-
-{% if page.draft %}
-{{"### _**Notice**: This is a really really early DRAFT. Here be dragons._" | markdown | safe}}
-{% endif %}
-
-{{ page.content | safe }}
 {% endblock content %}

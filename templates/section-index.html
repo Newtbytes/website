@@ -20,39 +20,41 @@
 {% endblock desc %}
 
 {% block content %}
+<div class="h-feed">
+    <h1 class="title p-name">
+        {{ section.title }}
+        <a href="{{ section.permalink }}" class="u-url"></a>
+    </h1>
 
-<h1 class="title">
-    {{ section.title }}
-</h1>
+    {{ section.description }}
 
-{{ section.description }}
+    {{ section.content | safe }}
 
-{{ section.content | safe }}
+    {% for page in section.pages %}
+    <div class="entry h-entry">
+        <a class="u-author" rel="author" href="{{ config.base_url }}"></a>
 
-{% for page in section.pages %}
-<ol>
-    <li class="entry">
         <p>
             {% if page.title %}
-            <a class="entry-title" href="{{ page.permalink | safe }}"><b>{{ page.title }}</b></a>
+            <a class="entry-title p-url" href="{{ page.permalink | safe }}"><b class="p-name">{{ page.title }}</b></a>
             · · ·
             {% endif %}
-            <span class="entry-date">{{ page.date }}</span>
+            <time class="entry-date dt-published" datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%SZ') }}">{{
+                page.date }}</time>
             {% if page.updated %}
-            <span class="entry-updated">(updated {{ page.updated }})</span>
+            <span class="entry-updated">(updated <time>{{ page.updated }}</time>)</span>
             {% endif %}
         </p>
 
         {% if section.extra | get(key="link_pages", default=true) %}
         {% if page.summary %}
-        {{ page.summary | safe }}
+        <div class="p-summary"> {{ page.summary | safe }} </div>
         <a class="continue-reading-link" href="{{ page.permalink }}#continue-reading">Continue Reading...</a>
         {% endif %}
         {% else %}
-        {{ page.content | safe }}
+        <div class="p-content">{{ page.content | safe }} </div>
         {% endif %}
-    </li>
-</ol>
-{% endfor %}
-
+    </div>
+    {% endfor %}
+</div>
 {% endblock content %}
