@@ -43,6 +43,7 @@
 <link rel="canonical" href="{{ url }}">
 {% endmacro meta_url %}
 
+
 {% macro meta_profile(first, last, username, gender) %}
 <meta property="og:type" content="profile">
 <meta property="og:profile:first_name" content="{{ first }}">
@@ -50,6 +51,7 @@
 <meta property="og:profile:username" content="{{ username }}">
 <meta property="og:profile:gender" content="{{ gender }}">
 {% endmacro meta_profile %}
+
 
 {% macro hcard_profile(first, last, username, gender, email, url, pfp, bday) %}
 <data class="h-card">
@@ -66,6 +68,7 @@
     <data class="u-email" value="mailto:{{ email }}">{{ email }}</data>
 </data>
 {% endmacro hcard_profile %}
+
 
 {% macro author_url(name="", url="", visible=false) %}
 <address class="p-author author h-card vcard">
