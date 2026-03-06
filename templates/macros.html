@@ -66,3 +66,21 @@
     <data class="u-email" value="mailto:{{ email }}">{{ email }}</data>
 </data>
 {% endmacro hcard_profile %}
+
+{% macro author_url(name="", url="", visible=false) %}
+<address class="p-author author h-card vcard">
+    {% if not name %}
+    {% set name = config.author %}
+    {% endif %}
+
+    {% if not url %}
+    {% set url = config.base_url %}
+    {% endif %}
+
+    <a href="{{ url }}" class="u-url url p-name fn" rel="author">
+        {% if visible and name %}
+        {{ name }}
+        {% endif %}
+    </a>
+</address>
+{% endmacro author_url %}

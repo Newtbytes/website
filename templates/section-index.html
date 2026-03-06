@@ -32,7 +32,7 @@
 
     {% for page in section.pages %}
     <div class="entry h-entry">
-        <a class="u-author" rel="author" href="{{ config.base_url }}"></a>
+        {{ macros::author_url() }}
 
         <p>
             {% if page.title %}

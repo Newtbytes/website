@@ -53,7 +53,7 @@
 {% block content %}
 <div class="h-entry">
     <a class="u-url" href="{{ page.permalink }}"></a>
-    <a class="u-author" href="{{ config.base_url }}"></a>
+    {{ macros::author_url() }}
 
     <h2>
         <b>
