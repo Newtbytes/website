@@ -23,10 +23,10 @@
 <div class="h-feed">
     <h1 class="title p-name">
         {{ section.title }}
-        <a href="{{ section.permalink }}" class="u-url"></a>
     </h1>
+    <a href="{{ section.permalink }}" class="u-url"></a>
 
-    {{ section.description }}
+    <p class="p-summary">{{ section.description }}</p>
 
     {{ section.content | safe }}
 
