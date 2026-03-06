@@ -56,20 +56,13 @@
         </div>
         <div class="main">
             <div class="side">
-                <div class="menu h-feed">
-                    <a class="u-author" href="{{ config.base_url }}"></a>
-                    <data class="p-name" value="Newt's Cove"></data>
-
+                <div class="menu">
                     {% set home = get_section(path="_index.md") %}
-                    <a href="{{ home.permalink }}" class="button u-url">{{ home.title }}</a>
+                    <a href="{{ home.permalink }}" class="button">{{ home.title }}</a>
                     {% for path in home.subsections %}
                     {% set subsection = get_section(path=path) %}
                     {% if "button" in subsection.extra %}
-                    <div class="h-entry">
-                        <a href="{{ subsection.permalink }}" class="button u-url">
-                            {{ subsection.extra["button"] }}
-                        </a>
-                    </div>
+                    <a href="{{ subsection.permalink }}" class="button">{{ subsection.extra["button"] }}</a>
                     {% endif %}
                     {% endfor %}
                 </div>
