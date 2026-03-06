@@ -1,43 +1,40 @@
-{% import "macros.html" as macros %}
+{% import "macros/utils.html" as utils %}
 
-{% extends "base.html" %}
+{% extends "webpage.html" %}
 
-{% block url %} {{ macros::meta_url(url=page.permalink | safe) }} {% endblock url %}
-
-{% block title %}
-{% if page.title %}
-{{ macros::meta_title(title=page.title) }}
-{% else %}
+{% block metadata %}
 {{ super() }}
-{% endif %}
-{% endblock title %}
 
-{% block author %}
+{% set meta_url = page.permalink | safe %}
+{% set meta_title = utils::page_title(page.title) %}
+
 {% if page.authors %}
-<meta name="author" content={{ page.authors | join(sep=", " ) }}>
-{% else %}
-{{ super() }}
+{% set meta_author = page.authors | join(sep=", ") %}
 {% endif %}
-{% endblock author %}
 
-{% block desc %}
 {% if page.description %}
-{{ macros::meta_desc(desc=page.description) }}
+{% set meta_desc = page.description %}
 {% elif page.summary %}
-{{ macros::meta_desc(desc=page.summary) }}
-{% else %}
-{{ super() }}
+{% set meta_desc = page.summary %}
 {% endif %}
-{% endblock desc %}
+{% endblock metadata %}
 
-{% block opengraph %}
-{{macros::og_article(
-author=page.authors | join(sep=", "),
-desc=page.description,
+{% block meta %}
+{{ super() }}
+
+{{ og::article(
+url=meta_url,
+title=meta_title
+author=meta_author,
+desc=meta_desc,
 date=page.date,
 updated=page.updated
-)}}
-{% endblock opengraph %}
+) }}
+{% endblock meta %}
+
+{% block og_type %}
+{{ og::type("article") }}
+{% endblock og_type %}
 
 {% block content %}
 <article class="h-entry">

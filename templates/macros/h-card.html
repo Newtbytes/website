@@ -1,0 +1,15 @@
+{% macro profile(first, last, username, gender, email, url, pfp, bday) %}
+<data class="h-card">
+    <data class="p-name">{{ first }} {{ last }}</data>
+    <data class="p-given-name">{{ first }}</data>
+    <data class="p-family-name">{{ last }}</data>
+    <data class="p-nickname">{{ username }}</data>
+
+    <data class="dt-bday">{{ bday }}</data> birthday
+
+    <data class="u-url" value="{{ url }}">{{ url }}"</data>
+    <data class="u-uid" value="{{ url }}">{{ url }}"</data>
+    <data class="u-logo" value="{{ pfp }}">{{ pfp }}"</data>
+    <data class="u-email" value="mailto:{{ email }}">{{ email }}</data>
+</data>
+{% endmacro profile %}

@@ -1,23 +1,19 @@
-{% extends "base.html" %}
+{% extends "webpage.html" %}
 
 {% block style %}
 <link rel="stylesheet" type="text/css" href="/styles/section-index.css">
 {% endblock style %}
-{% block url %} {{ macros::meta_url(url=section.permalink | safe ) }} {% endblock url %}
 
-{% if section.title %}
-{% block title %} {{ macros::meta_title(title=section.title) }} {% endblock title %}
-{% endif %}
+{% block metadata %}
+{% set meta_url = section.permalink | safe %}
+{% set meta_desc = section.permalink | safe %}
 
-{% block desc %}
 {% if section.description %}
-{{ macros::meta_desc(desc=section.description) }}
+{% set meta_desc = page.description %}
 {% elif section.summary %}
-{{ macros::meta_desc(desc=section.summary) }}
-{% else %}
-{{ super() }}
+{% set meta_desc = page.summary %}
 {% endif %}
-{% endblock desc %}
+{% endblock metadata %}
 
 {% block content %}
 <div class="h-feed">

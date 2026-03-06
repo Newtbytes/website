@@ -1,18 +1,25 @@
-{% import "macros.html" as macros %}
+{% import "macros/opengraph.html" as og %}
+{% import "macros/h-card.html" as h_card %}
 
-{% extends "base.html" %}
+{% extends "webpage.html" %}
 
-{% block title %} {{ macros::meta_title(title="Home") }} {% endblock title %}
+{% block metadata %}
+{% set meta_title = "Home" %}
+{% endblock metadata %}
 
-{% block opengraph %}
-{{ macros::meta_profile(
+{% block meta %}
+{{ super() }}
+
+{{ og::type("profile") }}
+
+{{ og::meta_profile(
 first="Ness",
 last="Shannon",
 username="newtbytes",
 gender="female")
 }}
 
-{{ macros::hcard_profile(
+{{ h_card::profile(
 first="Ness",
 last="Shannon",
 username="newtbytes",
