@@ -4,8 +4,10 @@ description = "I hope to frequently write posts here. daily thoughts, updates, a
 sort_by = "date"
 template = "section-index.html"
 page_template = "writing-page.html"
+weight = 1
 
 [extra]
 update_frequency = "weekly"
 link_pages = false
+button = "radar"
 +++
