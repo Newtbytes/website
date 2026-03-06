@@ -39,8 +39,7 @@
             <a class="entry-title p-url" href="{{ page.permalink | safe }}"><b class="p-name">{{ page.title }}</b></a>
             · · ·
             {% endif %}
-            <time class="entry-date dt-published" datetime="{{ page.date | date(format='%Y-%m-%dT%H:%M:%SZ') }}">{{
-                page.date }}</time>
+            <span class="entry-date">{{ macros::time_published(pubdate=page.date) }}</span>
             {% if page.updated %}
             <span class="entry-updated">(updated <time>{{ page.updated }}</time>)</span>
             {% endif %}
