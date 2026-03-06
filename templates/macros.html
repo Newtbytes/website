@@ -52,7 +52,7 @@
 {% endmacro meta_profile %}
 
 {% macro hcard_profile(first, last, username, gender, email, url, pfp, bday) %}
-<div class="h-card">
+<data class="h-card">
     <data class="p-name">{{ first }} {{ last }}</data>
     <data class="p-given-name">{{ first }}</data>
     <data class="p-family-name">{{ last }}</data>
@@ -64,5 +64,5 @@
     <data class="u-uid" value="{{ url }}">{{ url }}"</data>
     <data class="u-logo" value="{{ pfp }}">{{ pfp }}"</data>
     <data class="u-email" value="mailto:{{ email }}">{{ email }}</data>
-</div>
+</data>
 {% endmacro hcard_profile %}
