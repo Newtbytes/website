@@ -53,6 +53,27 @@
 {% endmacro meta_profile %}
 
 
+{% macro og_article(author, description, pub_date, mod_date) %}
+<meta property="og:type" content="article">
+
+{% if author %}
+<meta property="og:article:author" content="{{ author }}">
+{% endif %}
+
+{% if description %}
+<meta property="og:article:description" content="{{ description }}">
+{% endif %}
+
+{% if pub_date %}
+<meta property="og:article:published_time" content="{{ pub_date | date(format='%Y-%m-%dT%H:%M:%SZ') }}">
+{% endif %}
+
+{% if mod_date %}
+<meta property="og:article:modified_time" content="{{ mod_date | date(format='%Y-%m-%dT%H:%M:%SZ') }}">
+{% endif %}
+{% endmacro %}
+
+
 {% macro hcard_profile(first, last, username, gender, email, url, pfp, bday) %}
 <data class="h-card">
     <data class="p-name">{{ first }} {{ last }}</data>

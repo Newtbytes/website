@@ -31,23 +31,12 @@
 {% endblock desc %}
 
 {% block opengraph %}
-<meta property="og:type" content="article">
-
-{% if page.authors %}
-<meta property="og:article:author" content={{ page.authors | join(sep=", " ) }}>
-{% endif %}
-
-{% if page.description %}
-<meta property="og:article:description" content="{{ page.description }}">
-{% endif %}
-
-{% if page.date %}
-<meta property="og:article:published_time" content="{{ page.date | date(format='%Y-%m-%dT%H:%M:%SZ') }}">
-{% endif %}
-
-{% if page.updated %}
-<meta property="og:article:modified_time" content="{{ page.date | date(format='%Y-%m-%dT%H:%M:%SZ') }}">
-{% endif %}
+{{macros::og_article(
+author=page.authors | join(sep=", "),
+desc=page.description,
+date=page.date,
+updated=page.updated
+)}}
 {% endblock opengraph %}
 
 {% block content %}
