@@ -22,4 +22,4 @@ theme = "catppuccin-frappe"
 # TODO: figure out taxonomies
 
 [extra]
-family_mode = false
+family_mode = true
