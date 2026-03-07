@@ -1,4 +1,4 @@
-name: Build and deploy Zola website
+name: Build, test, and deploy Zola website
 on:
   push:
     branches:
@@ -21,6 +21,11 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v6.0.2
+
+      - name: Install zola
+        uses: taiki-e/install-action@v2
+        with:
+          tool: zola@0.19.1
 
       - run: zola check --drafts
 
