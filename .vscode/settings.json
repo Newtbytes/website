@@ -6,5 +6,6 @@
         "static/styles/base.css",
         "static/styles/writing.css"
     ],
-    "markdown.extension.toc.slugifyMode": "zola"
+    "markdown.extension.toc.slugifyMode": "zola",
+    "shellcheck.useWorkspaceRootAsCwd": true
 }
