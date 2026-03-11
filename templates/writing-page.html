@@ -2,7 +2,7 @@
 
 {% extends "webpage.html" %}
 
-{% block metadata %}
+{% block meta %}
 {{ super() }}
 
 {% set meta_url = page.permalink | safe %}
@@ -17,10 +17,6 @@
 {% elif page.summary %}
 {% set meta_desc = page.summary %}
 {% endif %}
-{% endblock metadata %}
-
-{% block meta %}
-{{ super() }}
 
 {{ og::article(
 url=meta_url,

@@ -4,16 +4,38 @@
 <link rel="stylesheet" type="text/css" href="/styles/section-index.css">
 {% endblock style %}
 
-{% block metadata %}
+{% block meta %}
 {% set meta_url = section.permalink | safe %}
-{% set meta_desc = section.permalink | safe %}
+{% set meta_author = config.author %}
+{% set meta_title = utils::page_title() %}
+{% set meta_image = "img/logo.png" %}
+{% set meta_desc = section.description %}
 
-{% if section.description %}
-{% set meta_desc = page.description %}
-{% elif section.summary %}
-{% set meta_desc = page.summary %}
-{% endif %}
-{% endblock metadata %}
+{{ meta::metadata(
+canon_url=meta_url,
+author=meta_author,
+title=meta_title,
+desc=meta_desc
+) }}
+
+{{ twitter::metadata(
+url=meta_url,
+img=meta_image,
+title=meta_title,
+desc=meta_desc
+) }}
+
+{{ og::website(
+url=meta_url,
+title=meta_title,
+desc=meta_desc
+) }}
+
+{{ og::image(
+path=meta_image,
+alt="Newt's Cove logo"
+) }}
+{% endblock meta %}
 
 {% block content %}
 <div class="h-feed">
