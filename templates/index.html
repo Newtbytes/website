@@ -4,15 +4,16 @@
 {% extends "webpage.html" %}
 
 {% block metadata %}
+{% set meta_url = current_url %}
 {% set meta_title = "Home" %}
 {% endblock metadata %}
 
 {% block meta %}
 {{ super() }}
 
-{{ og::type("profile") }}
+{{ og::type(value="profile") }}
 
-{{ og::meta_profile(
+{{ og::profile(
 first="Ness",
 last="Shannon",
 username="newtbytes",

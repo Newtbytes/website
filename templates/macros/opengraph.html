@@ -1,15 +1,25 @@
-{% macro image(url, alt) %}
+{% macro image(path, alt) %}
 {% set meta = get_image_metadata(path=path) %}
-<meta property="og:image" content="{{ url }}">
+<meta property="og:image" content="{{ get_url(path=path) }}">
 <meta property="og:image:width" content="{{ meta.width }}">
 <meta property="og:image:height" content="{{ meta.height }}">
 <meta property="og:image:alt" content="{{ alt }}">
-{% endmacro image(path, alt) %}
+{% endmacro image %}
+
+
+{% macro website(url, title="", desc="") %}
+<meta property="og:url" content="{{ url }}">
+<meta property="og:site_name" content="{{ config.base_url }}">
+{% if title %}
+<meta property="og:title" content="{{ title }}">
+{% endif%}
+{% if desc %}
+<meta property="og:description" content="{{ desc }}">
+{% endif%}
+{% endmacro website %}
 
 
 {% macro article(url, title="", author="", desc="", date="", updated="") %}
-{{ website(url=url, title=title, desc=desc) }}
-
 {% if author %}
 <meta property="og:article:author" content="{{ author }}">
 {% endif %}
@@ -26,18 +36,6 @@
 <meta property="og:article:modified_time" content="{{ updated | date(format='%Y-%m-%dT%H:%M:%SZ') }}">
 {% endif %}
 {% endmacro article %}
-
-
-{% macro website(url, title="", desc="") %}
-<meta property="og:url" content="{{ url }}">
-<meta property="og:site_name" content="{{ config.base_url }}">
-{% if title %}
-<meta property="og:title" content="{{ title }}">
-{% endif%}
-{% if desc %}
-<meta property="og:description" content="{{ desc }}">
-{% endif%}
-{% endmacro website %}
 
 
 {% macro profile(first, last, username, gender) %}

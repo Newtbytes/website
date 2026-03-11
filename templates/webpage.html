@@ -1,4 +1,4 @@
-{% import "macros/std_meta.html" as meta %}
+{% import "macros/meta.html" as meta %}
 {% import "macros/opengraph.html" as og %}
 {% import "macros/twitter.html" as twitter %}
 {% import "macros/utils.html" as utils %}
@@ -16,15 +16,13 @@
 
     <meta name="robots" content="index, follow">
 
-    {% block metadata %}
-    {% set meta_url = page_url %}
+    {% block meta %}
+    {% set meta_url = current_url %}
     {% set meta_author = config.author %}
     {% set meta_title = utils::page_title() %}
-    {% set meta_image = get_url(path="img/logo.png") %}
-    {% set meta_desc = "" %}
-    {% endblock metadata %}
+    {% set meta_image = "img/logo.png" %}
+    {% set meta_desc = "A webpage on Newt's Cove." %}
 
-    {% block meta %}
     {{ meta::metadata(
     canon_url=meta_url,
     author=meta_author,
@@ -32,7 +30,7 @@
     desc=meta_desc
     ) }}
 
-    {{ twitter_metadata(
+    {{ twitter::metadata(
     url=meta_url,
     img=meta_image,
     title=meta_title,
@@ -46,7 +44,7 @@
     ) }}
 
     {{ og::image(
-    url=meta_image,
+    path=meta_image,
     alt="Newt's Cove logo"
     ) }}
 
@@ -55,7 +53,7 @@
     {% endblock meta %}
 
     {% block og_type %}
-    {{ og::type("website") }}
+    {{ og::type(value="website") }}
     {% endblock og_type %}
 
     {% block style %}

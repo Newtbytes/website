@@ -3,6 +3,6 @@
 {% macro metadata(canon_url, author, title, desc) %}
 <link rel="canonical" href="{{ canon_url }}">
 <meta name="author" content="{{ author }}"">
-<title>{{ utils::page_title(title) }}</title>
+<title>{{ utils::page_title(title=title) }}</title>
 <meta name=" description" content="{{ desc }}">
 {% endmacro metadata %}

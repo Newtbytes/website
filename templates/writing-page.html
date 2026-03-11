@@ -6,7 +6,7 @@
 {{ super() }}
 
 {% set meta_url = page.permalink | safe %}
-{% set meta_title = utils::page_title(page.title) %}
+{% set meta_title = utils::page_title(title=page.title) %}
 
 {% if page.authors %}
 {% set meta_author = page.authors | join(sep=", ") %}
@@ -24,7 +24,7 @@
 
 {{ og::article(
 url=meta_url,
-title=meta_title
+title=meta_title,
 author=meta_author,
 desc=meta_desc,
 date=page.date,
@@ -33,13 +33,13 @@ updated=page.updated
 {% endblock meta %}
 
 {% block og_type %}
-{{ og::type("article") }}
+{{ og::type(value="article") }}
 {% endblock og_type %}
 
 {% block content %}
 <article class="h-entry">
     <a class="u-url" href="{{ page.permalink }}"></a>
-    {{ macros::author_url() }}
+    {{ utils::author_url() }}
 
     <h2>
         <b>
@@ -48,7 +48,7 @@ updated=page.updated
     </h2>
     <h3>
         <em>
-            {{ macros::time_published(pubdate=page.date) }}
+            {{ utils::time_published(pubdate=page.date) }}
         </em>
     </h3>
 
