@@ -24,8 +24,8 @@ Game Development
 this site is super duper ***WIP***!!  
 oh also i have no idea what i'm doing
 
-there's literally no content here yet. maybe one day i'll actually write something.  
-For now, just know that somewhere, a nerdy person that yearns to express their passions online exists.
+there's literally no content here yet. maybe one day i'll actually write something.
+For now, just know that somewhere, a nerdy {{ cond_family(real="girly", fake="guy") }} that yearns to express {{ cond_family(real="her", fake="his") }} passions online exists.
 
 ![](img/stamp/site_under_construction.gif)
 

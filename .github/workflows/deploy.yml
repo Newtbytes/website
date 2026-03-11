@@ -1,4 +1,4 @@
-name: Build and deploy Zola website
+name: Build, test, and deploy Zola website
 on:
   push:
     branches:
@@ -15,8 +15,25 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v6.0.2
+
+      - name: Install zola
+        uses: taiki-e/install-action@v2
+        with:
+          tool: zola@0.19.1
+
+      - run: zola check --drafts
+
   build:
     runs-on: ubuntu-latest
+
+    needs: [test]
+
     steps:
       - name: checkout
         uses: actions/checkout@v6.0.2
@@ -39,10 +56,13 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
+
     needs: build
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
