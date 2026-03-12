@@ -7,12 +7,25 @@
 {% endmacro dt_published %}
 
 
-{% macro author_url(name, url, visible=false) %}
+{% macro author_url(name="", url="", visible=false) %}
+{% if not name %}
+{% set name = config.author %}
+{% endif %}
+{% if not url and name == config.author %}
+{% set url = config.base_url %}
+{% endif %}
+{% if name or url %}
+{% if name == config.author %}
+{% set rel = "author me" %}
+{% else %}
+{% set rel = "author" %}
+{% endif %}
 <address class="p-author author h-card vcard">
-    <a href="{{ url }}" class="u-url url p-name fn" rel="author">
+    <a href="{{ url }}" class="u-url url p-name fn" rel="{{ rel }}">
         {% if visible and name %}
         {{ name }}
         {% endif %}
     </a>
 </address>
+{% endif %}
 {% endmacro author_url %}
