@@ -1,0 +1,20 @@
+{% import "macros/uf/types.html" as types %}
+
+{% macro profile(first="", last="", username="", gender="", email="", url="", pfp="", bday="") %}
+<data class="h-card">
+    {% if first and last %} <data class="p-name" value="{{ first }} {{ last }}"></data> {% endif %}
+    {% if first %} <data class="p-given-name" value="{{ first }}"></data> {% endif %}
+    {% if last %} <data class="p-family-name" value="{{ last }}"></data> {% endif %}
+    {% if username %} <data class="p-nickname" value="{{ username }}"></data> {% endif %}
+    {% if gender %} <data class="p-gender-identity" value="{{ gender }}"></data> {% endif %}
+
+    {% if bday %} {{ types::dt(date=bday, type="bday", visible=false) }} {% endif %}
+
+    {% if url %}
+    <data class="u-url" value="{{ url }}"></data>
+    <data class="u-uid" value="{{ url }}"></data>
+    {% endif %}
+    {% if url %} <data class="u-logo" value="{{ pfp }}"></data> {% endif %}
+    {% if email %} <data class="u-email" value="mailto:{{ email }}"></data> {% endif %}
+</data>
+{% endmacro profile %}

@@ -1,4 +1,6 @@
 {% import "macros/utils.html" as utils %}
+{% import "macros/uf/h-entry.html" as h_entry %}
+{% import "macros/uf/types.html" as types %}
 
 {% extends "webpage.html" %}
 
@@ -35,7 +37,7 @@ updated=page.updated
 {% block content %}
 <article class="h-entry">
     <a class="u-url" href="{{ page.permalink }}"></a>
-    {{ utils::author_url() }}
+    {{ h_entry::author_url(name=meta_author, url=config.base_url) }}
 
     <h2>
         <b>
@@ -44,7 +46,7 @@ updated=page.updated
     </h2>
     <h3>
         <em>
-            {{ utils::time_published(pubdate=page.date) }}
+            {{ types::dt(date=page.date, type="published") }}
         </em>
     </h3>
 

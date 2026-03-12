@@ -14,6 +14,8 @@
     <meta name="language" content="English">
     <meta property="og:locale" content="en_US">
 
+    <meta name="robots" content="index, follow">
+
     {% block meta %}
     {% set meta_url = current_url %}
     {% set meta_author = config.author %}
@@ -49,7 +51,6 @@
     {% endblock meta %}
     <meta name="keywords"
         content="Newt's Cove, Ness Shannon, newbytes, personal website, blog, machine learning, game development, creative writing, compiler, programming, web development, nerdy interests, WIP, under construction">
-
 
     {% block og_type %}
     {{ og::type(value="website") }}

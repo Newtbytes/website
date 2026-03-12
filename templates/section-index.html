@@ -1,3 +1,6 @@
+{% import "macros/uf/h-entry.html" as h_entry %}
+{% import "macros/uf/types.html" as types %}
+
 {% extends "webpage.html" %}
 
 {% block style %}
@@ -50,16 +53,16 @@ alt="Newt's Cove logo"
 
     {% for page in section.pages %}
     <div class="entry h-entry">
-        {{ utils::author_url() }}
+        {{ h_entry::author_url() }}
 
         <p>
             {% if page.title %}
             <a class="entry-title p-url" href="{{ page.permalink | safe }}"><b class="p-name">{{ page.title }}</b></a>
             · · ·
             {% endif %}
-            <span class="entry-date">{{ utils::time_published(pubdate=page.date) }}</span>
+            <span class="entry-date">{{ types::dt(date=page.date, type="published") }}</span>
             {% if page.updated %}
-            <span class="entry-updated">(updated <time>{{ page.updated }}</time>)</span>
+            <span class="entry-updated">(updated {{ types::dt(date=page.updated, type="updated") }})</span>
             {% endif %}
         </p>
 
