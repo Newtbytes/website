@@ -59,9 +59,9 @@ alt="Newt's Cove logo"
             <a class="entry-title p-url" href="{{ page.permalink | safe }}"><b class="p-name">{{ page.title }}</b></a>
             · · ·
             {% endif %}
-            <span class="entry-date">{{ h_entry::dt_published(date=page.date) }}</span>
+            <span class="entry-date">{{ h_entry::dt(date=page.date, type="published") }}</span>
             {% if page.updated %}
-            <span class="entry-updated">(updated <time>{{ page.updated }}</time>)</span>
+            <span class="entry-updated">(updated {{ h_entry::dt(date=page.updated, type="updated") }})</span>
             {% endif %}
         </p>
 

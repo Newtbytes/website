@@ -1,10 +1,10 @@
-{% macro dt_published(date, visible=false) %}
-<time class="dt-published published" datetime="{{ date | date(format='%Y-%m-%dT%H:%M:%SZ') }}">
+{% macro dt(date, type, visible=true) %}
+<time class="dt-{{ type }} {{ type }}" datetime="{{ date | date(format='%Y-%m-%dT%H:%M:%SZ') }}">
     {% if visible %}
     {{ date }}
     {% endif %}
 </time>
-{% endmacro dt_published %}
+{% endmacro dt %}
 
 
 {% macro author_url(name="", url="", visible=false) %}
