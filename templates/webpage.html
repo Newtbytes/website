@@ -1,49 +1,72 @@
-{% import "macros.html" as macros %}
-
-<!-- base template by teppyslayouts.neocities.org -->
+{% import "macros/meta.html" as meta %}
+{% import "macros/opengraph.html" as og %}
+{% import "macros/twitter.html" as twitter %}
+{% import "macros/utils.html" as utils %}
 
 <!DOCTYPE html>
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="language" content="English">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="robots" content="index, follow">
+
+    {% block meta %}
+    {% set meta_url = current_url %}
+    {% set meta_author = config.author %}
+    {% set meta_title = utils::page_title() %}
+    {% set meta_image = "img/logo.png" %}
+    {% set meta_desc = "A webpage on Newt's Cove." %}
+
+    {{ meta::metadata(
+    canon_url=meta_url,
+    author=meta_author,
+    title=meta_title,
+    desc=meta_desc
+    ) }}
+
+    {{ twitter::metadata(
+    url=meta_url,
+    img=meta_image,
+    title=meta_title,
+    desc=meta_desc
+    ) }}
+
+    {{ og::website(
+    url=meta_url,
+    title=meta_title,
+    desc=meta_desc
+    ) }}
+
+    {{ og::image(
+    path=meta_image,
+    alt="Newt's Cove logo"
+    ) }}
+
+    {% endblock meta %}
+    <meta name="keywords"
+        content="Newt's Cove, Ness Shannon, newbytes, personal website, blog, machine learning, game development, creative writing, compiler, programming, web development, nerdy interests, WIP, under construction">
+
+
+    {% block og_type %}
+    {{ og::type(value="website") }}
+    {% endblock og_type %}
+
     {% block style %}
     <link rel="stylesheet" type="text/css" href="/styles/base.css">
     <link rel="stylesheet" type="text/css" href="/styles/writing.css">
     {% endblock style %}
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-
-    {{ macros::meta_domain(domain="newtbytes.cc") }}
-    {% block url %} {{ macros::meta_url(url=config.base_url) }} {% endblock url %}
-
-    {% block author %}
-    <meta name="author" content={{ config.author }}>
-    {% endblock author %}
-
-    {% block title %} {% endblock title %}
-    {% block desc %}
-    {{ macros::meta_desc(desc="Newt's Cove is a personal website and blog by Ness Shannon, aka Newt,
-    aka newbytes. It's a place where I share my passions for all things cool and weird on the web, including machine
-    learning, game development, and more. This site is a work in progress, so stay tuned for creative musings and
-    updates!") }}
-    {% endblock desc %}
-    {{ macros::meta_image(path='img/logo.png', alt="Newt's Cove Logo") }}
-
-    <meta name="keywords"
-        content="Newt's Cove, Ness Shannon, newbytes, personal website, blog, machine learning, game development, creative writing, compiler, programming, web development, nerdy interests, WIP, under construction">
-
-    <meta name="language" content="English">
-    <meta property="og:locale" content="en_US">
-
-    {% block opengraph %}
-    <meta property="og:type" content="website">
-    {% endblock opengraph %}
-
-    <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="t89i41IXYJGuzmxpymjpBgFJ51wZ1awia8fyX05AVi4" />
 
+    {% block scripts %}
     <script type="text/javascript" src="scripts/cursor.js"></script>
+    {% endblock scripts %}
 </head>
 
 <body class="wrapper-body">

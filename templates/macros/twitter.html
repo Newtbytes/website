@@ -1,0 +1,19 @@
+{% import "macros/utils.html" as utils %}
+
+{% macro metadata(url, img="", title="", desc="") %}
+<meta property="twitter:url" content="{{ url }}">
+<meta property="twitter:domain" content="{{ config.base_url }}">
+
+{% if img %}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{ img }}">
+{% endif %}
+
+{% if title %}
+<meta name="twitter:title" content="{{ utils::page_title(title=title) }}">
+{% endif %}
+
+{% if desc %}
+<meta name="twitter:description" content="{{ desc }}">
+{% endif %}
+{% endmacro metadata %}

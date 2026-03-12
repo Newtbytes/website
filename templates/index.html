@@ -1,11 +1,19 @@
-{% import "macros.html" as macros %}
+{% import "macros/opengraph.html" as og %}
+{% import "macros/h-card.html" as h_card %}
 
-{% extends "base.html" %}
+{% extends "webpage.html" %}
 
-{% block title %} {{ macros::meta_title(title="Home") }} {% endblock title %}
+{% block metadata %}
+{% set meta_url = current_url %}
+{% set meta_title = "Home" %}
+{% endblock metadata %}
 
-{% block opengraph %}
-{{ macros::meta_profile(
+{% block meta %}
+{{ super() }}
+
+{{ og::type(value="profile") }}
+
+{{ og::profile(
 first="Ness",
 last="Shannon",
 username="newtbytes",
@@ -13,8 +21,10 @@ gender="female")
 }}
 {% endblock opengraph %}
 
+{% endblock opengraph %}
+
 {% block content %}
-{{ macros::hcard_profile(
+{{ h_card::profile(
 first="Ness",
 last="Shannon",
 username="newtbytes",
@@ -24,5 +34,6 @@ url="https://newtbytes.cc/",
 pfp=get_url(path="img/pfp.png"),
 bday="2007-9-19")
 }}
+
 {{ section.content | safe }}
 {% endblock content %}
