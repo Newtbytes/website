@@ -16,8 +16,8 @@
 
     <meta name="robots" content="index, follow">
 
-    <link href="{{ config.domain_url }}/rss.xml" type="application/rss+xml" rel="alternate" title="Newt's Cove">
-    <link href="{{ config.domain_url }}/atom.xml" type="application/atom+xml" rel="alternate" title="Newt's Cove">
+    <link href="{{ config.base_url }}/rss.xml" type="application/rss+xml" rel="alternate" title="Newt's Cove">
+    <link href="{{ config.base_url }}/atom.xml" type="application/atom+xml" rel="alternate" title="Newt's Cove">
 
     {% block meta %}
     {% set meta_url = current_url %}
@@ -25,6 +25,26 @@
     {% set meta_title = utils::page_title() %}
     {% set meta_image = "img/logo.png" %}
     {% set meta_desc = "A webpage on Newt's Cove." %}
+
+    {% if page is defined %}
+    {% set meta_url = page.permalink | safe %}
+    {% set meta_title = utils::page_title(title=page.title) %}
+
+    {% if page.authors %}
+    {% set meta_author = page.authors | join(sep=", ") %}
+    {% endif %}
+
+    {% if page.description %}
+    {% set meta_desc = page.description %}
+    {% elif page.summary %}
+    {% set meta_desc = page.summary %}
+    {% endif %}
+    {% endif %}
+
+    {% if section is defined %}
+    {% set meta_title = utils::page_title(title=section.title) %}
+    {% set meta_desc = section.description %}
+    {% endif %}
 
     {{ meta::metadata(
     canon_url=meta_url,

@@ -7,19 +7,6 @@
 {% block meta %}
 {{ super() }}
 
-{% set meta_url = page.permalink | safe %}
-{% set meta_title = utils::page_title(title=page.title) %}
-
-{% if page.authors %}
-{% set meta_author = page.authors | join(sep=", ") %}
-{% endif %}
-
-{% if page.description %}
-{% set meta_desc = page.description %}
-{% elif page.summary %}
-{% set meta_desc = page.summary %}
-{% endif %}
-
 {{ og::article(
 url=meta_url,
 title=meta_title,
