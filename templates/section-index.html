@@ -1,4 +1,5 @@
-{% import "macros/h-entry.html" as h_entry %}
+{% import "macros/uf/h-entry.html" as h_entry %}
+{% import "macros/uf/types.html" as types %}
 
 {% extends "webpage.html" %}
 
@@ -59,9 +60,9 @@ alt="Newt's Cove logo"
             <a class="entry-title p-url" href="{{ page.permalink | safe }}"><b class="p-name">{{ page.title }}</b></a>
             · · ·
             {% endif %}
-            <span class="entry-date">{{ h_entry::dt(date=page.date, type="published") }}</span>
+            <span class="entry-date">{{ types::dt(date=page.date, type="published") }}</span>
             {% if page.updated %}
-            <span class="entry-updated">(updated {{ h_entry::dt(date=page.updated, type="updated") }})</span>
+            <span class="entry-updated">(updated {{ types::dt(date=page.updated, type="updated") }})</span>
             {% endif %}
         </p>
 

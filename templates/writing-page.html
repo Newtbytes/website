@@ -1,5 +1,6 @@
 {% import "macros/utils.html" as utils %}
-{% import "macros/h-entry.html" as h_entry %}
+{% import "macros/uf/h-entry.html" as h_entry %}
+{% import "macros/uf/types.html" as types %}
 
 {% extends "webpage.html" %}
 
@@ -45,7 +46,7 @@ updated=page.updated
     </h2>
     <h3>
         <em>
-            {{ h_entry::dt(date=page.date, type="published") }}
+            {{ types::dt(date=page.date, type="published") }}
         </em>
     </h3>
 
