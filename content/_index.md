@@ -1,6 +1,6 @@
 +++
 title = "home"
-description = "(currently super WIP, not even a single complete first draft)"
+description = "Newt's cove home page - my own little internet space!!"
 template = "index.html"
 updated=2026-03-16
 +++
