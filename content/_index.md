@@ -14,6 +14,8 @@ updated=2026-03-16
 I'm Ness Shannon, aka Newt, aka newbytes! I'm into all things cool and weird on the web ;).  
 I'm (kinda) nerdy.
 
+![](img/div/happy-star.png)
+
 ## Interests :3
 
 Here's a very short and overly vague list of my interests:
@@ -26,6 +28,12 @@ Here's a very short and overly vague list of my interests:
   - Game development
 - Creative writing
   - Science fiction, mostly! I'm currently writing a novel. I should write more about that project....
+
+## Links & Socials
+
+- Wikipedia: <a rel="me" href="https://en.wikipedia.org/wiki/User:newtbytes">User:Newtbytes</a>
+- Discord: newtbytes
+- Github: <a rel="me" href="https://github.com/newtbytes">newtbytes</a>
 
 ![](img/div/happy-star.png)
 
