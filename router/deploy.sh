@@ -1,5 +1,14 @@
 #!/bin/bash
 
+install_file () {
+    sudo mv "$1" "$2"
+}
+
+install_nginx_conf() {
+    sudo mv "$1" "$2"
+    sudo ln -fL -v /etc/nginx/sites-available/"$2" /etc/nginx/sites-enabled/"$2"
+}
+
 deps () {
     if ! dpkg -s "$@"; then
         sudo apt-get -y install "$@"
@@ -8,12 +17,7 @@ deps () {
 
 deps nginx
 
-source .env
-# shellcheck disable=SC2016
-envsubst '$SUS_USER_AGENT_REGEX,$SUS_POSTAL_CODE_REGEX,$SUS_CITY_REGEX' \
-    < router/nginx.conf                                                 \
-    | sudo tee /etc/nginx/sites-available/router.nginx.conf > /dev/null
-
-sudo ln -fL -v /etc/nginx/sites-available/router.nginx.conf /etc/nginx/sites-enabled/router.nginx.conf
+install_nginx_conf router/nginx.conf router.nginx.conf
+install_nginx_conf router/detect.conf router.detect.conf
 
 nginx -s reload
