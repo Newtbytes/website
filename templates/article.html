@@ -1,6 +1,6 @@
 {% import "macros/utils.html" as utils %}
 {% import "macros/uf/h-entry.html" as h_entry %}
-{% import "macros/uf/types.html" as types %}
+{% import "macros/types.html" as types %}
 
 {% extends "webpage.html" %}
 
@@ -22,13 +22,13 @@ updated=page.updated
 {% endblock og_type %}
 
 {% block content %}
-<article class="h-entry">
+<article class="h-entry" itemscope itemtype="https://schema.org/BlogPosting">
     <a class="u-url" href="{{ page.permalink }}"></a>
     {{ h_entry::author_url(name=meta_author, url=config.base_url) }}
 
     <h2>
         <b>
-            <div class="title p-name">{{ page.title }}</div>
+            <div class="title p-name" itemprop="headline">{{ page.title }}</div>
         </b>
     </h2>
     <h3>
@@ -37,7 +37,7 @@ updated=page.updated
         </em>
     </h3>
 
-    <div class="e-content">
+    <div class="e-content" itemprop="articleBody">
         {% if page.draft %}
         {{"### _**Notice**: This is a really really early DRAFT. Here be dragons._" | markdown | safe}}
         {% endif %}
