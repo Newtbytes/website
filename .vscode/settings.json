@@ -36,4 +36,5 @@
         "editor.suggestFontSize": 12,
     },
     "markdown.extension.completion.enabled": true,
+    "markdown.extension.completion.root": "content",
 }
