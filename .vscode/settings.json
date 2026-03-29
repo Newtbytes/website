@@ -6,5 +6,34 @@
         "static/styles/base.css",
         "static/styles/writing.css"
     ],
-    "markdown.extension.toc.slugifyMode": "zola"
+    "markdown.extension.toc.slugifyMode": "zola",
+    "[markdown]": {
+        "editor.unicodeHighlight.ambiguousCharacters": false,
+        "editor.unicodeHighlight.invisibleCharacters": false,
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+            "comments": "on",
+            "strings": "on",
+            "other": "on"
+        },
+        "editor.snippetSuggestions": "top",
+        "editor.suggest.showWords": true,
+        "editor.suggest.preview": true,
+        "editor.suggest.matchOnWordStartOnly": true,
+        "editor.suggestOnTriggerCharacters": true,
+        "editor.acceptSuggestionOnEnter": "off",
+        "editor.suggestSelection": "recentlyUsedByPrefix",
+        "editor.inlineSuggest.suppressSuggestions": true,
+        "editor.inlineSuggest.enabled": true,
+        "editor.inlineSuggest.edits.showCollapsed": true,
+        "files.insertFinalNewline": true,
+        "editor.allowVariableFonts": true,
+        "editor.tabSize": 2,
+        "editor.fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif",
+        "editor.fontSize": 16,
+        "editor.fontVariations": true,
+        "editor.suggestFontSize": 12,
+    },
+    "markdown.extension.completion.enabled": true,
 }
