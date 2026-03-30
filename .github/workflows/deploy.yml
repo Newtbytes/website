@@ -45,7 +45,7 @@ jobs:
           build_flags: --drafts
 
       - name: Deploy to neocities
-        uses: bcomnes/deploy-to-neocities@v3.0.4
+        uses: bcomnes/deploy-to-neocities@v3.0.5
         with:
           cleanup: true
           neocities_supporter: false
