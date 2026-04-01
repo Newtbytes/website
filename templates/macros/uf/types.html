@@ -1,7 +1,7 @@
-{% macro dt(date, type, visible=true) %}
+{%- macro dt(date, type, visible=true) -%}
 <time class="dt-{{ type }} {{ type }}" datetime="{{ date | date(format='%Y-%m-%dT%H:%M:%SZ') }}">
-    {% if visible %}
+    {%- if visible -%}
     {{ date }}
-    {% endif %}
+    {%- endif -%}
 </time>
-{% endmacro dt %}
+{%- endmacro dt -%}
