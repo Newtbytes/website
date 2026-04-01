@@ -1,0 +1,29 @@
+{# Class names for Microformats2 and hAtom #}
+
+{%- macro entry() -%}
+entry h-entry hentry
+{%- endmacro entry -%}
+
+{%- macro title() -%}
+title entry-title p-name
+{%- endmacro title -%}
+
+{%- macro author() -%}
+author p-author
+{%- endmacro author -%}
+
+{%- macro dt(type="") -%}
+dt-{{type}} {{type}}
+{%- endmacro dt -%}
+
+{%- macro summary() -%}
+summary entry-summary p-summary
+{%- endmacro summary -%}
+
+{%- macro content() -%}
+content entry-content e-content
+{%- endmacro content -%}
+
+{%- macro url() -%}
+url u-url
+{%- endmacro url -%}

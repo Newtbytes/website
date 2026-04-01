@@ -1,5 +1,7 @@
+{% import "macros/uf/classes.html" as cls %}
+
 {%- macro dt(date, type, visible=true) -%}
-<time class="dt-{{ type }} {{ type }}" datetime="{{ date | date(format='%Y-%m-%dT%H:%M:%SZ') }}">
+<time class="{{cls::dt(type=type)}}" datetime="{{ date | date(format='%Y-%m-%dT%H:%M:%SZ') }}">
     {%- if visible -%}
     {{ date }}
     {%- endif -%}
