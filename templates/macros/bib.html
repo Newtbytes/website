@@ -24,7 +24,9 @@ pp. {{ ref.tags.pages }},
 {% endmacro article %}
 
 {% macro online(ref) %}
-{% if ref.tags.author %}<span class="p-author">{{ ref.tags.author }}</span>,{% endif %}
+{% if ref.tags.author %}<span class="p-author">{{ ref.tags.author }}</span>
+{% if ref.tags.pubdate -%}({{- types::dt(date=ref.tags.urldate, type="published") -}}){%- endif -%}
+,{% endif %}
 "<span class="p-name">{{ ref.tags.title }}</span>",
 {% if ref.tags.publisher %}<span class="p-publication">{{ ref.tags.publisher }}</span>,{% endif %}
 {% if ref.tags.year %}{{ ref.tags.year }},{% endif %}
