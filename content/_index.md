@@ -33,6 +33,7 @@ Here's a very short and overly vague list of my interests:
 - Wikipedia: <a rel="me" href="https://en.wikipedia.org/wiki/User:newtbytes">User:Newtbytes</a>
 - Discord: newtbytes
 - Github: <a rel="me" href="https://github.com/newtbytes">newtbytes</a>
+<!-- FIXME: {{ cond_family(real='- transfem.social: <a rel="me" href="https://transfem.social/@newtbytes">@newtbytes@transfem.social</a>', fake='') }} -->
 
 ![](img/div/happy-star.png)
 

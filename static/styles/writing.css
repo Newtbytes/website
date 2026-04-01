@@ -36,6 +36,16 @@ body {
     font-size: larger;
 }
 
+blockquote {
+    border-left-width: 0.1em;
+    border-left-style: groove;
+    border-left-color: #3D444D;
+
+    padding-left: 1em;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
 .footnote-definition {
     .footnote-definition-label {
         font-size: smaller;
@@ -175,4 +185,38 @@ samp {
     font-size: 1.05em;
     /* slightly larger than the surrounding text */
     line-height: 1.6;
+}
+
+a.ref-link {
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+#references {
+    font-size: 0.9rem;
+
+    dl {
+        display: grid;
+        overflow: hidden;
+        grid-template-columns: max-content minmax(0, 1fr);
+        row-gap: 0.8rem;
+    }
+
+    dt {
+        grid-column-start: 1;
+        padding-right: 0.8rem;
+    }
+
+    dd {
+        grid-column-start: 2;
+        -webkit-hyphens: auto;
+        -moz-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+    }
+}
+
+details summary>* {
+    display: inline;
+    margin-left: 4pt;
 }

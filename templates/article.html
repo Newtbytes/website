@@ -1,6 +1,8 @@
 {% import "macros/utils.html" as utils %}
+{% import "macros/bib.html" as bib %}
 {% import "macros/uf/h-entry.html" as h_entry %}
-{% import "macros/types.html" as types %}
+{% import "macros/uf/types.html" as types %}
+{% import "macros/uf/classes.html" as cls %}
 
 {% extends "webpage.html" %}
 
@@ -22,13 +24,13 @@ updated=page.updated
 {% endblock og_type %}
 
 {% block content %}
-<article class="h-entry" itemscope itemtype="https://schema.org/BlogPosting">
-    <a class="u-url" href="{{ page.permalink }}"></a>
+<article class="{{cls::entry()}}" itemscope itemtype="https://schema.org/BlogPosting">
+    <a class="{{cls::url()}}" href="{{ page.permalink }}"></a>
     {{ h_entry::author_url(name=meta_author, url=config.base_url) }}
 
     <h2>
         <b>
-            <div class="title p-name" itemprop="headline">{{ page.title }}</div>
+            <div class="{{cls::title()}}" itemprop="headline">{{ page.title }}</div>
         </b>
     </h2>
     <h3>
@@ -37,7 +39,7 @@ updated=page.updated
         </em>
     </h3>
 
-    <div class="e-content" itemprop="articleBody">
+    <div class="{{cls::content()}}" itemprop="articleBody">
         {% if page.draft %}
         {{"### _**Notice**: This is a really really early DRAFT. Here be dragons._" | markdown | safe}}
         {% endif %}
@@ -45,4 +47,6 @@ updated=page.updated
         {{ page.content | safe }}
     </div>
 </article>
+
+{{ bib::refs_list(page=page) }}
 {% endblock content %}
