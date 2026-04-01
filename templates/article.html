@@ -45,7 +45,7 @@ updated=page.updated
 
         {{ page.content | safe }}
     </div>
-
-    {{ bib::refs_list(page=page) }}
 </article>
+
+{{ bib::refs_list(page=page) }}
 {% endblock content %}
