@@ -1,20 +1,22 @@
 {% import "macros/uf/types.html" as types %}
 {% import "macros/uf/classes.html" as cls %}
 
-{% macro profile(first="", last="", username="", gender="", email="", url="", pfp="", bday="") %}
-<data class="{{cls::profile()}}">
-    {% if first and last %} <data class="{{cls::name()}}" value="{{ first }} {{ last }}"></data>{% endif %}
+{% macro profile(first="", last="", username="", gender="", pronouns="", email="", url="", pfp="", bday="") %}
+<data class="{{cls::profile()}}" itemtype="https://schema.org/Person">
+    {% if first and last %}
+    <data class="{{cls::name()}}" itemprop="givenName name" value="{{ first }} {{ last }}"></data>
+    {% endif %}
     {% if first %} <data class="{{cls::given_name()}}" value="{{ first }}"></data> {% endif %}
-    {% if last %} <data class="{{cls::family_name()}}" value="{{ last }}"></data> {% endif %}
+    {% if last %} <data class="{{cls::family_name()}}" itemprop="familyName" value="{{ last }}"></data> {% endif %}
     {% if username %} <data class="{{cls::nickname()}}" value="{{ username }}"></data> {% endif %}
-    {% if gender %} <data class="p-gender-identity" value="{{ gender }}"></data> {% endif %}
+    {% if gender %} <data class="p-gender-identity" itemprop="gender" value="{{ gender }}"></data> {% endif %}
 
     {% if bday %} {{ types::dt(date=bday, type="bday", visible=false) }} {% endif %}
 
     {% if url %}
-    <data class="{{cls::url()}} {{cls::uid()}}" value="{{ url }}"></data>
+    <data class="{{cls::url()}} {{cls::uid()}}" itemprop="url" value="{{ url }}"></data>
     {% endif %}
-    {% if pfp %} <data class="{{cls::logo()}}" value="{{ pfp }}"></data> {% endif %}
-    {% if email %} <data class="{{cls::email()}}" value="mailto:{{ email }}"></data> {% endif %}
+    {% if pfp %} <data class="{{cls::logo()}}" itemprop="image" value="{{ pfp }}"></data> {% endif %}
+    {% if email %} <data class="{{cls::email()}}" itemprop="email" value="mailto:{{ email }}"></data> {% endif %}
 </data>
 {% endmacro profile %}
