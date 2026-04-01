@@ -10,8 +10,8 @@
 {% elif type == "updated" %}
 {% set itemprop = "dateModified" %}
 {% endif %}
-<time class="{{cls::dt(type=type)}}" datetime="{{ date | date(format='%Y-%m-%dT%H:%M:%SZ') }}" {% if defined itemprop %}
-    itemprop={{itemprop}} {% endif %}>
+<time class="{{cls::dt(type=type)}}" datetime="{{ date | date(format='%Y-%m-%dT%H:%M:%SZ') }}" {% if itemprop is defined
+    %} itemprop={{itemprop}} {% endif %}>
     {%- if visible -%}
     {{ date }}
     {%- endif -%}
