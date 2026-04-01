@@ -13,8 +13,8 @@
 {% else %}
 {% set rel = "author" %}
 {% endif %}
-<address class="{{cls::author()}} h-card vcard">
-    <a href="{{ url }}" class="{{cls::url()}} p-name fn" rel="{{ rel }}">
+<address class="{{cls::author()}} {{cls::profile()}}">
+    <a href="{{ url }}" class="{{cls::url()}} {% if visible and name %}{{cls::name()}}{% endif %}" rel="{{ rel }}">
         {% if visible and name %}
         {{ name }}
         {% endif %}
