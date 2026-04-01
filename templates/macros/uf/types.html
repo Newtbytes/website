@@ -5,3 +5,8 @@
     {%- endif -%}
 </time>
 {%- endmacro dt -%}
+
+
+{%- macro p(value, type) -%}
+<span class="p-{{type}} {{type}}">{{- value | safe -}}</span>,
+{%- endmacro p -%}
