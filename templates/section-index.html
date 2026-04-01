@@ -20,12 +20,13 @@
     {{ section.content | safe }}
 
     {% for page in section.pages %}
-    <div class="{{cls::entry()}}">
+    <div class="{{cls::entry()}}" itemscope itemtype="https://schema.org/BlogPosting">
         {{ h_entry::author_url() }}
 
         <p>
             {% if page.title %}
-            <a class="{{cls::url()}}" href="{{ page.permalink | safe }}"><b class="p-name entry-title">{{ page.title
+            <a class="{{cls::url()}}" href="{{ page.permalink | safe }}"><b class="p-name entry-title"
+                    itemprop="name">{{ page.title
                     }}</b></a>
             · · ·
             {% endif %}
@@ -41,7 +42,7 @@
         <a class="continue-reading-link" href="{{ page.permalink }}#continue-reading">Continue Reading...</a>
         {% endif %}
         {% else %}
-        <div class="{{cls::content()}}">{{ page.content | safe }} </div>
+        <div class="{{cls::content()}}" itemprop="articleBody">{{ page.content | safe }} </div>
         {% endif %}
     </div>
     {% endfor %}
