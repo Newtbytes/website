@@ -26,12 +26,12 @@ pp. {{ ref.tags.pages }},
 {% macro online(ref) %}
 {% if ref.tags.author %}{{ types::p(value=ref.tags.author, type="author") }}
 {% if ref.tags.pubdate -%}({{- types::dt(date=ref.tags.urldate, type="published") -}}){%- endif -%}
-,{% endif %}
+{% endif %}
 "{{ types::p(value=ref.tags.title, type="name") }}"
-{% if ref.tags.publisher %}{{ types::p(value=ref.tags.publisher, type="publication") }},{% endif %}
-{% if ref.tags.year %}{{types::dt(date=ref.tags.year, type="published")}},{% endif %}
+{% if ref.tags.publisher %}{{ types::p(value=ref.tags.publisher, type="publication") }}{% endif %}
+{% if ref.tags.year %}{{types::dt(date=ref.tags.year, type="published")}}{% endif %}
 {% if ref.tags.url %}<a href="{{ ref.tags.url }}" target="_blank" class="u-url">{{ ref.tags.url }}</a>{% endif %}
-{% if ref.tags.urldate %}, <em>Accessed {{types::dt(date=ref.tags.urldate, type="accessed")}}</em>{% endif %}
+{% if ref.tags.urldate %}<em>Accessed {{types::dt(date=ref.tags.urldate, type="accessed")}}</em>{% endif %}
 {% endmacro %}
 
 {% macro inproceedings(ref) %}
