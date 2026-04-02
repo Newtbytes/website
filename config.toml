@@ -6,6 +6,8 @@ description = "Ness Shannon's personal website, blog, microblog, and more!"
 author = "newtbytes"
 
 generate_feeds = true
+generate_sitemap = true
+feed_filenames = ["atom.xml", "rss.xml"]
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = false
