@@ -1,9 +1,13 @@
 # The URL the site will be built for
 base_url = "https://newtbytes.cc"
 
+title = "Newt's Cove"
+description = "Ness Shannon's personal website, blog, microblog, and more!"
 author = "newtbytes"
 
 generate_feeds = true
+generate_sitemap = true
+feed_filenames = ["atom.xml", "rss.xml"]
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = false
@@ -15,8 +19,10 @@ build_search_index = true
 # since I often write on platforms that automatically insert smart punctuation,
 # might as well make sure it's consistent across the whole site
 smart_punctuation = true
+external_links_no_follow = true
 
 [markdown.highlighting]
+error_on_missing_language = true
 theme = "catppuccin-frappe"
 
 # TODO: figure out taxonomies
