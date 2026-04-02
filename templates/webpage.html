@@ -16,15 +16,15 @@
 
     <meta name="robots" content="index, follow">
 
-    <link href="{{ config.base_url }}/rss.xml" type="application/rss+xml" rel="alternate" title="Newt's Cove">
-    <link href="{{ config.base_url }}/atom.xml" type="application/atom+xml" rel="alternate" title="Newt's Cove">
+    <link href="{{ config.base_url }}/rss.xml" type="application/rss+xml" rel="alternate" title="{{ config.title }}">
+    <link href="{{ config.base_url }}/atom.xml" type="application/atom+xml" rel="alternate" title="{{ config.title }}">
 
     {% block meta %}
     {% set meta_url = current_url %}
     {% set meta_author = config.author %}
     {% set meta_title = utils::page_title() %}
     {% set meta_image = "img/logo.png" %}
-    {% set meta_desc = "A webpage on Newt's Cove." %}
+    {% set meta_desc = config.description %}
 
     {% if page is defined %}
     {% set meta_url = page.permalink | safe %}
@@ -68,7 +68,7 @@
 
     {{ og::image(
     path=meta_image,
-    alt="Newt's Cove logo"
+    alt="{{ config.title }} logo"
     ) }}
 
     {% if meta_author == "newtbytes" %}
@@ -76,7 +76,7 @@
     {% endif %}
     {% endblock meta %}
     <meta name="keywords"
-        content="Newt's Cove, Ness Shannon, newbytes, personal website, blog, machine learning, game development, creative writing, compiler, programming, web development, nerdy interests, WIP, under construction">
+        content="{{ config.title }}, Ness Shannon, newbytes, personal website, blog, machine learning, game development, creative writing, compiler, programming, web development, nerdy interests, WIP, under construction">
 
     {% block og_type %}
     {{ og::type(value="website") }}

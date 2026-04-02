@@ -1,6 +1,8 @@
 # The URL the site will be built for
 base_url = "https://newtbytes.cc"
 
+title = "Newt's Cove"
+description = "Ness Shannon's personal website, blog, microblog, and more!"
 author = "newtbytes"
 
 generate_feeds = true

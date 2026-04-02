@@ -1,7 +1,7 @@
 {%- macro page_title(title="") -%}
-{%- if title and title != "Newt's Cove" -%}
-Newt's Cove | {{ title }}
+{%- if title and title != "{{ config.title }}" -%}
+{{ config.title }} | {{ title }}
 {%- else -%}
-Newt's Cove
+{{ config.title }}
 {%- endif -%}
 {%- endmacro page_title -%}
