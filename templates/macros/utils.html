@@ -1,7 +1,7 @@
-{% macro page_title(title="") %}
-{% if title and title != "Newt's Cove" -%}
+{%- macro page_title(title="") -%}
+{%- if title and title != "Newt's Cove" -%}
 Newt's Cove | {{ title }}
-{% else %}
+{%- else -%}
 Newt's Cove
-{% endif %}
-{% endmacro page_title %}
+{%- endif -%}
+{%- endmacro page_title -%}
