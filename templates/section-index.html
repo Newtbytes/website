@@ -15,7 +15,7 @@
     </h1>
     <a href="{{ section.permalink }}" class="{{cls::url()}}"></a>
 
-    <p class="{{cls::summary()}}">{{ section.description }}</p>
+    <p class="{{cls::summary()}}">{{ section.description | safe }}</p>
 
     {{ section.content | safe }}
 

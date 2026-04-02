@@ -35,15 +35,15 @@
     {% endif %}
 
     {% if page.description %}
-    {% set meta_desc = page.description %}
+    {% set meta_desc = page.description | safe %}
     {% elif page.summary %}
-    {% set meta_desc = page.summary %}
+    {% set meta_desc = page.summary | safe %}
     {% endif %}
     {% endif %}
 
     {% if section is defined %}
     {% set meta_title = utils::page_title(title=section.title) %}
-    {% set meta_desc = section.description %}
+    {% set meta_desc = section.description | safe %}
     {% endif %}
 
     {{ meta::metadata(
