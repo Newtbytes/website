@@ -2,7 +2,7 @@
 {% import "macros/uf/classes.html" as cls %}
 
 {% macro profile(first="", last="", username="", gender="", pronouns="", email="", url="", pfp="", bday="") %}
-<data class="{{cls::profile()}}" itemscope itemtype="https://schema.org/Person">
+<div class="{{cls::profile()}}" itemscope itemtype="https://schema.org/Person">
     {% if first and last %}
     <data class="{{cls::name()}}" itemprop="givenName name" value="{{ first }} {{ last }}"></data>
     {% endif %}
@@ -18,5 +18,5 @@
     {% endif %}
     {% if pfp %} <data class="{{cls::logo()}}" itemprop="image" value="{{ pfp }}"></data> {% endif %}
     {% if email %} <data class="{{cls::email()}}" itemprop="email" value="mailto:{{ email }}"></data> {% endif %}
-</data>
+</div>
 {% endmacro profile %}
