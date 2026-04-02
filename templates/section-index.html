@@ -37,11 +37,11 @@
 
         {% if section.extra | get(key="link_pages", default=true) %}
         {% if page.summary %}
-        <div class="{{cls::summary()}}"> {{ page.summary | safe }} </div>
+        <div class="{{cls::summary()}}">{{ page.summary | safe }}</div>
         <a class="continue-reading-link" href="{{ page.permalink }}#continue-reading">Continue Reading...</a>
         {% endif %}
         {% else %}
-        <div class="{{cls::content()}}">{{ page.content | safe }} </div>
+        <div class="{{cls::content()}}">{{ page.content | safe }}</div>
         {% endif %}
     </div>
     {% endfor %}
