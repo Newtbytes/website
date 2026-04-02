@@ -55,7 +55,7 @@ img {
 	box-sizing: border-box;
 }
 
-.header {
+header {
 	border-bottom: 6px ridge;
 	height: 160px;
 	box-sizing: border-box;
@@ -130,7 +130,7 @@ a {
 	color: blue;
 }
 
-.footer {
+footer {
 	border-top: 6px ridge;
 	min-height: 64px;
 	background-image: url("/img/bg/purple_clouds.png");
