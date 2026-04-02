@@ -22,6 +22,7 @@ smart_punctuation = true
 external_links_no_follow = true
 
 [markdown.highlighting]
+error_on_missing_language = true
 theme = "catppuccin-frappe"
 
 # TODO: figure out taxonomies
