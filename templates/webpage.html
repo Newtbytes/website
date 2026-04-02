@@ -71,11 +71,12 @@
     alt="Newt's Cove logo"
     ) }}
 
+    {% if meta_author == "newtbytes" %}
+    <meta name="fediverse:creator" content="newtbytes@transfem.social" />
+    {% endif %}
     {% endblock meta %}
     <meta name="keywords"
         content="Newt's Cove, Ness Shannon, newbytes, personal website, blog, machine learning, game development, creative writing, compiler, programming, web development, nerdy interests, WIP, under construction">
-
-    <meta name="fediverse:creator" content="newtbytes@transfem.social" />
 
     {% block og_type %}
     {{ og::type(value="website") }}
