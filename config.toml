@@ -17,6 +17,7 @@ build_search_index = true
 # since I often write on platforms that automatically insert smart punctuation,
 # might as well make sure it's consistent across the whole site
 smart_punctuation = true
+external_links_no_follow = true
 
 [markdown.highlighting]
 theme = "catppuccin-frappe"
