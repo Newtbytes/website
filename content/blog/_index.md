@@ -1,6 +1,6 @@
 +++
 title = "my blog"
-description = "(currently super WIP, not even a single complete first draft)"
+description = "my blog!"
 sort_by = "date"
 template = "section-index.html"
 page_template = "article.html"
