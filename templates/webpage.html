@@ -18,8 +18,15 @@
 
     <meta name="robots" content="index, follow">
 
-    <link href="{{ config.base_url }}/rss.xml" type="application/rss+xml" rel="alternate" title="{{ config.title }}">
-    <link href="{{ config.base_url }}/atom.xml" type="application/atom+xml" rel="alternate" title="{{ config.title }}">
+    {% block rss %}
+    <link rel="alternate" type="application/rss+xml" title="RSS"
+        href="{{ get_url(path='rss.xml', trailing_slash=false) }}">
+    {% endblock rss %}
+
+    {% block atom %}
+    <link rel="alternate" type="application/atom+xml" title="Atom"
+        href="{{ get_url(path='atom.xml', trailing_slash=false) }}">
+    {% endblock atom %}
 
     {% block favicon %}
     {% set favicon = resize_image(path="img/goober.png", width=48, height=48, format="webp") %}
