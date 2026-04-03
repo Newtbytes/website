@@ -1,7 +1,7 @@
 +++
 title = "Artemis Post-launch Thoughts" 
 date = 2026-04-01
-updated = 2026-04-02
+updated = 2026-04-04
 authors = ["newtbytes"]
 +++
 
