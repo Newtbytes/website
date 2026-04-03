@@ -5,5 +5,5 @@
 {% set_global num = loop.index %}
 {% endif %}
 {% endfor %}
-<a href="#bibref-{{ key }}" class="ref-link">[{{ num | default(value="#noref") }}]</a>
+<sup><a href="#bibref-{{ key }}" class="ref-link">[{{ num | default(value="#noref") }}]</a></sup>
 {% endif %}
