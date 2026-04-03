@@ -24,6 +24,7 @@
     {% set meta_author = config.author %}
     {% set meta_title = utils::page_title() %}
     {% set meta_image = "img/logo.png" %}
+    {% set meta_image_alt = config.title ~ " logo" %}
     {% set meta_desc = config.description %}
 
     {% if page is defined %}
@@ -68,7 +69,7 @@
 
     {{ og::image(
     path=meta_image,
-    alt="{{ config.title }} logo"
+    alt=meta_image_alt
     ) }}
 
     {% if meta_author == "newtbytes" %}
