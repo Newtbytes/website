@@ -1,65 +1,65 @@
 {# Class names for Microformats2 and hAtom #}
 
 {%- macro entry() -%}
-entry h-entry hentry
+    entry h-entry hentry
 {%- endmacro entry -%}
 
 {%- macro feed() -%}
-feed h-feed hfeed
+    feed h-feed hfeed
 {%- endmacro feed -%}
 
 {%- macro title() -%}
-title entry-title p-name
+    title entry-title p-name
 {%- endmacro title -%}
 
 {%- macro author() -%}
-author p-author
+    author p-author
 {%- endmacro author -%}
 
 {%- macro dt(type="") -%}
-dt-{{type}} {{type}}
+    dt-{{type}} {{type}}
 {%- endmacro dt -%}
 
 {%- macro summary() -%}
-summary entry-summary p-summary
+    summary entry-summary p-summary
 {%- endmacro summary -%}
 
 {%- macro content() -%}
-content entry-content e-content
+    content entry-content e-content
 {%- endmacro content -%}
 
 {%- macro url() -%}
-url u-url
+    url u-url
 {%- endmacro url -%}
 
 {%- macro uid() -%}
-uid u-uid
+    uid u-uid
 {%- endmacro uid -%}
 
 {%- macro profile() -%}
-vcard hcard h-card card
+    vcard hcard h-card card
 {%- endmacro profile -%}
 
 {%- macro name() -%}
-p-name name fn
+    p-name name fn
 {%- endmacro name -%}
 
 {%- macro given_name() -%}
-n given-name p-given-name
+    n given-name p-given-name
 {%- endmacro given_name -%}
 
 {%- macro family_name() -%}
-n family-name p-family-name
+    n family-name p-family-name
 {%- endmacro family_name -%}
 
 {%- macro nickname() -%}
-nickname p-nickname
+    nickname p-nickname
 {%- endmacro nickname -%}
 
 {%- macro logo() -%}
-photo u-logo
+    photo u-logo
 {%- endmacro logo -%}
 
 {%- macro email() -%}
-u-email email
+    u-email email
 {%- endmacro logo -%}

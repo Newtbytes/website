@@ -1,51 +1,40 @@
 {% macro image(path, alt) %}
-{% set meta = get_image_metadata(path=path) %}
-<meta property="og:image" content="{{ get_url(path=path) }}">
-<meta property="og:image:width" content="{{ meta.width }}">
-<meta property="og:image:height" content="{{ meta.height }}">
-<meta property="og:image:alt" content="{{ alt }}">
+    {% set meta = get_image_metadata(path=path) %}
+    <meta property="og:image" content="{{ get_url(path=path) }}">
+    <meta property="og:image:width" content="{{ meta.width }}">
+    <meta property="og:image:height" content="{{ meta.height }}">
+    <meta property="og:image:alt" content="{{ alt }}">
 {% endmacro image %}
 
 
 {% macro website(url, title="", desc="") %}
-<meta property="og:url" content="{{ url }}">
-<meta property="og:site_name" content="{{ config.base_url }}">
-{% if title %}
-<meta property="og:title" content="{{ title }}">
-{% endif%}
-{% if desc %}
-<meta property="og:description" content="{{ desc | striptags }}">
-{% endif%}
+    <meta property="og:url" content="{{ url }}">
+    <meta property="og:site_name" content="{{ config.base_url }}">
+    {% if title %}<meta property="og:title" content="{{ title }}">{% endif%}
+    {% if desc %}<meta property="og:description" content="{{ desc | striptags }}">{% endif%}
 {% endmacro website %}
 
 
 {% macro article(url, title="", author="", desc="", date="", updated="") %}
-{% if author %}
-<meta property="og:article:author" content="{{ author }}">
-{% endif %}
-
-{% if desc %}
-<meta property="og:article:description" content="{{ desc | striptags }}">
-{% endif %}
-
-{% if date %}
-<meta property="og:article:published_time" content="{{ date | date(format='%Y-%m-%dT%H:%M:%SZ') }}">
-{% endif %}
-
-{% if updated %}
-<meta property="og:article:modified_time" content="{{ updated | date(format='%Y-%m-%dT%H:%M:%SZ') }}">
-{% endif %}
+    {% if author %}<meta property="og:article:author" content="{{ author }}">{% endif %}
+    {% if desc %}<meta property="og:article:description" content="{{ desc | striptags }}">{% endif %}
+    {% if date %}
+        <meta property="og:article:published_time" content="{{ date | date(format='%Y-%m-%dT%H:%M:%SZ') }}">
+    {% endif %}
+    {% if updated %}
+        <meta property="og:article:modified_time" content="{{ updated | date(format='%Y-%m-%dT%H:%M:%SZ') }}">
+    {% endif %}
 {% endmacro article %}
 
 
 {% macro profile(first, last, username, gender) %}
-<meta property="og:profile:first_name" content="{{ first }}">
-<meta property="og:profile:last_name" content="{{ last }}">
-<meta property="og:profile:username" content="{{ username }}">
-<meta property="og:profile:gender" content="{{ gender }}">
+    <meta property="og:profile:first_name" content="{{ first }}">
+    <meta property="og:profile:last_name" content="{{ last }}">
+    <meta property="og:profile:username" content="{{ username }}">
+    <meta property="og:profile:gender" content="{{ gender }}">
 {% endmacro profile %}
 
 
 {% macro type(value) %}
-<meta property="og:type" content="{{ value }}">
+    <meta property="og:type" content="{{ value }}">
 {% endmacro type %}

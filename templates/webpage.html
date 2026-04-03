@@ -21,77 +21,78 @@
     <meta name="robots" content="noimageai">
 
     {% block rss %}
-    <link rel="alternate" type="application/rss+xml" title="RSS"
-        href="{{ get_url(path='rss.xml', trailing_slash=false) }}">
+        <link rel="alternate" type="application/rss+xml" title="RSS"
+            href="{{ get_url(path='rss.xml', trailing_slash=false) }}">
     {% endblock rss %}
 
     {% block atom %}
-    <link rel="alternate" type="application/atom+xml" title="Atom"
-        href="{{ get_url(path='atom.xml', trailing_slash=false) }}">
+        <link rel="alternate" type="application/atom+xml" title="Atom"
+            href="{{ get_url(path='atom.xml', trailing_slash=false) }}">
     {% endblock atom %}
 
     {% block favicon %}
-    {% set favicon = resize_image(path="img/goober.png", width=48, height=48, format="webp") %}
-    <link rel="icon" href="{{favicon.url}}">
+        {% set favicon = resize_image(path="img/goober.png", width=48, height=48, format="webp") %}
+        <link rel="icon" href="{{favicon.url}}">
     {% endblock favicon %}
 
     {% block meta %}
-    {% set meta_url = current_url %}
-    {% set meta_author = config.author %}
-    {% set meta_title = utils::page_title() %}
-    {% set meta_image = "img/logo.png" %}
-    {% set meta_image_alt = config.title ~ " logo" %}
-    {% set meta_desc = config.description %}
+        {% set meta_url = current_url %}
+        {% set meta_author = config.author %}
+        {% set meta_title = utils::page_title() %}
+        {% set meta_image = "img/logo.png" %}
+        {% set meta_image_alt = config.title ~ " logo" %}
+        {% set meta_desc = config.description %}
 
-    {% if page is defined %}
-    {% set meta_url = page.permalink | safe %}
-    {% set meta_title = utils::page_title(title=page.title) %}
+        {% if page is defined %}
+            {% set meta_url = page.permalink | safe %}
+            {% set meta_title = utils::page_title(title=page.title) %}
 
-    {% if page.authors %}
-    {% set meta_author = page.authors | join(sep=", ") %}
-    {% endif %}
+            {% if page.authors %}
+                {% set meta_author = page.authors | join(sep=", ") %}
+            {% endif %}
 
-    {% if page.description %}
-    {% set meta_desc = page.description %}
-    {% elif page.summary %}
-    {% set meta_desc = page.summary %}
-    {% endif %}
-    {% endif %}
+            {% if page.description %}
+                {% set meta_desc = page.description %}
+            {% elif page.summary %}
+                {% set meta_desc = page.summary %}
+            {% endif %}
+        {% endif %}
 
-    {% if section is defined %}
-    {% set meta_title = utils::page_title(title=section.title) %}
-    {% set meta_desc = section.description %}
-    {% endif %}
+        {% if section is defined %}
+            {% set meta_title = utils::page_title(title=section.title) %}
+            {% set meta_desc = section.description %}
+        {% endif %}
 
-    {{ meta::metadata(
-    canon_url=meta_url,
-    author=meta_author,
-    title=meta_title,
-    desc=meta_desc
-    ) }}
+        {{ meta::metadata(
+        canon_url=meta_url,
+        author=meta_author,
+        title=meta_title,
+        desc=meta_desc
+        ) }}
 
-    {{ twitter::metadata(
-    url=meta_url,
-    img=meta_image,
-    title=meta_title,
-    desc=meta_desc
-    ) }}
+        {{ twitter::metadata(
+        url=meta_url,
+        img=meta_image,
+        title=meta_title,
+        desc=meta_desc
+        ) }}
 
-    {{ og::website(
-    url=meta_url,
-    title=meta_title,
-    desc=meta_desc
-    ) }}
+        {{ og::website(
+        url=meta_url,
+        title=meta_title,
+        desc=meta_desc
+        ) }}
 
-    {{ og::image(
-    path=meta_image,
-    alt=meta_image_alt
-    ) }}
+        {{ og::image(
+        path=meta_image,
+        alt=meta_image_alt
+        ) }}
 
-    {% if meta_author == "newtbytes" %}
-    <meta name="fediverse:creator" content="newtbytes@transfem.social" />
-    {% endif %}
+        {% if meta_author == "newtbytes" %}
+            <meta name="fediverse:creator" content="newtbytes@transfem.social" />
+        {% endif %}
     {% endblock meta %}
+    
     <meta name="keywords"
         content="{{ config.title }}, Ness Shannon, newbytes, personal website, blog, machine learning, game development, creative writing, compiler, programming, web development, nerdy interests, WIP, under construction">
 
@@ -100,14 +101,14 @@
     {% endblock og_type %}
 
     {% block style %}
-    <link rel="stylesheet" type="text/css" href="/styles/base.css">
-    <link rel="stylesheet" type="text/css" href="/styles/writing.css">
+        <link rel="stylesheet" type="text/css" href="/styles/base.css">
+        <link rel="stylesheet" type="text/css" href="/styles/writing.css">
     {% endblock style %}
 
     <meta name="google-site-verification" content="t89i41IXYJGuzmxpymjpBgFJ51wZ1awia8fyX05AVi4" />
 
     {% block scripts %}
-    <script type="text/javascript" src="scripts/cursor.js"></script>
+        <script type="text/javascript" src="scripts/cursor.js"></script>
     {% endblock scripts %}
 </head>
 
@@ -125,11 +126,12 @@
                 <div class="menu">
                     {% set home = get_section(path="_index.md") %}
                     <a href="{{ home.permalink }}" class="button">{{ home.title }}</a>
+
                     {% for path in home.subsections %}
-                    {% set subsection = get_section(path=path) %}
-                    {% if "button" in subsection.extra %}
-                    <a href="{{ subsection.permalink }}" class="button">{{ subsection.extra["button"] }}</a>
-                    {% endif %}
+                        {% set subsection = get_section(path=path) %}
+                        {% if "button" in subsection.extra %}
+                            <a href="{{ subsection.permalink }}" class="button">{{ subsection.extra["button"] }}</a>
+                        {% endif %}
                     {% endfor %}
                 </div>
 

@@ -7,46 +7,46 @@
 {% extends "webpage.html" %}
 
 {% block meta %}
-{{ super() }}
+    {{ super() }}
 
-{{ og::article(
-url=meta_url,
-title=meta_title,
-author=meta_author,
-desc=meta_desc,
-date=page.date,
-updated=page.updated
-) }}
+    {{ og::article(
+    url=meta_url,
+    title=meta_title,
+    author=meta_author,
+    desc=meta_desc,
+    date=page.date,
+    updated=page.updated
+    ) }}
 {% endblock meta %}
 
 {% block og_type %}
-{{ og::type(value="article") }}
+    {{ og::type(value="article") }}
 {% endblock og_type %}
 
 {% block content %}
-<article class="{{cls::entry()}}" itemscope itemtype="https://schema.org/BlogPosting">
-    <a class="{{cls::url()}}" href="{{ page.permalink }}"></a>
-    {{ h_entry::author_url(name=meta_author, url=config.base_url) }}
+    <article class="{{cls::entry()}}" itemscope itemtype="https://schema.org/BlogPosting">
+        <a class="{{cls::url()}}" href="{{ page.permalink }}"></a>
+        {{ h_entry::author_url(name=meta_author, url=config.base_url) }}
 
-    <h2>
-        <b>
-            <span class="{{cls::title()}}" itemprop="headline">{{ page.title }}</span>
-        </b>
-    </h2>
-    <h3>
-        <em>
-            {{ types::dt(date=page.date, type="published") }}
-        </em>
-    </h3>
+        <h2>
+            <b>
+                <span class="{{cls::title()}}" itemprop="headline">{{ page.title }}</span>
+            </b>
+        </h2>
+        <h3>
+            <em>
+                {{ types::dt(date=page.date, type="published") }}
+            </em>
+        </h3>
 
-    <div class="{{cls::content()}}" itemprop="articleBody">
-        {% if page.draft %}
-        {{"### _**Notice**: This is a really really early DRAFT. Here be dragons._" | markdown | safe}}
-        {% endif %}
+        <div class="{{cls::content()}}" itemprop="articleBody">
+            {% if page.draft %}
+                {{"### _**Notice**: This is a really really early DRAFT. Here be dragons._" | markdown | safe}}
+            {% endif %}
 
-        {{ page.content | safe }}
-    </div>
-</article>
+            {{ page.content | safe }}
+        </div>
+    </article>
 
-{{ bib::refs_list(page=page) }}
+    {{ bib::refs_list(page=page) }}
 {% endblock content %}

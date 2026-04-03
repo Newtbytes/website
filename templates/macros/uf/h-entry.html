@@ -1,24 +1,24 @@
 {% import "macros/uf/classes.html" as cls %}
 
 {% macro author_url(name="", url="", visible=false) %}
-{% if not name %}
-{% set name = config.author %}
-{% endif %}
-{% if not url and name == config.author %}
-{% set url = config.base_url %}
-{% endif %}
-{% if name or url %}
-{% if name == config.author %}
-{% set rel = "author me" %}
-{% else %}
-{% set rel = "author" %}
-{% endif %}
-<address class="{{cls::author()}} {{cls::profile()}}">
-    <a href="{{ url }}" class="{{cls::url()}} {% if visible and name %}{{cls::name()}}{% endif %}" rel="{{ rel }}">
-        {% if visible and name %}
-        {{ name }}
+    {% if not name %} 
+        {% set name = config.author %}
+    {% endif %}
+    {% if not url and name == config.author %}
+        {% set url = config.base_url %}
+    {% endif %}
+
+    {% if name or url %}
+        {% if name == config.author %}
+            {% set rel = "author me" %}
+        {% else %}
+            {% set rel = "author" %}
         {% endif %}
-    </a>
-</address>
-{% endif %}
+
+        <address class="{{cls::author()}} {{cls::profile()}}">
+            <a href="{{ url }}" class="{{cls::url()}} {% if visible and name %}{{cls::name()}}{% endif %}" rel="{{ rel }}">
+                {% if visible and name %} {{ name }} {% endif %}
+            </a>
+        </address>
+    {% endif %}
 {% endmacro author_url %}

@@ -5,45 +5,49 @@
 {% extends "webpage.html" %}
 
 {% block style %}
-<link rel="stylesheet" type="text/css" href="/styles/section-index.css">
+    <link rel="stylesheet" type="text/css" href="/styles/section-index.css">
 {% endblock style %}
 
 {% block content %}
-<div class="{{cls::feed()}}">
-    <h1 class="{{cls::title()}}">
-        {{ section.title }}
-    </h1>
-    <a href="{{ section.permalink }}" class="{{cls::url()}}"></a>
+    <div class="{{cls::feed()}}">
+        <h1 class="{{cls::title()}}">
+            {{ section.title }}
+        </h1>
+        <a href="{{ section.permalink }}" class="{{cls::url()}}"></a>
 
-    <p class="{{cls::summary()}}">{{ section.description | safe }}</p>
+        <p class="{{cls::summary()}}">{{ section.description | safe }}</p>
 
-    {{ section.content | safe }}
+        {{ section.content | safe }}
 
-    {% for page in section.pages %}
-    <div class="{{cls::entry()}}">
-        {{ h_entry::author_url() }}
+        {% for page in section.pages %}
+            <div class="{{cls::entry()}}">
+                {{ h_entry::author_url() }}
 
-        <p>
-            {% if page.title %}
-            <a class="{{cls::url()}}" href="{{ page.permalink | safe }}"><b class="p-name entry-title">{{ page.title
-                    }}</b></a>
-            · · ·
-            {% endif %}
-            <span class="entry-date">{{ types::dt(date=page.date, type="published") }}</span>
-            {% if page.updated %}
-            <span class="entry-updated">(updated {{ types::dt(date=page.updated, type="updated") }})</span>
-            {% endif %}
-        </p>
+                <p>
+                    {% if page.title %}
+                        <a class="{{cls::url()}}" href="{{ page.permalink | safe }}">
+                            <b class="p-name entry-title">{{ page.title }}</b>
+                        </a>
+                        · · ·
+                    {% endif %}
+                    
+                    <span class="entry-date">{{ types::dt(date=page.date, type="published") }}</span>
+                    {% if page.updated %}
+                        <span class="entry-updated">(updated {{ types::dt(date=page.updated, type="updated") }})</span>
+                    {% endif %}
+                </p>
 
-        {% if section.extra | get(key="link_pages", default=true) %}
-        {% if page.summary %}
-        <div class="{{cls::summary()}}">{{ page.summary | safe }}</div>
-        <a class="continue-reading-link" href="{{ page.permalink }}#continue-reading">Continue Reading...</a>
-        {% endif %}
-        {% else %}
-        <div class="{{cls::content()}}">{{ page.content | safe }}</div>
-        {% endif %}
+                {% if section.extra | get(key="link_pages", default=true) %}
+                    {% if page.summary %}
+                        <div class="{{cls::summary()}}">{{ page.summary | safe }}</div>
+                        <a class="continue-reading-link" href="{{ page.permalink }}#continue-reading">
+                            Continue Reading...
+                        </a>
+                    {% endif %}
+                {% else %}
+                    <div class="{{cls::content()}}">{{ page.content | safe }}</div>
+                {% endif %}
+            </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
 {% endblock content %}

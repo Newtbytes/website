@@ -3,35 +3,30 @@
 
 {% extends "webpage.html" %}
 
-{% block metadata %}
-{% set meta_url = current_url %}
-{% set meta_title = "Home" %}
-{% endblock metadata %}
-
 {% block meta %}
-{{ super() }}
+    {{ super() }}
 
-{{ og::type(value="profile") }}
+    {{ og::type(value="profile") }}
 
-{{ og::profile(
-first="Ness",
-last="Shannon",
-username="newtbytes",
-gender="female")
-}}
+    {{ og::profile(
+    first="Ness",
+    last="Shannon",
+    username="newtbytes",
+    gender="female")
+    }}
 {% endblock meta %}
 
 {% block content %}
-{{ h_card::profile(
-first="Ness",
-last="Shannon",
-username="newtbytes",
-gender="female",
-email="ness@newtbytes.cc",
-url="https://newtbytes.cc/",
-pfp=get_url(path="img/pfp.png"),
-bday="2007-9-19")
-}}
+    {{ h_card::profile(
+    first="Ness",
+    last="Shannon",
+    username="newtbytes",
+    gender="female",
+    email="ness@newtbytes.cc",
+    url="https://newtbytes.cc/",
+    pfp=get_url(path="img/pfp.png"),
+    bday="2007-9-19")
+    }}
 
-{{ section.content | safe }}
+    {{ section.content | safe }}
 {% endblock content %}
