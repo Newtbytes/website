@@ -14,6 +14,6 @@
 {% endif %}
 
 {% if desc %}
-<meta name="twitter:description" content="{{ desc }}">
+<meta name="twitter:description" content="{{ desc | striptags }}">
 {% endif %}
 {% endmacro metadata %}
