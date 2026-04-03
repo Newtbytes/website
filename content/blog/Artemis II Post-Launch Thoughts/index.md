@@ -45,9 +45,9 @@ As a young tiny little baby child, I possessed my very own copy of the Steam cli
 
 ## The Toilet Saga
 
-The Orion spacecraft is probably the farthest humanity has sent a proper toilet to space, given that the Apollo missions didn't really have a *toilet* (they had plastic bags). Orion has an actual, honest to god, *toilet*, and quite the advanced toilet at that. The "Universal Waste Management System," commonly known as 'toilet,' is basically a little private room with a hatch/seat for solid waste, and a hose for liquid waste. The solid waste is stored and will be brought back to Earth, but the liquid waste is supposed to be... ejected into space. Lmao. Also, the toilet is so loud during operation that you need to wear hearing protection when using it lol[^1]
+The Orion spacecraft is probably the farthest humanity has sent a proper toilet to space, given that the Apollo missions didn't really have a *toilet* (they had plastic bags). Orion has an actual, honest to god, *toilet*, and quite the advanced toilet at that. The "Universal Waste Management System," commonly known as 'toilet,' is basically a little private room with a hatch/seat for solid waste, and a hose for liquid waste. The solid waste is stored and will be brought back to Earth, but the liquid waste is supposed to be... ejected into space. Lmao. Also, the toilet is so loud during operation that you need to wear hearing protection when using it lol{{ref(key="miller2026")}}
 
-Unfortunately, the Universal Waste Management System, in all its groundbreaking space waste management glory, broke a couple hours into the mission. The crew could still poop, it's just the urination related functionality that broke.[^2]
+Unfortunately, the Universal Waste Management System, in all its groundbreaking space waste management glory, broke a couple hours into the mission. The crew could still poop, it's just the urination related functionality that broke.{{ref(key="malik2026")}}
 
 ...Fortunately!
 
@@ -56,11 +56,4 @@ they fixed Orion's toilet!! they can now eject piss into space again >:3c #artem
 <iframe src="https://transfem.social/embed/notes/aklhp69x01dl0015" data-misskey-embed-id="v1_8938c903-ab4f-4487-a0f2-2ea69e4e24fd" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" style="border: none; width: 100%; max-width: 500px; height: 300px; color-scheme: light dark;"></iframe>
 <script defer src="https://transfem.social/embed.js"></script>
 
-Yup! They fixed it today (April 2nd).[^2][^3] Mission Specialist Christina Koch said she was the 'plumber' and fixed the toilet lol.[^4]
-
-## References
-
-[^1]: <https://www.nytimes.com/2026/04/01/science/artemis-ii-bathroom-toilet.html>
-[^2]: <https://www.space.com/space-exploration/artemis/theres-a-bit-of-toilet-trouble-on-nasas-artemis-2-mission-to-the-moon>
-[^3]: <https://www.nasa.gov/blogs/missions/2026/04/02/artemis-ii-flight-update-crew-and-ground-teams-successfully-troubleshoot-orions-toilet/>
-[^4]: <https://www.cbsnews.com/video/watch-artemis-ii-astronauts-take-questions-way-toward-moon/>
+Yup! They fixed it today (April 2nd).{{ref(key="malik2026")}}{{ref(key="zakrzewski2026")}} Mission Specialist Christina Koch said she was the 'plumber' and fixed the toilet lol.{{ref(key="abcnews2026")}}
