@@ -21,6 +21,11 @@
     <link href="{{ config.base_url }}/rss.xml" type="application/rss+xml" rel="alternate" title="{{ config.title }}">
     <link href="{{ config.base_url }}/atom.xml" type="application/atom+xml" rel="alternate" title="{{ config.title }}">
 
+    {% block favicon %}
+    {% set favicon = resize_image(path="img/goober.png", width=48, height=48, format="webp") %}
+    <link rel="icon" href="{{favicon.url}}">
+    {% endblock favicon %}
+
     {% block meta %}
     {% set meta_url = current_url %}
     {% set meta_author = config.author %}
