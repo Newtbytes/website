@@ -1,0 +1,127 @@
+{% macro strip(in) %}
+{{ in | replace(from="---",to="—") | replace(from="--", to="-") | replace(from="{",to="") | replace(from="}", to="") |
+safe }}
+{% endmacro strip %}
+
+{% macro book(ref) %}
+{{ ref.tags.author }},
+<em>{{ ref.tags.title }}</em>,
+{{ ref.tags.publisher }},
+{{ ref.tags.year }}
+{% endmacro book %}
+
+{% macro article(ref) %}
+{{ ref.tags.author }},
+"{{ ref.tags.title }}",
+<em>{{ ref.tags.journal }}</em>,
+vol. {{ ref.tags.volume }},
+{{ ref.tags.number}},
+pp. {{ ref.tags.pages }},
+{% if ref.tags.month %}{{ ref.tags.month }}{% endif %}
+{{ ref.tags.year }}
+{% endmacro article %}
+
+{% macro online(ref) %}
+{% if ref.tags.author %}{{ ref.tags.author }},{% endif %}
+"{{ ref.tags.title }}",
+{% if ref.tags.publisher %}{{ ref.tags.publisher }},{% endif %}
+{% if ref.tags.year %}{{ ref.tags.year }},{% endif %}
+{% if ref.tags.url %}<a href="{{ ref.tags.url }}" target="_blank">{{ ref.tags.url }}</a>{% endif %}
+{% if ref.tags.urldate %}, <em>Accessed {{ref.tags.urldate}}</em>{% endif %}
+{% endmacro %}
+
+{% macro inproceedings(ref) %}
+{{ ref.tags.author }},
+"{{ ref.tags.title }},"
+in <em>{{ ref.tags.booktitle }}</em>,
+{{ ref.tags.address }},
+{{ ref.tags.year }},
+pp. {{ ref.tags.pages }}
+{% endmacro inproceedings %}
+
+{% macro manual(ref) %}
+{{ ref.tags.author }},
+<em>{{ ref.tags.title }}</em>,
+{{ ref.tags.organization }},
+{{ ref.tags.address }},
+{% if ref.tags.edition %}{{ ref.tags.edition }},{% endif %}
+{% if ref.tags.month %}{{ ref.tags.month }}{% endif %}
+{{ ref.tags.year }}.
+{% endmacro manual %}
+
+{% macro thesis(ref, type) %}
+{{ ref.tags.author }},
+"{{ ref.tags.title }},"
+{{ type }},
+{{ ref.tags.school }},
+{{ ref.tags.address }},
+{{ ref.tags.year }}
+{% endmacro thesis %}
+
+{% macro mastersthesis(ref) %}
+{{ bib::thesis(ref=ref,type="M.S. Thesis") }}
+{% endmacro mastersthesis %}
+
+{% macro phdthesis(ref) %}
+{{ bib::thesis(ref=ref,type="Ph.D. dissertation") }}
+{% endmacro phdthesis %}
+
+{% macro misc(ref) %}
+{% if ref.tags.author %}{{ ref.tags.author }},{% endif %}
+{{ ref.tags.title }},
+{% if ref.tags.publisher %}{{ ref.tags.publisher }},{% endif %}
+{% if ref.tags.year %}{{ ref.tags.year }},{% endif %}
+{% if ref.tags.doi %}
+<a href="https://doi.org/{{ ref.tags.doi }}">{{ ref.tags.doi }}</a>
+{% elif ref.tags.url %}
+<a href="{{ ref.tags.url }}" target="_blank">{{ ref.tags.url }}</a>
+{% endif %}
+{% endmacro misc %}
+
+{% macro bibref(bibliography,num) %}
+{% if bibliography.entry_type == "book" %}
+{{ bib::book(ref=bibliography) }}
+{% elif bibliography.entry_type == "article" %}
+{{ bib::article(ref=bibliography) }}
+{% elif bibliography.entry_type == "online" %}
+{{ bib::online(ref=bibliography) }}
+{% elif bibliography.entry_type == "inproceedings" %}
+{{ bib::inproceedings(ref=bibliography) }}
+{% elif bibliography.entry_type == "misc" %}
+{{ bib::misc(ref=bibliography) }}
+{% elif bibliography.entry_type == "mastersthesis" %}
+{{ bib::mastersthesis(ref=bibliography) }}
+{% elif bibliography.entry_type == "phdthesis" %}
+{{ bib::phdthesis(ref=bibliography) }}
+{% elif bibliography.entry_type == "manual" %}
+{{ bib::manual(ref=bibliography) }}
+{% elif bibliography.entry_type == "githubissue" %}
+{{ bib::bib_githubissue(ref=bibliography) }}
+{% else %}
+unsupported reference type
+{% endif %}
+{% endmacro bibref %}
+
+{% macro ref(bibliography,num) %}
+<dt class="ref-num" id="bibref-{{ bibliography.citation_key }}">[{{ num }}]</dt>
+<dd>{{ bib::strip(in=bib::bibref(bibliography=bibliography,num=num)) }}</dd>
+{% endmacro ref %}
+
+{% macro refs_list(page) %}
+{% if page.colocated_path %}
+{% set citations = load_data(path=page.colocated_path ~ "references.bib", format="bibtex", required=false) %}
+{% if citations %}
+<div id="references">
+    {% set has_references = citations.bibliographies | length > 0 %}
+    {% if has_references %}
+    <h2>References</h2>
+    <dl>
+        {% for citation in citations.bibliographies %}
+        {{ bib::ref(bibliography=citation,num=loop.index) }}
+        {% endfor %}
+    </dl>
+    {% endif %}
+</div>
+{% endif %}
+{% endif %}
+{% endmacro refs_list %}
