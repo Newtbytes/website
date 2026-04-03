@@ -52,10 +52,11 @@ they fixed Orion's toilet!! they can now eject piss into space again >:3c #artem
 <iframe src="https://transfem.social/embed/notes/aklhp69x01dl0015" data-misskey-embed-id="v1_8938c903-ab4f-4487-a0f2-2ea69e4e24fd" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" style="border: none; width: 100%; max-width: 500px; height: 300px; color-scheme: light dark;"></iframe>
 <script defer src="https://transfem.social/embed.js"></script>
 
-Yup! They fixed it today (April 2nd).[^2][^3]
+Yup! They fixed it today (April 2nd).[^2][^3] Mission Specialist Christina Koch said she was the 'plumber' and fixed the toilet lol.[^4]
 
 ## References
 
 [^1]: <https://www.nytimes.com/2026/04/01/science/artemis-ii-bathroom-toilet.html>
 [^2]: <https://www.space.com/space-exploration/artemis/theres-a-bit-of-toilet-trouble-on-nasas-artemis-2-mission-to-the-moon>
 [^3]: <https://www.nasa.gov/blogs/missions/2026/04/02/artemis-ii-flight-update-crew-and-ground-teams-successfully-troubleshoot-orions-toilet/>
+[^4]: <https://www.cbsnews.com/video/watch-artemis-ii-astronauts-take-questions-way-toward-moon/>
