@@ -20,6 +20,10 @@ I am perhaps the physical manifestation of the space core from Portal 2 right no
 <iframe src="https://transfem.social/embed/notes/akk7elntvkp2001s" data-misskey-embed-id="v1_9e3b1501-c1ea-4a2c-9e2b-4bf30fa4c8f5" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" style="border: none; width: 100%; max-width: 500px; height: 300px; color-scheme: light dark;"></iframe>
 <script defer src="https://transfem.social/embed.js"></script>
 
+<!-- Pictures of Earth taken by Artemis II -->
+<iframe src="https://transfem.social/embed/notes/akmrabi5n7gx001j" data-misskey-embed-id="v1_38fa8285-124b-4975-9990-e6ff8dd989e4" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" style="border: none; width: 100%; max-width: 500px; height: 300px; color-scheme: light dark;"></iframe>
+<script defer src="https://transfem.social/embed.js"></script>
+
 <!-- ret: 'One of my highlights from the Artemis II launch yesterday was on Sky News when the reporter interviewed a guy after the launch. 
 
 The reporter asked “did you find it moving?” - the guy misheard and replied “it did appear to be moving, yes”' -->
