@@ -111,17 +111,21 @@ unsupported reference type
 {% if page.colocated_path %}
 {% set citations = load_data(path=page.colocated_path ~ "references.bib", format="bibtex", required=false) %}
 {% if citations %}
-<div id="references">
+<details id="references">
     {% set has_references = citations.bibliographies | length > 0 %}
     {% if has_references %}
-    <h2>References</h2>
+    <summary>
+        <h2>
+            References
+        </h2>
+    </summary>
     <dl>
         {% for citation in citations.bibliographies %}
         {{ bib::ref(bibliography=citation,num=loop.index) }}
         {% endfor %}
     </dl>
     {% endif %}
-</div>
+</details>
 {% endif %}
 {% endif %}
 {% endmacro refs_list %}

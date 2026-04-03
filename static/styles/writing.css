@@ -215,3 +215,8 @@ a.ref-link {
         hyphens: auto;
     }
 }
+
+details summary>* {
+    display: inline;
+    margin-left: 4pt;
+}
