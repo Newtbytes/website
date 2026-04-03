@@ -36,6 +36,16 @@ body {
     font-size: larger;
 }
 
+blockquote {
+    border-left-width: 0.1em;
+    border-left-style: groove;
+    border-left-color: #3D444D;
+
+    padding-left: 1em;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
 .footnote-definition {
     .footnote-definition-label {
         font-size: smaller;
