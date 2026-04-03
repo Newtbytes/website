@@ -1,0 +1,8 @@
+{% import "macros/uf/types.html" as types %}
+
+
+{% macro dt(date, type, visible=true) %}
+<span itemprop="date{{type|lower|replace(from='updated', to='modified')|capitalize}}">
+    {{- types::dt(date=date, type=type, visible=visible) -}}
+</span>
+{% endmacro dt %}
