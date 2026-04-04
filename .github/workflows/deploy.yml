@@ -14,6 +14,9 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
+env:
+  ZOLA_VERSION: 0.22.1
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -25,7 +28,7 @@ jobs:
       - name: Install zola
         uses: taiki-e/install-action@v2
         with:
-          tool: zola@0.19.1
+          tool: zola@${{ env.ZOLA_VERSION }}
 
       - run: zola check --drafts
 
@@ -41,7 +44,7 @@ jobs:
       - name: Build Zola + upload Pages artifact
         uses: getzola/github-pages@435a833fd3f1edcb28d70576c89e30a6365cd8f7
         with:
-          zola_version: v0.22.0
+          zola_version: v${{ env.ZOLA_VERSION }}
           build_flags: --drafts
 
       - name: Deploy to neocities
