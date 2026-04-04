@@ -57,3 +57,5 @@ they fixed Orion's toilet!! they can now eject piss into space again >:3c #artem
 <script defer src="https://transfem.social/embed.js"></script>
 
 Yup! They fixed it today (April 2nd).{{ref(key="malik2026")}}{{ref(key="zakrzewski2026")}} Mission Specialist Christina Koch said she was the 'plumber' and fixed the toilet lol.{{ref(key="abcnews2026")}}
+
+Update (April 4th): The toilet has a...burning smell?? The smell is unknown apparently, but the crew is still allowed to use the toilet.{{ref(key="malik2026_b")}}
