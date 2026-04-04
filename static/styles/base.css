@@ -18,6 +18,8 @@
 	--blue-bg: #172872;
 	--blue-readable-bg: #a9b8fd;
 
+	--yellow-bg-readable: #ffffbc;
+
 	--lightmode-text-lightbg-muted: #222222;
 	--lightmode-text-lightbg: black;
 }
@@ -134,11 +136,23 @@ footer {
 	min-height: 64px;
 	background-image: url("/img/bg/purple_clouds.png");
 	text-align: center;
+	color: aliceblue;
+	text-shadow: 1px 1px 2px darkorchid;
 
 	p {
-		color: aliceblue;
 		margin: 0;
 	}
+}
+
+footer {
+	color: aliceblue;
+	margin: 0;
+}
+
+footer::after {
+	/* color: aliceblue;
+	margin: 0; */
+	content: "Icons from Pixel Icon Library by HackerNoon";
 }
 
 .marquee {

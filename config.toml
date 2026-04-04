@@ -23,6 +23,7 @@ generate_robots_txt = true
 # might as well make sure it's consistent across the whole site
 smart_punctuation = true
 external_links_no_follow = true
+github_alerts = true
 
 [markdown.highlighting]
 error_on_missing_language = true

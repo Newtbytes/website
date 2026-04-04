@@ -46,6 +46,28 @@ blockquote {
     padding-bottom: 1px;
 }
 
+.markdown-alert-note::before {
+    display: inline-block;
+    width: 1em;
+    height: auto;
+    line-break: loose;
+    content: url("/img/icon/bookmark-solid.svg");
+}
+
+.markdown-alert-note {
+    border-radius: 12px;
+    border-style: ridge;
+
+    border-top-color: hsl(var(--yellow-bg-readable) h 90% 90%);
+    border-right-color: hsl(var(--yellow-bg-readable) h 90% 90%);
+    border-left-color: hsl(var(--yellow-bg-readable) h 10% 10%);
+    border-bottom-color: hsl(var(--yellow-bg-readable) h 10% 10%);
+
+    background-color: var(--yellow-bg-readable);
+
+    padding: 1em;
+}
+
 .footnote-definition {
     .footnote-definition-label {
         font-size: smaller;
