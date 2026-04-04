@@ -81,7 +81,6 @@ header {
 	line-height: 40px;
 	text-align: center;
 	font-weight: bold;
-	margin-bottom: 12px;
 	font-family: var(--secondary-font);
 	font-size: 16px;
 	background-color: var(--button-col);
@@ -140,4 +139,30 @@ footer {
 		color: aliceblue;
 		margin: 0;
 	}
+}
+
+.marquee {
+	--s: 150px; /* size of the images */
+	--d: 25s; /* animation duration */
+	--n: 12; /* number of visible images */
+
+	display: flex;
+	overflow: hidden;
+}
+img {
+	width: var(--s);
+	offset: shape(from calc(var(--s)/-2) 50%,hline by calc(sibling-count()*max(100%/var(--n),var(--s))));
+	animation: x var(--d) linear infinite calc(-1*sibling-index()*var(--d)/sibling-count());
+}
+@keyframes x { 
+	to { offset-distance: 100%; }
+}
+
+.menu {
+	/* border-style: groove; */
+}
+
+.menuitem {
+	margin-top: 5px;
+	margin-bottom: 5px;
 }

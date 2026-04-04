@@ -120,46 +120,45 @@
             <div class="title">
                 <img src="/img/logo.png">
             </div>
+            <div class="blinkies marquee">
+                <!-- goobers -->
+                <img src="/img/blink/cinnamoroll.webp">
+                <img src="/img/blink/lucario.gif">
+                <img src="/img/blink/eevee.gif">
+                <img src="/img/blink/raichu.gif">
+                <img src="/img/blink/rawr.gif">
+                <img src="/img/blink/silly.gif">
+                <img src="/img/blink/too_silly.gif">
 
+                <!-- games -->
+                <img src="/img/blink/hlfan.gif">
+                <img src="/img/blink/terraria.gif">
+
+                <!-- nerd interests -->
+                <img src="/img/blink/compsci_nerd.gif">
+                <img src="/img/blink/dream_in_vectors.gif">
+                <img src="/img/blink/love_computer.gif">
+                <img src="/img/blink/math.gif">
+
+                <img src="/img/blink/creative-Bear.gif">
+                <img src="/img/blink/antisocial.gif">
+                <img src="/img/blink/emoticons.gif">
+            </div>
             <img src="/img/other/character.gif" class="character">
         </header>
+
         <div class="main">
-            <div class="side">
+            <div class="side side-left">
                 <div class="menu">
                     {% set home = get_section(path="_index.md") %}
-                    <a href="{{ home.permalink }}" class="button">{{ home.title }}</a>
+                    <a href="{{ home.permalink }}" class="menuitem button">{{ home.title }}</a>
 
                     {% for path in home.subsections %}
                         {% set subsection = get_section(path=path) %}
                         {% if "button" in subsection.extra %}
-                            <a href="{{ subsection.permalink }}" class="button">{{ subsection.extra["button"] }}</a>
+                            <a href="{{ subsection.permalink }}" class="menuitem button">{{ subsection.extra["button"] }}</a>
                         {% endif %}
                     {% endfor %}
-                </div>
-
-                <div class="blinkies">
-                    <!-- goobers -->
-                    <img src="/img/blink/cinnamoroll.webp">
-                    <img src="/img/blink/lucario.gif">
-                    <img src="/img/blink/eevee.gif">
-                    <img src="/img/blink/raichu.gif">
-                    <img src="/img/blink/rawr.gif">
-                    <img src="/img/blink/silly.gif">
-                    <img src="/img/blink/too_silly.gif">
-
-                    <!-- games -->
-                    <img src="/img/blink/hlfan.gif">
-                    <img src="/img/blink/terraria.gif">
-
-                    <!-- nerd interests -->
-                    <img src="/img/blink/compsci_nerd.gif">
-                    <img src="/img/blink/dream_in_vectors.gif">
-                    <img src="/img/blink/love_computer.gif">
-                    <img src="/img/blink/math.gif">
-
-                    <img src="/img/blink/creative-Bear.gif">
-                    <img src="/img/blink/antisocial.gif">
-                    <img src="/img/blink/emoticons.gif">
                 </div>
             </div>
 
