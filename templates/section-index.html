@@ -1,5 +1,4 @@
-{% import "macros/uf/h-entry.html" as h_entry %}
-{% import "macros/uf/types.html" as types %}
+{% import "macros/types.html" as types %}
 {% import "macros/uf/classes.html" as cls %}
 
 {% extends "webpage.html" %}
@@ -25,7 +24,7 @@
 
         {% for page in section.pages %}
             <div class="{{cls::entry()}}" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-                {{ h_entry::author_url() }}
+                {{ types::author() }}
 
                 <p>
                     {% if page.title %}

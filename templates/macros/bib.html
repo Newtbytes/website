@@ -1,108 +1,142 @@
-{% import "macros/uf/types.html" as types %}
+{% import "macros/types.html" as types %}
+{% import "macros/uf/types.html" as uf_types %}
 
 {% macro strip(in) %}
     {{ in | replace(from="---",to="—") | replace(from="--", to="-") | replace(from="{",to="") | replace(from="}", to="") |
     safe }}
 {% endmacro strip %}
 
-{% macro book(ref) %}
-    {{ types::p(value=ref.tags.author, type="author") }},
-    <em>{{ types::p(value=ref.tags.title, type="name") }}</em>,
-    {{ types::p(value=ref.tags.publisher, type="publication") }},
-    {{types::dt(date=ref.tags.year, type="published")}}
+{% macro book(author, title, publisher, year) %}
+    {{ author }},
+    <cite>{{ title }}</cite>,
+    {{ publication }},
+    {{ year }}
 {% endmacro book %}
 
-{% macro article(ref) %}
-    {{ types::p(value=ref.tags.author, type="author") }},
-    "{{ types::p(value=ref.tags.title, type="name") }}",
-    <em>{{ types::p(value=ref.tags.journal, type="publication") }}</em>,
-    vol. {{ ref.tags.volume }},
-    {{ ref.tags.number}},
-    pp. {{ ref.tags.pages }},
-    {% if ref.tags.month %}{{ ref.tags.month }}{% endif %}
-    {{types::dt(date=ref.tags.year, type="published")}}
+{% macro article(author, title, journal, volume, number, pages, year, month="") %}
+    {{ author }},
+    "{{ title }}",
+    <em>{{ journal }}</em>,
+    vol. {{ volume }},
+    {{ number }},
+    pp. {{ pages }},
+    {% if month %}{{ month }}{% endif %}
+    {{ year }}
 {% endmacro article %}
 
-{% macro online(ref) %}
-    {% if ref.tags.author %}{{ types::p(value=ref.tags.author, type="author") }} {% endif %}
-    {% if ref.tags.pubdate -%}({{- types::dt(date=ref.tags.urldate, type="published") -}}){%- endif -%}
-    "{{ types::p(value=ref.tags.title, type="name") }}"
-    {% if ref.tags.publisher %}{{ types::p(value=ref.tags.publisher, type="publication") }}{% endif %}
-    {% if ref.tags.year %}{{types::dt(date=ref.tags.year, type="published")}}{% endif %}
-    {% if ref.tags.url %}<a href="{{ ref.tags.url }}" target="_blank" class="u-url">{{ ref.tags.url }}</a>{% endif %}
-    {% if ref.tags.urldate %}<em>Accessed {{types::dt(date=ref.tags.urldate, type="accessed")}}</em>{% endif %}
+{% macro online(title, author="", pubdate="", publisher="", year="", url="", urldate="") %}
+    {% if author %}{{ author }} {% endif %}
+    {% if pubdate -%}({{- urldate -}}){%- endif -%}
+    "{{ title }}"
+    {% if publisher %}{{ publisher }}{% endif %}
+    {% if year %}{{ year }}{% endif %}
+    {% if url %}{{ url }}{% endif %}
+    {% if urldate %}<em>Accessed {{ urldate }}</em>{% endif %}
 {% endmacro %}
 
-{% macro inproceedings(ref) %}
-    {{ types::p(value=ref.tags.author, type="author") }},
-    "{{ types::p(value=ref.tags.title, type="name") }},"
-    in <em>{{ ref.tags.booktitle }}</em>,
-    {{ ref.tags.address }},
-    {{types::dt(date=ref.tags.year, type="published")}},
-    pp. {{ ref.tags.pages }}
+{% macro inproceedings(author, title, booktitle, address, year, pages) %}
+    {{ author }},
+    "{{ title }},"
+    in <cite>{{ booktitle }}</cite>,
+    {{ address }},
+    {{ year }},
+    pp. {{ pages }}
 {% endmacro inproceedings %}
 
-{% macro manual(ref) %}
-    {{ types::p(value=ref.tags.author, type="author") }},
-    <em>{{ types::p(value=ref.tags.title, type="name") }}</em>,
-    {{ types::p(value=ref.tags.organization, type="publication") }},
-    {{ ref.tags.address }},
-    {% if ref.tags.edition %}{{ ref.tags.edition }},{% endif %}
-    {% if ref.tags.month %}{{ ref.tags.month }}{% endif %}
-    {{types::dt(date=ref.tags.year, type="published")}}.
+{% macro manual(author, title, organization, address, year, edition="", month="") %}
+    {{ author }},
+    <cite>{{ title }}</cite>,
+    {{ organization }},
+    {{ address }},
+    {% if edition %}{{ edition }},{% endif %}
+    {% if month %}{{ month }}{% endif %}
+    {{ year }}.
 {% endmacro manual %}
 
-{% macro thesis(ref, type) %}
-    {{ types::p(value=ref.tags.author, type="author") }},
-    "{{ types::p(value=ref.tags.title, type="name") }},"
+{% macro thesis(author, title, type, address, year) %}
+    {{ author }},
+    "{{ title }},"
     {{ type }},
-    {{ types::p(value=ref.tags.school, type="publication") }},
-    {{ ref.tags.address }},
-    {{types::dt(date=ref.tags.year, type="published")}}
+    {{ school }},
+    {{ address }},
+    {{ year }}
 {% endmacro thesis %}
 
-{% macro mastersthesis(ref) %}
-    {{ bib::thesis(ref=ref,type="M.S. Thesis") }}
+{% macro mastersthesis(author, title, address, year) %}
+    {{ bib::thesis(author=author, title=title, type="M.S. Thesis", address=address, year=year) }}
 {% endmacro mastersthesis %}
 
-{% macro phdthesis(ref) %}
-    {{ bib::thesis(ref=ref,type="Ph.D. dissertation") }}
+{% macro phdthesis(author, title, address, year) %}
+    {{ bib::thesis(author=author, title=title, type="Ph.D. dissertation", address=address, year=year) }}
 {% endmacro phdthesis %}
 
-{% macro misc(ref) %}
-    {% if ref.tags.author %}{{ types::p(value=ref.tags.author, type="author") }},{% endif %}
-    {{ types::p(value=ref.tags.title, type="name") }},
-    {% if ref.tags.publisher %}{{ types::p(value=ref.tags.publisher, type="publication") }},{% endif %}
-    {% if ref.tags.year %}{{types::dt(date=ref.tags.year, type="published")}},{% endif %}
-    {% if ref.tags.doi %}
-        <a href="https://doi.org/{{ ref.tags.doi }}" class="u-url">{{ ref.tags.doi }}</a>
-    {% elif ref.tags.url %}
-        <a href="{{ ref.tags.url }}" target="_blank" class="u-url">{{ ref.tags.url }}</a>
+{% macro misc(title, author="", publisher="", year="", doi="", url="") %}
+    {% if author %}{{ author }},{% endif %}
+    {{ title }},
+    {% if publisher %}{{ publisher }},{% endif %}
+    {% if year %}{{ year }},{% endif %}
+    {% if doi %}
+        {{ doi }}
+    {% elif url %}
+        {{ url }}
     {% endif %}
 {% endmacro misc %}
 
 {% macro bibref(bibliography,num) %}
-    {% if bibliography.entry_type == "book" %}
-        {{ bib::book(ref=bibliography) }}
-    {% elif bibliography.entry_type == "article" %}
-        {{ bib::article(ref=bibliography) }}
-    {% elif bibliography.entry_type == "online" %}
-        {{ bib::online(ref=bibliography) }}
-    {% elif bibliography.entry_type == "inproceedings" %}
-        {{ bib::inproceedings(ref=bibliography) }}
-    {% elif bibliography.entry_type == "misc" %}
-        {{ bib::misc(ref=bibliography) }}
-    {% elif bibliography.entry_type == "mastersthesis" %}
-        {{ bib::mastersthesis(ref=bibliography) }}
-    {% elif bibliography.entry_type == "phdthesis" %}
-        {{ bib::phdthesis(ref=bibliography) }}
-    {% elif bibliography.entry_type == "manual" %}
-        {{ bib::manual(ref=bibliography) }}
-    {% elif bibliography.entry_type == "githubissue" %}
-        {{ bib::bib_githubissue(ref=bibliography) }}
-    {% else %}
-        unsupported reference type
-    {% endif %}
+    {# Get reference properties #}
+    {% set author = bibliography.tags | get(key="author", default="") %}
+    {% set title = bibliography.tags | get(key="title", default="") %}
+    {% set pubdate = bibliography.tags | get(key="pubdate", default="") %}
+    {% set publisher = bibliography.tags | get(key="publisher", default="") %}
+    {% set organization = bibliography.tags | get(key="organization", default="") %}
+    {% set address = bibliography.tags | get(key="address", default="") %}
+    {% set journal = bibliography.tags | get(key="journal", default="") %}
+    {% set edition = bibliography.tags | get(key="edition", default="") %}
+    {% set volume = bibliography.tags | get(key="volume", default="") %}
+    {% set number = bibliography.tags | get(key="number", default="") %}
+    {% set booktitle = bibliography.tags | get(key="booktitle", default="") %}
+    {% set doi = bibliography.tags | get(key="doi", default="") %}
+    {% set pages = bibliography.tags | get(key="pages", default="") %}
+    {% set year = bibliography.tags | get(key="year", default="") %}
+    {% set month = bibliography.tags | get(key="month", default="") %}
+    {% set url = bibliography.tags | get(key="url", default="") %}
+    {% set urldate = bibliography.tags | get(key="urldate", default="") %}
+
+    {# Markup reference properties #}
+    {% if author %} {% set author = types::author(name=author) %} {% endif %}
+
+    {% if title %} {% set title = '<span itemprop="headline" class="p-name name">' ~ title ~ '</span>' | safe %} {% endif %}
+
+    {% if pubdate %} {% set pubdate = types::dt(date=pubdate, type="published") %} {% endif %}
+
+    {% if doi %} {% set doi = '<a href="https://doi.org/' ~ doi ~ '" class="u-url url" itemprop="sameAs">' ~ doi ~ '</a>' %} {% endif %}
+
+    {% if url %} {% set url = '<a href="' ~ url ~ '" target="_blank" class="u-url url" itemprop="sameAs">' ~ url ~ '</a>' %} {% endif %}
+    {% if urldate %} {% set urldate = types::dt(date=urldate, type="accessed") %} {% endif %}
+
+    <span itemprop="citation" itemscope itemtype="https://schema.org/CreativeWork">
+        {% if bibliography.entry_type == "book" %}
+            {{ bib::book(author=author, title=title, publisher=publisher, year=year) }}
+        {% elif bibliography.entry_type == "article" %}
+            {{ bib::article(author=author, title=title, journal=journal, volume=volume, number=number, pages=pages, year=year, month=month) }}
+        {% elif bibliography.entry_type == "online" %}
+            {{ bib::online(title=title, author=author, pubdate=pubdate, publisher=publisher, year=year, url=url, urldate=urldate) }}
+        {% elif bibliography.entry_type == "inproceedings" %}
+            {{ bib::inproceedings(author=author, title=title, booktitle=booktitle, address=address, year=year, pages=pages) }}
+        {% elif bibliography.entry_type == "misc" %}
+            {{ bib::misc(title=title, author=author, publisher=publisher, year=year, doi=doi, url=url) }}
+        {% elif bibliography.entry_type == "mastersthesis" %}
+            {{ bib::mastersthesis(author=author, title=title, address=address, year=year) }}
+        {% elif bibliography.entry_type == "phdthesis" %}
+            {{ bib::phdthesis(author=author, title=title, address=address, year=year) }}
+        {% elif bibliography.entry_type == "manual" %}
+            {{ bib::manual(author=author, title=title, organization=organization, address=address, year=year, edition=edition, month=month) }}
+        {# TODO: {% elif bibliography.entry_type == "githubissue" %}
+            {{ bib::githubissue(ref=bibliography) }} #}
+        {% else %}
+            unsupported reference type
+        {% endif %}
+    </span>
 {% endmacro bibref %}
 
 {% macro ref(bibliography,num) %}

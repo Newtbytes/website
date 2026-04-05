@@ -1,7 +1,6 @@
 {% import "macros/utils.html" as utils %}
 {% import "macros/bib.html" as bib %}
-{% import "macros/uf/h-entry.html" as h_entry %}
-{% import "macros/uf/types.html" as types %}
+{% import "macros/types.html" as types %}
 {% import "macros/uf/classes.html" as cls %}
 
 {% extends "webpage.html" %}
@@ -34,7 +33,7 @@
 {% block content %}
     <article class="{{cls::entry()}}" itemscope itemtype="https://schema.org/BlogPosting">
         <a class="{{cls::url()}}" href="{{ page.permalink }}"></a>
-        {{ h_entry::author_url(name=meta_author, url=config.base_url) }}
+        {{ types::author(name=meta_author, url=config.base_url) }}
 
         <h2>
             <b>

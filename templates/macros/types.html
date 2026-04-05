@@ -1,8 +1,45 @@
-{% import "macros/uf/types.html" as types %}
+{% import "macros/uf/types.html" as uf_types %}
 
 
 {% macro dt(date, type, visible=true) %}
     <span itemprop="date{{type|lower|replace(from='updated', to='modified')|capitalize}}">
-        {{- types::dt(date=date, type=type, visible=visible) -}}
+        {{- uf_types::dt(date=date, type=type, visible=visible) -}}
     </span>
 {% endmacro dt %}
+
+{% macro author(name="", url="", visible=false) %}
+    {% if not name %} 
+        {% set name = config.author %}
+    {% endif %}
+    {% if not url and name == config.author %}
+        {% set url = config.base_url %}
+    {% endif %}
+
+    {% if url %}
+        {% if name == config.author %}
+            {% set rel = "author me" %}
+        {% else %}
+            {% set rel = "author" %}
+        {% endif %}
+
+        <address class="{{cls::author()}} {{cls::profile()}}" itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <a 
+                href="{{ url }}"
+                class="{{cls::url()}}
+                {% if visible and name %}{{cls::name()}}{% endif %}"
+                rel="{{ rel }}"
+                itemprop="url"
+            >
+                {% if visible and name %}<span itemprop="name">{{ name }}</span>{% endif %}
+            </a>
+        </address>
+
+    {% else %}
+        <{% if visible %}span{% else %}data{% endif %}
+            itemprop="author name" itemscope itemtype="https://schema.org/Person"
+            class="{{cls::author()}} {{cls::profile()}} {{cls::name()}}"
+        >
+            {{- name -}}
+        </{% if visible %}span{% else %}data{% endif %}>
+    {% endif %}
+{% endmacro author %}
