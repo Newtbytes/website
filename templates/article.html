@@ -47,6 +47,10 @@
             </em>
         </h3>
 
+        {% if page.toc %}
+            {{ utils::toc(toc=page.toc) }}
+        {% endif %}
+
         <div class="{{cls::content()}}" itemprop="articleBody">
             {% if page.draft %}
                 {{"### _**Notice**: This is a really really early DRAFT. Here be dragons._" | markdown | safe}}

@@ -17,6 +17,10 @@
 
         <p class="{{cls::summary()}}">{{ section.description | safe }}</p>
 
+        {% if section.toc %}
+            {{ utils::toc(toc=section.toc) }}
+        {% endif %}
+
         {{ section.content | safe }}
 
         {% for page in section.pages %}
