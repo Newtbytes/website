@@ -1,0 +1,90 @@
++++
+title = "Website Resources"
+description = "My personal collection of resources for personal website development!! Including assets, frameworks, software, tools, etc."
+template = "section-index.html"
+page_template = "article.html"
+weight = 999
+
+[extra]
+button = "resources"
++++
+
+## Resource pages
+
+Other resource pages that could be useful!!
+
+- [The Frutiger Aero Archive > Resources](https://frutigeraeroarchive.org/resources)
+
+## Assets
+
+- [glitter-graphics.com](https://www.glitter-graphics.com)
+
+### Gifs
+
+- [Picgifs](https://www.picgifs.com/)
+
+### Sprites
+
+- [videogamesprites.net](https://www.videogamesprites.net/)
+- [The Spriters Resource](https://www.spriters-resource.com/)
+
+### Icons
+
+- [The Frutiger Aero Archive > Icons](https://frutigeraeroarchive.org/icons)
+
+### Fonts
+
+- <http://www.planet.dk/fonts/>
+- [J. Vill's fonts](https://jvill.gumroad.com): Some really cool looking free Y2K fonts
+- [Velvetyne Libre Friends](https://velvetyne.fr/velvetyne-libre-friends/): List of free and open source fonts/font collections
+
+### Backgrounds
+
+- <https://hekate2.github.io/website-tools/index.html>
+- [Backgrounds Archive](http://backgroundsarchive.com)
+- [Magic Pattern: CSS Background Patterns](https://www.magicpattern.design/tools/css-backgrounds): "Beautiful pure CSS background patterns that you can actually use in your projects!"
+
+## CSS Styles
+
+- <https://joppiesaus.neocities.org>
+
+## Guides
+
+### CSS
+
+- [CSS Tricks](https://css-tricks.com/)
+- [Josh W Comeau](https://www.joshwcomeau.com)
+
+### Static Site Generators
+
+- [Let's Code It: Static Site Generator](https://sequoia.makes.software/lets-code-it-static-site-generator/)
+
+#### Comments
+
+- [Various ways to include comments on your static site](https://darekkay.com/blog/static-site-comments/)
+- [Tutorial: How to Add Self-hosted Comments to Your Static Site](https://bloggingfordevs.com/static-site-comments/)
+
+### Syntax Highlighting
+
+- [Markup for Syntax Highlighting: A Comparison of Different Approaches](https://manuel-strehl.de/markup_for_syntax_highlighting): Posted in 2011, could be outdated
+- [Syntax highlighting code in Eleventy posts](https://www.martingunnarsson.com/posts/eleventy-syntax-highlighting/)
+- [Setting up syntax highlighting for Hugo](https://home.hedy.dev/posts/hugo-syntax-highlighting/)
+- [Zola Docs > Syntax Highlighting](https://www.getzola.org/documentation/content/syntax-highlighting/): This site uses Zola, so this is what I use :3
+
+### Website Layout
+
+- [Full-Bleed Layout Using CSS Grid: An elegant solution to a tricky modern layout](https://www.joshwcomeau.com/css/full-bleed/)
+
+## Software
+
+- [ColorZilla](https://www.colorzilla.com/firefox/): Pick the colors on a web page :3
+
+### Libraries
+
+#### Go
+
+- <https://github.com/alecthomas/chroma>
+
+#### Node
+
+- <https://marked.js.org>

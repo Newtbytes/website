@@ -9,13 +9,21 @@
 {% block meta %}
     {{ super() }}
 
+    {% set meta_date = "" %}
+    {% set meta_updated = "" %}
+
+    {% if page is defined %}
+    {% set meta_date = page | get(key="date", default="") %}
+    {% set meta_updated = page | get(key="updated", default="") %}
+    {% endif %}
+
     {{ og::article(
     url=meta_url,
     title=meta_title,
     author=meta_author,
     desc=meta_desc,
-    date=page.date,
-    updated=page.updated
+    date=meta_date,
+    updated=meta_updated
     ) }}
 {% endblock meta %}
 
