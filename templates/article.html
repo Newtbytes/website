@@ -52,7 +52,9 @@
         {% endif %}
 
         {% if page.draft %}
-            {{"### _**Notice**: This is a really really early DRAFT. Here be dragons._" | markdown | safe}}
+            <div class="markdown-alert-warning">
+                {{"_This is a really really early DRAFT. Here be dragons._" | markdown | safe}}
+            </div>
         {% endif %}
 
         <div class="{{cls::content()}}" itemprop="articleBody">

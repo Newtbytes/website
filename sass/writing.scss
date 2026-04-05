@@ -56,27 +56,39 @@ blockquote {
     padding-bottom: 1px;
 }
 
-.markdown-alert-note::before {
-    display: inline-block;
-    width: 1em;
-    height: auto;
-    line-break: loose;
-    content: url("/img/icon/bookmark-solid.svg");
+@mixin markdown-alert($type, $bg-color, $icon) {
+    .markdown-alert-#{$type}::before {
+        display: inline-block;
+        width: 1em;
+        height: auto;
+        line-break: loose;
+        content: $icon;
+    }
+
+    .markdown-alert-#{$type} {
+        text-align: center;
+        width: max-content;
+    
+        border-radius: 12px;
+        border-style: ridge;
+
+        border-top-color: hsl(60, 90%, 90%);
+        border-right-color: hsl(60, 90%, 90%);
+        border-left-color: hsl(60, 10%, 10%);
+        border-bottom-color: hsl(60, 10%, 10%);
+
+        background-color: $bg-color;
+
+        padding: 1em;
+
+        p {
+            margin: 0;
+        }
+    }
 }
 
-.markdown-alert-note {
-    border-radius: 12px;
-    border-style: ridge;
-
-    border-top-color: hsl(60, 90%, 90%);
-    border-right-color: hsl(60, 90%, 90%);
-    border-left-color: hsl(60, 10%, 10%);
-    border-bottom-color: hsl(60, 10%, 10%);
-
-    background-color: var(--yellow-bg-readable);
-
-    padding: 1em;
-}
+@include markdown-alert(note, var(--yellow-bg-readable), url("/img/icon/bookmark-solid.svg"));
+@include markdown-alert(warning, var(--red-bg-readable), url("/img/icon/exclamation-triangle.svg"));
 
 .footnote-definition {
     .footnote-definition-label {
