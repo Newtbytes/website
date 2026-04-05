@@ -6,14 +6,14 @@ template = "index.html"
 
 # WELCOME TO NEWT'S COVE
 
-![](img/div/happy-star.png)
+{{divider(name="happy-star")}}
 
 ## Welcome to my lil place on the internet
 
 I'm Ness Shannon, aka Newt, aka newbytes! I'm into all things cool and weird on the web ;).  
 I'm (kinda) nerdy.
 
-![](img/div/happy-star.png)
+{{divider(name="happy-star")}}
 
 ## Interests :3
 
@@ -35,9 +35,9 @@ Here's a very short and overly vague list of my interests:
 - Github: <a rel="me" href="https://github.com/newtbytes">newtbytes</a>
 <!-- FIXME: {{ cond_family(real='- transfem.social: <a rel="me" href="https://transfem.social/@newtbytes">@newtbytes@transfem.social</a>', fake='') }} -->
 
-![](img/div/happy-star.png)
+{{divider(name="happy-star")}}
 
-### ![warning symbol](img/icon/warning.gif) WARNING
+### ![Warning symbol with a blinking '!' in the center](img/icon/warning.gif) WARNING
 
 this site is super duper ***WIP***!!  
 oh also i have no idea what i'm doing
@@ -45,7 +45,7 @@ oh also i have no idea what i'm doing
 there's literally no content here yet. maybe one day i'll actually write something.
 For now, just know that somewhere, a nerdy {{ cond_family(real="girly", fake="guy") }} that yearns to express {{ cond_family(real="her", fake="his") }} passions online exists.
 
-![This site under construction!](img/stamp/site_under_construction.gif)
+![Caution! This site under construction!](img/stamp/site_under_construction.gif)
 
 ![](img/memes/https___github.com_Kautenja_gym-super-mario-bros_blob_master_gym_super_mario_bros__roms_super-mario-bros.nes.jpg)
 

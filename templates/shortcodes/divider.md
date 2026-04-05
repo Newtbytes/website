@@ -1,0 +1,1 @@
+![](img/div/{{ name }}.png)
