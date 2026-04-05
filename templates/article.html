@@ -51,11 +51,11 @@
             {{ utils::toc(toc=page.toc) }}
         {% endif %}
 
-        <div class="{{cls::content()}}" itemprop="articleBody">
-            {% if page.draft %}
-                {{"### _**Notice**: This is a really really early DRAFT. Here be dragons._" | markdown | safe}}
-            {% endif %}
+        {% if page.draft %}
+            {{"### _**Notice**: This is a really really early DRAFT. Here be dragons._" | markdown | safe}}
+        {% endif %}
 
+        <div class="{{cls::content()}}" itemprop="articleBody">
             {{ page.content | safe }}
         </div>
     </article>
