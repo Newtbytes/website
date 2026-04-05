@@ -75,7 +75,7 @@ blockquote {
 
     .markdown-alert-#{$type} {
         text-align: center;
-        width: max-content;
+        width: fit-content;
     
         border-radius: 12px;
         border-style: ridge;
