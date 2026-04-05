@@ -79,6 +79,18 @@ Other resource pages that could be useful!!
 
 - [ColorZilla](https://www.colorzilla.com/firefox/): Pick the colors on a web page :3
 
+### Hosts
+
+#### Static Hosting
+
+- [Neocities](https://neocities.org)
+- [Nekoweb](https://nekoweb.org)
+
+### Guestbook
+
+- [CBox (Chatbox)](https://www.cbox.ws/)
+- [Smart Guestbook](https://www.smartgb.com/)
+
 ### Libraries
 
 #### Go
