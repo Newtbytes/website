@@ -31,6 +31,7 @@ Other resource pages that could be useful!!
 ### Icons
 
 - [The Frutiger Aero Archive > Icons](https://frutigeraeroarchive.org/icons)
+- [Pixel Icon Library by HackerNoon](https://pixeliconlibrary.com)
 
 ### Fonts
 
