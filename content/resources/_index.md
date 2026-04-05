@@ -101,3 +101,14 @@ Other resource pages that could be useful!!
 #### Node
 
 - <https://marked.js.org>
+
+## Structured Data
+
+- [Google rich results types](https://developers.google.com/search/docs/appearance/structured-data/search-gallery)
+- [schema.org](https://schema.org)
+- [microdata spec](https://html.spec.whatwg.org/multipage/microdata.html#microdata)
+
+### Tools
+
+- [Google Rich Results Test](https://search.google.com/test/rich-results)
+- [Schema Markup Validator](https://validator.schema.org)
