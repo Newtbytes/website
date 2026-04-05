@@ -1,0 +1,15 @@
+:root {
+	--primary-font: 'PixelOperator', monospace;
+	--secondary-font: 'DTM Sans';
+
+	--header-col: #f2007d;
+	--button-col: #e34262;
+
+	--blue-bg: #172872;
+	--blue-readable-bg: #a9b8fd;
+
+	--yellow-bg-readable: #ffffbc;
+
+	--lightmode-text-lightbg-muted: #222222;
+	--lightmode-text-lightbg: black;
+}

@@ -1,5 +1,4 @@
-@import url("base.css");
-@import url("writing.css");
+@import url("style.css");
 
 .entry {
     display: flex;

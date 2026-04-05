@@ -1,28 +1,5 @@
-@font-face {
-	font-family: 'PixelOperator';
-	src: url("../fonts/PixelOperator.ttf");
-}
-
-@font-face {
-	font-family: 'DTM Sans';
-	src: url("../fonts/dtm-sans.ttf");
-}
-
-:root {
-	--primary-font: 'PixelOperator', monospace;
-	--secondary-font: 'DTM Sans';
-
-	--header-col: #f2007d;
-	--button-col: #e34262;
-
-	--blue-bg: #172872;
-	--blue-readable-bg: #a9b8fd;
-
-	--yellow-bg-readable: #ffffbc;
-
-	--lightmode-text-lightbg-muted: #222222;
-	--lightmode-text-lightbg: black;
-}
+@import url("fonts.css");
+@import url("colors.css");
 
 body,
 html {
@@ -45,16 +22,16 @@ html {
 	flex-grow: 1;
 }
 
-img {
-	max-width: 100%;
-}
-
 .wrapper {
 	border: 6px ridge;
 	width: 1000px;
 	margin: auto;
 	margin-top: 20px;
 	box-sizing: border-box;
+}
+
+.content {
+    padding: 12px;
 }
 
 header {
@@ -118,17 +95,8 @@ header {
 	padding-left: 20px;
 }
 
-h1 {
-	color: var(--header-col);
-	border-bottom: 1px dashed;
-}
-
-h2 {
-	color: var(--header-col);
-}
-
-a {
-	color: blue;
+img {
+	max-width: 100%;
 }
 
 footer {
@@ -155,6 +123,15 @@ footer::after {
 	content: "Icons from Pixel Icon Library by HackerNoon";
 }
 
+.menu {
+	/* border-style: groove; */
+}
+
+.menuitem {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
 .marquee {
 	--s: 150px; /* size of the images */
 	--d: 25s; /* animation duration */
@@ -170,13 +147,4 @@ img {
 }
 @keyframes x { 
 	to { offset-distance: 100%; }
-}
-
-.menu {
-	/* border-style: groove; */
-}
-
-.menuitem {
-	margin-top: 5px;
-	margin-bottom: 5px;
 }

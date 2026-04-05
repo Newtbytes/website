@@ -1,7 +1,21 @@
-@import url("base.css");
+@import url("colors.css");
+@import url("fonts.css");
 
-.content {
-    padding: 12px;
+body {
+    font-family: var(--primary-font);
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: larger;
+}
+
+h1 {
+	color: var(--header-col);
+	border-bottom: 1px dashed;
+}
+
+h2 {
+	color: var(--header-col);
 }
 
 h1 {
@@ -28,12 +42,8 @@ h2 {
 
 }
 
-body {
-    font-family: var(--primary-font);
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    font-size: larger;
+a {
+	color: blue;
 }
 
 blockquote {
