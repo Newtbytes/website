@@ -151,7 +151,7 @@
 
         <div class="main">
             <div class="side side-left">
-                <div class="menu buttons">
+                <nav class="menu buttons">
                     {% set home = get_section(path="_index.md") %}
                     <a href="{{ home.permalink }}" class="menuitem button">{{ home.title }}</a>
 
@@ -161,7 +161,7 @@
                             <a href="{{ subsection.permalink }}" class="menuitem button">{{ subsection.extra["button"] }}</a>
                         {% endif %}
                     {% endfor %}
-                </div>
+                </nav>
 
                 <div class="menu webrings">
                     <div id="furryring" class="menuitem webring">
