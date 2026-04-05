@@ -9,13 +9,13 @@
 {% endblock style %}
 
 {% block content %}
-    <div class="{{cls::feed()}}">
-        <h1 class="{{cls::title()}}">
+    <div class="{{cls::feed()}}" itemscope itemtype="https://schema.org/Blog">
+        <h1 class="{{cls::title()}}" itemprop="headline">
             {{ section.title }}
         </h1>
-        <a href="{{ section.permalink }}" class="{{cls::url()}}"></a>
+        <a href="{{ section.permalink }}" class="{{cls::url()}}" itemtype="url"></a>
 
-        <p class="{{cls::summary()}}">{{ section.description | safe }}</p>
+        <p class="{{cls::summary()}}" itemprop="abstract">{{ section.description | safe }}</p>
 
         {% if section.toc %}
             {{ utils::toc(toc=section.toc) }}
@@ -24,17 +24,17 @@
         {{ section.content | safe }}
 
         {% for page in section.pages %}
-            <div class="{{cls::entry()}}">
+            <div class="{{cls::entry()}}" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
                 {{ h_entry::author_url() }}
 
                 <p>
                     {% if page.title %}
-                        <a class="{{cls::url()}}" href="{{ page.permalink | safe }}">
-                            <b class="p-name entry-title">{{ page.title }}</b>
+                        <a class="{{cls::url()}}" href="{{ page.permalink | safe }}" itemprop="url">
+                            <b class="p-name entry-title" itemprop="headline">{{ page.title }}</b>
                         </a>
                         · · ·
                     {% endif %}
-                    
+
                     <span class="entry-date">{{ types::dt(date=page.date, type="published") }}</span>
                     {% if page.updated %}
                         <span class="entry-updated">(updated {{ types::dt(date=page.updated, type="updated") }})</span>
@@ -43,13 +43,13 @@
 
                 {% if section.extra | get(key="link_pages", default=true) %}
                     {% if page.summary %}
-                        <div class="{{cls::summary()}}">{{ page.summary | safe }}</div>
+                        <div class="{{cls::summary()}}" itemprop="abstract">{{ page.summary | safe }}</div>
                         <a class="continue-reading-link" href="{{ page.permalink }}#continue-reading">
                             Continue Reading...
                         </a>
                     {% endif %}
                 {% else %}
-                    <div class="{{cls::content()}}">{{ page.content | safe }}</div>
+                    <div class="{{cls::content()}}" itemprop="articleBody">{{ page.content | safe }}</div>
                 {% endif %}
             </div>
         {% endfor %}
