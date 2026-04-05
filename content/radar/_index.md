@@ -5,6 +5,7 @@ sort_by = "date"
 template = "section-index.html"
 page_template = "article.html"
 weight = 1
+generate_feeds = true
 
 [extra]
 update_frequency = "weekly"

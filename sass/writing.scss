@@ -56,12 +56,20 @@ blockquote {
     padding-bottom: 1px;
 }
 
+@mixin icon {
+    display: inline-block;
+    width: 1em;
+    height: auto;
+    line-break: loose; 
+}
+
+.icon {
+    @include icon;
+}
+
 @mixin markdown-alert($type, $bg-color, $icon) {
     .markdown-alert-#{$type}::before {
-        display: inline-block;
-        width: 1em;
-        height: auto;
-        line-break: loose;
+        @include icon;
         content: $icon;
     }
 
