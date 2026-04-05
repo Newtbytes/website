@@ -9,6 +9,6 @@ generate_feeds = true
 
 [extra]
 update_frequency = "weekly"
-link_pages = false
+inline_pages = false
 button = "radar"
 +++

@@ -36,20 +36,26 @@
                 {{ types::author() }}
 
                 <p>
-                    {% if page.title %}
-                        <a class="{{cls::url()}}" href="{{ page.permalink | safe }}" itemprop="sameAs">
-                            <b class="p-name entry-title" itemprop="headline">{{ page.title }}</b>
-                        </a>
-                        · · ·
-                    {% endif %}
+                    <a class="{{cls::url()}}" href="{{ page.permalink | safe }}" itemprop="sameAs">
+                        <b class="p-name entry-title" itemprop="headline">
+                            {% if page.title %}
+                                {{ page.title }}
+                            {% elif page.date %}
+                                <span class="entry-date">{{ types::dt(date=page.date, type="published") }}</span>
+                            {% endif %}
+                        </b>
+                    </a>
+                    {# only show these dots if something will follow them #}
+                    {% if page.title or page.updated %} · · · {% endif %}
 
-                    <span class="entry-date">{{ types::dt(date=page.date, type="published") }}</span>
+                    {# putting the page date here is redundant if the page date is used as the page title #}
+                    {% if page.title %} <span class="entry-date">{{ types::dt(date=page.date, type="published") }}</span> {% endif %}
                     {% if page.updated %}
                         <span class="entry-updated">(updated {{ types::dt(date=page.updated, type="updated") }})</span>
                     {% endif %}
                 </p>
 
-                {% if section.extra | get(key="link_pages", default=true) %}
+                {% if section.extra | get(key="inline_pages", default=true) %}
                     {% if page.summary %}
                         <div class="{{cls::summary()}}" itemprop="abstract">{{ page.summary | safe }}</div>
                         <a class="continue-reading-link" href="{{ page.permalink }}#continue-reading">
