@@ -23,7 +23,7 @@
         {{ section.content | safe }}
 
         {% for page in section.pages %}
-            <div class="{{cls::entry()}}" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+            <div class="{{cls::entry()}}" itemprop="hasPart blogPost" itemscope itemtype="https://schema.org/BlogPosting">
                 {{ types::author() }}
 
                 <p>
