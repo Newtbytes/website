@@ -150,7 +150,7 @@
 
         <div class="main">
             <div class="side side-left">
-                <nav class="menu buttons">
+                <nav class="menu buttons" name="Pages">
                     {% set home = get_section(path="_index.md") %}
                     <a href="{{ home.permalink }}" class="menuitem button">{{ home.title }}</a>
 
@@ -162,7 +162,7 @@
                     {% endfor %}
                 </nav>
 
-                <div class="menu webrings">
+                <div class="menu webrings rainbow-bg" name="Webrings">
                     <div id="furryring" class="menuitem webring">
                         <script type="text/javascript" src="https://furryring.neocities.org/onionring-variables.js"></script>
                         <script type="text/javascript" src="https://furryring.neocities.org/onionring-widget.js"></script>

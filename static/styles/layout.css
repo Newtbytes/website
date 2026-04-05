@@ -124,12 +124,30 @@ footer::after {
 }
 
 .menu {
-	/* border-style: groove; */
+	border-style: dotted;
+	margin-top: 1lh;
+	margin-bottom: 1lh;
+
+	border-radius: 10px;
+}
+
+.menu::before {
+	display: block;
+	content: attr(name);
+	border-bottom-style: dotted;
+	text-align: center;
 }
 
 .menuitem {
-	margin-top: 5px;
-	margin-bottom: 5px;
+	margin: 5px;
+}
+
+.rainbow-bg {
+	--brightness: 0.8;
+	background:
+		linear-gradient(217deg, rgb(255 0 0 / var(--brightness)), transparent 70.71%),
+		linear-gradient(127deg, rgb(0 255 0 / var(--brightness)), transparent 70.71%),
+		linear-gradient(336deg, rgb(0 0 255 / var(--brightness)), transparent 70.71%);
 }
 
 .marquee {
