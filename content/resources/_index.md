@@ -9,6 +9,8 @@ weight = 999
 button = "resources"
 +++
 
+Here's a big 'ol collection of resources for creating personal websites! I honestly am mostly just using this for keeping track of things I find so I can maybe use them later lol, but i hope it could maybe help someone else someday!
+
 ## Resource pages
 
 Other resource pages that could be useful!!
@@ -30,8 +32,21 @@ Other resource pages that could be useful!!
 
 ### Icons
 
+- <https://sadthemes.tumblr.com/smolpxl>: cute animated icons :3
 - [The Frutiger Aero Archive > Icons](https://frutigeraeroarchive.org/icons)
 - [Pixel Icon Library by HackerNoon](https://pixeliconlibrary.com)
+
+### Blinkies
+
+- [blinkies.cafe](https://blinkies.cafe): fun little blinky gif generator!!
+
+### Stamps
+
+- <https://raining-starss.neocities.org/stampcollection>
+
+### Buttons
+
+- [plasticdino buttons](https://plasticdino.net/buttons)
 
 ### Fonts
 
