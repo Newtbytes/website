@@ -157,8 +157,8 @@
                             <a  href="{{ home.permalink }}" class="menuitem button" 
                                 property="item" typeof="WebPage">
                                 <span property="name">{{ home.title }}</span>
-                                <meta property="position" content="1">
                             </a>
+                            <meta property="position" content="1">
                         </li>
 
                         {% for path in home.subsections %}
@@ -168,8 +168,8 @@
                                     <a  href="{{ subsection.permalink }}" class="menuitem button" 
                                         property="item" typeof="WebPage">
                                         <span property="name">{{ subsection.extra["button"] }}</span>
-                                        <meta property="position" content="2">
                                     </a>
+                                    <meta property="position" content="2">
                                 </li>
                             {% endif %}
                     {% endfor %}
