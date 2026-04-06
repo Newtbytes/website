@@ -16,6 +16,7 @@ Here's a big 'ol collection of resources for creating personal websites! I hones
 Other resource pages that could be useful!!
 
 - [The Frutiger Aero Archive > Resources](https://frutigeraeroarchive.org/resources)
+- [Maphren's resources and credits page](https://maphren.neocities.org/?z=/resources_credits)
 
 ## Assets
 
