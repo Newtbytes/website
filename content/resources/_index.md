@@ -24,6 +24,7 @@ Other resource pages that could be useful!!
 ### Gifs
 
 - [Picgifs](https://www.picgifs.com/)
+- [gifcities](https://gifcities.org): Huge archive of millions of gifs from geocities. A part of the [Internet Archive](https://archive.org).
 
 ### Sprites
 
@@ -63,6 +64,16 @@ Other resource pages that could be useful!!
 ## CSS Styles
 
 - <https://joppiesaus.neocities.org>
+
+## Widgets
+
+- [webneko](https://webneko.net/): free to use code snippet that adds a cute little kitten that runs around on your screen and chases your cursor :3
+
+## Themes
+
+Pre-made themes, layouts, CSS, etc.
+
+- [REPTH Themes](https://repth.neocities.org/theme)
 
 ## Guides
 
