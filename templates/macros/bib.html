@@ -105,16 +105,16 @@
     {# Markup reference properties #}
     {% if author %} {% set author = types::author(name=author) %} {% endif %}
 
-    {% if title %} {% set title = '<span itemprop="headline" class="p-name name">' ~ title ~ '</span>' | safe %} {% endif %}
+    {% if title %} {% set title = '<span property="headline" class="p-name name">' ~ title ~ '</span>' | safe %} {% endif %}
 
     {% if pubdate %} {% set pubdate = types::dt(date=pubdate, type="published") %} {% endif %}
 
-    {% if doi %} {% set doi = '<a href="https://doi.org/' ~ doi ~ '" class="u-url url" itemprop="sameAs">' ~ doi ~ '</a>' %} {% endif %}
+    {% if doi %} {% set doi = '<a href="https://doi.org/' ~ doi ~ '" class="u-url url" rel="sameAs">' ~ doi ~ '</a>' %} {% endif %}
 
-    {% if url %} {% set url = '<a href="' ~ url ~ '" target="_blank" class="u-url url" itemprop="sameAs">' ~ url ~ '</a>' %} {% endif %}
+    {% if url %} {% set url = '<a href="' ~ url ~ '" target="_blank" class="u-url url" rel="sameAs">' ~ url ~ '</a>' %} {% endif %}
     {% if urldate %} {% set urldate = types::dt(date=urldate, type="accessed") %} {% endif %}
 
-    <span itemprop="citation" itemscope itemtype="https://schema.org/CreativeWork">
+    <span property="citation" typeof="CreativeWork">
         {% if bibliography.entry_type == "book" %}
             {{ bib::book(author=author, title=title, publisher=publisher, year=year) }}
         {% elif bibliography.entry_type == "article" %}

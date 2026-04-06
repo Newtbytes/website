@@ -30,12 +30,9 @@
 {% block content %}
     <article
         class="{{cls::entry()}}"
-        {% block schema %}
-        itemscope
-        itemtype="https://schema.org/Article"
-        {% endblock schema %}
+        {% block schema %} typeof="Article" {% endblock schema %}
     >
-        <h1 class="{{cls::title()}}" itemprop="headline">
+        <h1 class="{{cls::title()}}" property="headline">
             <a
                 class="{{cls::url()}}"
                 href="
@@ -43,7 +40,7 @@
                     {{current_url}}
                     {% endblock permalink %}
                 "
-                itemprop="url"
+                property="url"
             >
                 {% block title %} Unnamed Article {% endblock title %}
             </a>
@@ -67,7 +64,7 @@
 
         {% block notes %} {% endblock notes %}
 
-        <p class="{{cls::summary()}}" itemprop="abstract">
+        <p class="{{cls::summary()}}" property="abstract">
             {% block desc %}
                 {% if meta_desc is defined %}
                     {{ meta_desc }}
@@ -78,7 +75,7 @@
         {% block toc %}
         {% endblock toc %}
 
-        <div class="{{cls::content()}}" itemprop="articleBody">
+        <div class="{{cls::content()}}" property="articleBody">
             {% block body %} {% endblock body %}
         </div>
 

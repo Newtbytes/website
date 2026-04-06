@@ -38,12 +38,12 @@
 
 {% block posts %}
     {% for page in section.pages %}
-        <div class="section-entry {{cls::entry()}}" itemprop="hasPart blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <div class="section-entry {{cls::entry()}}" property="hasPart" typeof="BlogPosting">
             {{ types::author() }}
 
             <p>
-                <a class="{{cls::url()}}" href="{{ page.permalink | safe }}" itemprop="sameAs">
-                    <b class="p-name entry-title" itemprop="headline">
+                <a class="{{cls::url()}}" href="{{ page.permalink | safe }}" rel="sameAs">
+                    <b class="p-name entry-title" property="headline">
                         {% if page.title %}
                             {{ page.title }}
                         {% elif page.date %}
@@ -63,13 +63,13 @@
 
             {% if section.extra | get(key="inline_pages", default=true) %}
                 {% if page.summary %}
-                    <div class="{{cls::summary()}}" itemprop="abstract">{{ page.summary | safe }}</div>
+                    <div class="{{cls::summary()}}" property="abstract">{{ page.summary | safe }}</div>
                     <a class="continue-reading-link" href="{{ page.permalink }}#continue-reading">
                         Continue Reading...
                     </a>
                 {% endif %}
             {% else %}
-                <div class="{{cls::content()}}" itemprop="articleBody">{{ page.content | safe }}</div>
+                <div class="{{cls::content()}}" property="articleBody">{{ page.content | safe }}</div>
             {% endif %}
         </div>
     {% endfor %}
