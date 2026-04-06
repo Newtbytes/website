@@ -115,7 +115,7 @@
     {% endblock scripts %}
 </head>
 
-<body class="wrapper-body" typeof="WebPage">
+<body class="wrapper-body" {% block webPageSchema %} typeof="WebPage" {% endblock webPageSchema %}>
     <div class="wrapper">
         <header>
             <div class="title">

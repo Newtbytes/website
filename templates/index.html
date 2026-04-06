@@ -16,6 +16,10 @@
     }}
 {% endblock meta %}
 
+{% block webPageSchema %}
+    typeof="ProfilePage"
+{% endblock webPageSchema %}
+
 {% block content %}
     {{ h_card::profile(
     first="Ness",
@@ -26,7 +30,7 @@
     url="https://newtbytes.cc/",
     pfp=get_url(path="img/pfp.png"),
     bday="2007-9-19",
-    schema="property=creator")
+    schema="property=mainEntity")
     }}
 
     {{ section.content | safe }}
