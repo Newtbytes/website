@@ -151,15 +151,29 @@
         <div class="main">
             <div class="side side-left">
                 <nav class="menu buttons" name="Pages">
-                    {% set home = get_section(path="_index.md") %}
-                    <a href="{{ home.permalink }}" class="menuitem button">{{ home.title }}</a>
+                    <ol typeof="BreadcrumbList">
+                        {% set home = get_section(path="_index.md") %}
+                        <li property="itemListElement" typeof="ListItem">
+                            <a  href="{{ home.permalink }}" class="menuitem button" 
+                                property="item" typeof="WebPage">
+                                <span property="name">{{ home.title }}</span>
+                                <meta property="position" content="1">
+                            </a>
+                        </li>
 
-                    {% for path in home.subsections %}
-                        {% set subsection = get_section(path=path) %}
-                        {% if "button" in subsection.extra %}
-                            <a href="{{ subsection.permalink }}" class="menuitem button">{{ subsection.extra["button"] }}</a>
-                        {% endif %}
+                        {% for path in home.subsections %}
+                            {% set subsection = get_section(path=path) %}
+                            {% if "button" in subsection.extra %}
+                                <li property="itemListElement" typeof="ListItem">
+                                    <a  href="{{ subsection.permalink }}" class="menuitem button" 
+                                        property="item" typeof="WebPage">
+                                        <span property="name">{{ subsection.extra["button"] }}</span>
+                                        <meta property="position" content="2">
+                                    </a>
+                                </li>
+                            {% endif %}
                     {% endfor %}
+                    </ol>
                 </nav>
 
                 <div class="menu webrings rainbow-bg" name="Webrings">

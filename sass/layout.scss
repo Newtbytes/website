@@ -142,6 +142,11 @@ footer::after {
 	margin: 5px;
 }
 
+nav ol {
+	list-style: none;
+	padding: 0;
+}
+
 .rainbow-bg {
 	--brightness: 0.8;
 	background:
