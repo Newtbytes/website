@@ -26,7 +26,7 @@
 
 {% macro online(title, author="", pubdate="", publisher="", year="", url="", urldate="") %}
     {% if author %}{{ author }} {% endif %}
-    {% if pubdate -%}({{- urldate -}}){%- endif -%}
+    {% if pubdate -%}({{- pubdate -}}){%- endif -%}
     "{{ title }}"
     {% if publisher %}{{ publisher }}{% endif %}
     {% if year %}{{ year }}{% endif %}
