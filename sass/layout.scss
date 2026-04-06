@@ -11,8 +11,8 @@ html {
 	background-image: url('/img/bg/space.gif');
 }
 
-.page {
-	padding: 12px;
+main {
+	padding: 24px;
 	background: #FFF;
 	border: 0;
 	width: 100%;
@@ -30,10 +30,6 @@ html {
 	box-sizing: border-box;
 }
 
-.content {
-    padding: 12px;
-}
-
 header {
 	border-bottom: 6px ridge;
 	height: 160px;
@@ -42,7 +38,7 @@ header {
 	position: relative;
 }
 
-.main {
+.page {
 	display: flex;
 }
 

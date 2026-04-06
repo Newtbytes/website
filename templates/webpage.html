@@ -148,7 +148,7 @@
             <img src="/img/other/character.gif" class="character" alt="Ness as a dog or cat-like fursona, wearing a red T-shirt, a green sweater, and flip-flops. Pink text below her says 'I like computers :3'. Ness is hugging her whole PC setup in her arms, display, keyboard, mouse, and PC included. She's surrounded by two pink hearts.">
         </header>
 
-        <div class="main">
+        <div class="page">
             <div class="side side-left">
                 <nav class="menu buttons" name="Pages">
                     <ol property="breadcrumb" typeof="BreadcrumbList">
@@ -187,11 +187,9 @@
                 </div>
             </div>
 
-            <div class="page">
-                <div class="content">
-                    {% block content %} {% endblock content %}
-                </div>
-            </div>
+            <main class="content">
+                {% block content %} {% endblock content %}
+            </main>
         </div>
         <footer>
             <a href="https://discord.gg/DNkEtrqZsY" rel="external nofollow">Discord</a>
