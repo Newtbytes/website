@@ -20,12 +20,12 @@
                             {% for h2 in h1.children %}
                                 <li property="itemListElement" typeof="ListItem">
                                     <a rel="item" href="{{ h2.permalink | safe }}"><span property="name">{{ h2.title }}</span></a>
-                                    <meta property="position" content="{{ loop.index }}" />
+                                    <meta property="position" content="2" />
                                 </li>
                             {% endfor %}
                         </ol>
                     {% endif %}
-                    <meta property="position" content="{{ loop.index }}" />
+                    <meta property="position" content="1" />
                 </li>
             {% endfor %}
             </ol>
