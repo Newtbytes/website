@@ -25,12 +25,12 @@
 {% endmacro article %}
 
 {% macro online(title, author="", pubdate="", publisher="", year="", url="", urldate="") %}
-    {% if author %}{{ author }} {% endif %}
-    {% if pubdate -%}({{- pubdate -}}){%- endif -%}
-    "{{ title }}"
+    {% if author %}{{ author }}{% endif %}
+    {% if pubdate %}({{ pubdate }}).{% endif %}
+    "{{ title }},"
     {% if publisher %}{{ publisher }}{% endif %}
     {% if year %}{{ year }}{% endif %}
-    {% if url %}{{ url }}{% endif %}
+    {% if url %}{{ url }}.{% endif %}
     {% if urldate %}<em>Accessed {{ urldate }}</em>{% endif %}
 {% endmacro %}
 
@@ -107,7 +107,7 @@
 
     {% if title %} {% set title = '<span property="headline" class="p-name name">' ~ title ~ '</span>' | safe %} {% endif %}
 
-    {% if pubdate %} {% set pubdate = types::dt(date=pubdate, type="published") %} {% endif %}
+    {% if pubdate %} {% set pubdate = types::dt(date=pubdate, type="published") | trim %} {% endif %}
 
     {% if doi %} {% set doi = '<a href="https://doi.org/' ~ doi ~ '" class="u-url url" rel="sameAs">' ~ doi ~ '</a>' %} {% endif %}
 
