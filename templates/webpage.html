@@ -115,7 +115,7 @@
     {% endblock scripts %}
 </head>
 
-<body class="wrapper-body">
+<body class="wrapper-body" typeof="WebPage">
     <div class="wrapper">
         <header>
             <div class="title">
@@ -151,7 +151,7 @@
         <div class="main">
             <div class="side side-left">
                 <nav class="menu buttons" name="Pages">
-                    <ol typeof="BreadcrumbList">
+                    <ol property="breadcrumb" typeof="BreadcrumbList">
                         {% set home = get_section(path="_index.md") %}
                         <li property="itemListElement" typeof="ListItem">
                             <a  href="{{ home.permalink }}" class="menuitem button" 

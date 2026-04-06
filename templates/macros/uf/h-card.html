@@ -1,8 +1,8 @@
 {% import "macros/uf/types.html" as types %}
 {% import "macros/uf/classes.html" as cls %}
 
-{% macro profile(first="", last="", username="", gender="", pronouns="", email="", url="", pfp="", bday="") %}
-    <div class="{{cls::profile()}}" typeof="Person">
+{% macro profile(first="", last="", username="", gender="", pronouns="", email="", url="", pfp="", bday="", schema="") %}
+    <div class="{{cls::profile()}}" {{ schema | safe }} typeof="Person">
         {% if first and last %}
             <meta class="{{cls::name()}}" property="givenName name" content="{{ first }} {{ last }}"/>
         {% endif %}

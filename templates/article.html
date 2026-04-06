@@ -30,6 +30,7 @@
 {% block content %}
     <article
         class="{{cls::entry()}}"
+        property="mainEntity"
         {% block schema %} typeof="Article" {% endblock schema %}
     >
         <h1 class="{{cls::title()}}" property="headline">
