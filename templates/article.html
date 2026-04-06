@@ -50,15 +50,19 @@
         </h1>
 
         <p>
-            <span class="entry-date">
-                {% block date %}
-                {% endblock date %}
-            </span>
+            {% block published %}
+                <span class="entry-date">
+                    {% block dt_published %}
+                    {% endblock dt_published %}
+                </span>
+            {% endblock published %}
 
+            {% block updated %}
             <span class="entry-updated">
-                {% block updated %}
-                {% endblock updated %}
+                {% block dt_updated %}
+                {% endblock dt_updated %}
             </span>
+            {% endblock updated %}
         </p>
 
         {% block notes %} {% endblock notes %}

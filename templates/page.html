@@ -9,13 +9,23 @@
     {{ page.title }}
 {% endblock title %}
 
-{% block date %}
+{% block dt_published %}
     {{ types::dt(date=page.date, type="published") }}
-{% endblock date %}
+{% endblock dt_published %}
+
+{% block dt_updated %}
+    (updated {{ types::dt(date=page.updated, type="updated") }})
+{% endblock dt_updated %}
+
+{% block published %}
+    {% if page.date %}
+        {{ super() }}
+    {% endif %}
+{% endblock published %}
 
 {% block updated %}
     {% if page.updated %}
-        (updated {{ types::dt(date=page.updated, type="updated") }})
+        {{ super() }}
     {% endif %}
 {% endblock updated %}
 
