@@ -9,23 +9,27 @@
 {% macro toc(toc) %}
     {# Require at least four headings for TOC to be generated #}
     {% if 4 <= toc | length %}
-        <h3>Table of Contents</h3>
-        <ul>
-        {% for h1 in toc %}
-            <li>
-                <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
-                {% if h1.children %}
-                    <ul>
-                        {% for h2 in h1.children %}
-                            <li>
-                                <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-            </li>
-        {% endfor %}
-        </ul>
-        <img src="/img/div/happy-star.png" alt="">
+        <div itemscope itemtype="https://schema.org/BreadcrumbList">
+            <h3 itemprop="name">Table of Contents</h3>
+            <ol>
+            {% for h1 in toc %}
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="{{ h1.permalink | safe }}"><span itemprop="name">{{ h1.title }}</span></a>
+                    {% if h1.children %}
+                        <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+                            {% for h2 in h1.children %}
+                                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                    <a itemprop="item" href="{{ h2.permalink | safe }}"><span itemprop="name">{{ h2.title }}</span></a>
+                                    <meta itemprop="position" content="{{ loop.index }}" />
+                                </li>
+                            {% endfor %}
+                        </ol>
+                    {% endif %}
+                    <meta itemprop="position" content="{{ loop.index }}" />
+                </li>
+            {% endfor %}
+            </ol>
+            <img src="/img/div/happy-star.png" alt="">
+        </div>
     {% endif %}
 {% endmacro toc %}
