@@ -41,7 +41,7 @@
 {% block notes %}
     {% if page.draft %}
         <div class="markdown-alert-warning">
-            {{"_This is a really really early DRAFT. Here be dragons._" | markdown | safe}}
+            <em>This is a really really early <span property="creativeWorkStatus">DRAFT</span>. Here be dragons.</em>
         </div>
     {% endif %}
 {% endblock notes %}
