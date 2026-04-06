@@ -46,6 +46,10 @@ a {
 	color: blue;
 }
 
+h1 a {
+    color: var(--header-col);
+}
+
 blockquote {
     border-left-width: 0.1em;
     border-left-style: groove;

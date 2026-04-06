@@ -1,7 +1,4 @@
-{% import "macros/utils.html" as utils %}
-{% import "macros/bib.html" as bib %}
 {% import "macros/types.html" as types %}
-{% import "macros/uf/classes.html" as cls %}
 
 {% extends "webpage.html" %}
 
@@ -31,35 +28,55 @@
 {% endblock og_type %}
 
 {% block content %}
-    <article class="{{cls::entry()}}" itemscope itemtype="https://schema.org/BlogPosting">
-        <a class="{{cls::url()}}" href="{{ page.permalink }}"></a>
-        {{ types::author(name=meta_author, url=config.base_url) }}
+    <article
+        class="{{cls::entry()}}"
+        {% block schema %}
+        itemscope
+        itemtype="https://schema.org/Article"
+        {% endblock schema %}
+    >
+        <h1 class="{{cls::title()}}" itemprop="headline">
+            <a
+                class="{{cls::url()}}"
+                href="
+                    {% block permalink %}
+                    {{current_url}}
+                    {% endblock permalink %}
+                "
+                itemprop="url"
+            >
+                {% block title %} Unnamed Article {% endblock title %}
+            </a>
+        </a>
+        </h1>
 
-        <h2>
-            <b>
-                <span class="{{cls::title()}}" itemprop="headline">{{ page.title }}</span>
-            </b>
-        </h2>
-        <h3>
-            <em>
-                {{ types::dt(date=page.date, type="published") }}
-            </em>
-        </h3>
+        <p>
+            <span class="entry-date">
+                {% block date %}
+                {% endblock date %}
+            </span>
 
-        {% if page.toc %}
-            {{ utils::toc(toc=page.toc) }}
-        {% endif %}
+            <span class="entry-updated">
+                {% block updated %}
+                {% endblock updated %}
+            </span>
+        </p>
 
-        {% if page.draft %}
-            <div class="markdown-alert-warning">
-                {{"_This is a really really early DRAFT. Here be dragons._" | markdown | safe}}
-            </div>
-        {% endif %}
+        {% block notes %} {% endblock notes %}
+
+        <p class="{{cls::summary()}}" itemprop="abstract">
+            {% block desc %}
+            {% endblock desc %}
+        </p>
+
+        {% block toc %}
+        {% endblock toc %}
 
         <div class="{{cls::content()}}" itemprop="articleBody">
-            {{ page.content | safe }}
+            {% block body %} {% endblock body %}
         </div>
-    </article>
 
-    {{ bib::refs_list(page=page) }}
+        {% block references %}
+        {% endblock references %}
+    </article>
 {% endblock content %}

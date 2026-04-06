@@ -1,0 +1,44 @@
+{% import "macros/utils.html" as utils %}
+{% import "macros/bib.html" as bib %}
+{% import "macros/types.html" as types %}
+{% import "macros/uf/classes.html" as cls %}
+
+{% extends "article.html" %}
+
+{% block title %}
+    {{ page.title }}
+{% endblock title %}
+
+{% block date %}
+    {{ types::dt(date=page.date, type="published") }}
+{% endblock date %}
+
+{% block updated %}
+    {% if page.updated %}
+        (updated {{ types::dt(date=page.updated, type="updated") }})
+    {% endif %}
+{% endblock updated %}
+
+{% block permalink %}
+    {{ page.permalink }}
+{% endblock permalink %}
+
+{% block notes %}
+    {% if page.draft %}
+        <div class="markdown-alert-warning">
+            {{"_This is a really really early DRAFT. Here be dragons._" | markdown | safe}}
+        </div>
+    {% endif %}
+{% endblock notes %}
+
+{% block desc %}
+    {{ page.description }}
+{% endblock desc %}
+
+{% block body %}
+    {{ page.content | safe }}
+{% endblock body %}
+
+{% block references %}
+    {{ bib::refs_list(page=page) }}
+{% endblock references %}

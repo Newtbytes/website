@@ -2,8 +2,8 @@
 title = "my blog"
 description = "my blog!"
 sort_by = "date"
-template = "section-index.html"
-page_template = "article.html"
+template = "section.html"
+page_template = "page.html"
 weight = 0
 generate_feeds = true
 

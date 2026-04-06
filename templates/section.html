@@ -1,0 +1,72 @@
+{% extends "blog.html" %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="section-index.css">
+{% endblock style %}
+
+{% block title %}
+    {{ section.title }}
+{% endblock title %}
+
+{% block permalink %}
+    {{ section.permalink }}
+{% endblock permalink %}
+
+{% block desc %}
+    {{ section.description }}
+{% endblock desc %}
+
+{% block toc %}
+    {% if section.generate_feeds %}
+        {% if "rss.xml" in config.feed_filenames %}
+            <p>{{types::icon(fn="rss.svg")}}<a href="{{ section.permalink }}/rss.xml">Subscribe to the RSS feed</a></p>
+        {% endif %}
+        {% if "atom.xml" in config.feed_filenames %}
+            <p>{{types::icon(fn="rss.svg")}}<a href="{{ section.permalink }}/atom.xml">Subscribe to the Atom feed</a></p>
+        {% endif %}
+    {% endif %}
+{% endblock toc %}
+
+{% block body %}
+    {{ section.content | safe }}
+    {{ super() }}
+{% endblock body %}
+
+{% block posts %}
+    {% for page in section.pages %}
+        <div class="{{cls::entry()}}" itemprop="hasPart blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+            {{ types::author() }}
+
+            <p>
+                <a class="{{cls::url()}}" href="{{ page.permalink | safe }}" itemprop="sameAs">
+                    <b class="p-name entry-title" itemprop="headline">
+                        {% if page.title %}
+                            {{ page.title }}
+                        {% elif page.date %}
+                            <span class="entry-date">{{ types::dt(date=page.date, type="published") }}</span>
+                        {% endif %}
+                    </b>
+                </a>
+                {# only show these dots if something will follow them #}
+                {% if page.title or page.updated %} · · · {% endif %}
+
+                {# putting the page date here is redundant if the page date is used as the page title #}
+                {% if page.title %} <span class="entry-date">{{ types::dt(date=page.date, type="published") }}</span> {% endif %}
+                {% if page.updated %}
+                    <span class="entry-updated">(updated {{ types::dt(date=page.updated, type="updated") }})</span>
+                {% endif %}
+            </p>
+
+            {% if section.extra | get(key="inline_pages", default=true) %}
+                {% if page.summary %}
+                    <div class="{{cls::summary()}}" itemprop="abstract">{{ page.summary | safe }}</div>
+                    <a class="continue-reading-link" href="{{ page.permalink }}#continue-reading">
+                        Continue Reading...
+                    </a>
+                {% endif %}
+            {% else %}
+                <div class="{{cls::content()}}" itemprop="articleBody">{{ page.content | safe }}</div>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endblock posts %}

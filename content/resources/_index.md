@@ -1,8 +1,8 @@
 +++
 title = "Website Resources"
 description = "My personal collection of resources for personal website development!! Including assets, frameworks, software, tools, etc."
-template = "section-index.html"
-page_template = "article.html"
+template = "section.html"
+page_template = "page.html"
 weight = 999
 
 [extra]
