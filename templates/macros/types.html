@@ -7,7 +7,7 @@
     </span>
 {% endmacro dt %}
 
-{% macro author(name="", url="", visible=false) %}
+{% macro author(name="", url="", visible=true) %}
     {% if not name %} 
         {% set name = config.author %}
     {% endif %}
@@ -39,7 +39,7 @@
             property="author name" typeof="Person"
             class="{{cls::author()}} {{cls::profile()}} {{cls::name()}}"
         >
-            {{- name -}}
+            {%- if visible -%}{{- name -}}{%- endif -%}
         </{% if visible %}span{% else %}data{% endif %}>
     {% endif %}
 {% endmacro author %}

@@ -103,7 +103,10 @@
     {% set urldate = bibliography.tags | get(key="urldate", default="") %}
 
     {# Markup reference properties #}
-    {% if author %} {% set author = types::author(name=author) %} {% endif %}
+    {% if author %}
+        {% set author = types::author(name=author) %}
+        {% set author = "<address>" ~ author ~ "</address>" %}
+    {% endif %}
 
     {% if title %} {% set title = '<span property="headline" class="p-name name">' ~ title ~ '</span>' | safe %} {% endif %}
 

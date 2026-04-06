@@ -39,7 +39,7 @@
 {% block posts %}
     {% for page in section.pages %}
         <div class="section-entry {{cls::entry()}}" property="hasPart" typeof="BlogPosting">
-            {{ types::author() }}
+            {{ types::author(visible=false) }}
 
             <p>
                 <a class="{{cls::url()}}" href="{{ page.permalink | safe }}" rel="sameAs">
