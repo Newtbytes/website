@@ -193,7 +193,14 @@
         </div>
         <footer>
             <a href="https://discord.gg/DNkEtrqZsY" rel="external nofollow">Discord</a>
-            <p>© ness shannon ˖⁺‧₊˚✦ 2024-2026</p>
+            {% set repo = load_data(url="https://api.github.com/repos/newtbytes/newtbytes.cc", format="json") %}
+            {% set modified = repo['updated_at'] %}
+            {% set year = modified | date(format="%Y") %}
+            <p>© ness shannon ˖⁺‧₊˚✦ 
+                <time datetime="2024-09-01" property="datePublished">2024</time>
+                -
+                <time datetime="{{modified}}" property="dateModified">{{year}}</time>
+            </p>
         </footer>
     </div>
 </body>
