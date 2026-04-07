@@ -25,6 +25,10 @@
             <p>{{types::icon(fn="rss.svg")}}<a href="{{ section.permalink }}/atom.xml">Subscribe to the Atom feed</a></p>
         {% endif %}
     {% endif %}
+
+    {% if section.toc %}
+        {{ utils::toc(toc=section.toc) }}
+    {% endif %}
 {% endblock toc %}
 
 {% block body %}
