@@ -5,6 +5,11 @@
 
 {% extends "article.html" %}
 
+{% block schema %}
+    itemscope
+    itemtype="https://schema.org/BlogPosting"
+{% endblock schema %}
+
 {% block title %}
     {{ page.title }}
 {% endblock title %}
