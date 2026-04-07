@@ -1,10 +1,5 @@
 {% extends "article.html" %}
 
-{% block schema %}
-    itemscope
-    itemtype="https://schema.org/Blog"
-{% endblock schema %}
-
 {% block body %}
     <div class="{{cls::feed()}}" itemscope itemtype="https://schema.org/Blog">
         {% block posts %}
