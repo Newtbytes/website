@@ -78,8 +78,6 @@ Other resource pages that could be useful!!
 
 ## Software
 
-- [ColorZilla](https://www.colorzilla.com/firefox/): Pick the colors on a web page :3
-
 ### Hosts
 
 #### Static Hosting
