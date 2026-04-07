@@ -15,6 +15,6 @@
 
         {% if url %}<meta class="{{cls::url()}} {{cls::uid()}}" itemprop="url" content="{{ url }}"/>{% endif %}
         {% if pfp %} <meta class="{{cls::logo()}}" itemprop="image" content="{{ pfp }}"/> {% endif %}
-        {% if email %} <meta class="{{cls::email()}}" itemprop="email" content="mailto:{{ email }}"/> {% endif %}
+        {% if email %} <meta class="{{cls::email()}}" itemprop="email" content="{{ email }}"/> {% endif %}
     </div>
 {% endmacro profile %}
