@@ -45,6 +45,12 @@
     {{ page.description }}
 {% endblock desc %}
 
+{% block toc %}
+    {% if page.toc %}
+        {{ utils::toc(toc=page.toc) }}
+    {% endif %}
+{% endblock toc %}
+
 {% block body %}
     {{ page.content | safe }}
 {% endblock body %}
