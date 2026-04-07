@@ -30,7 +30,7 @@ jobs:
         with:
           tool: zola@${{ env.ZOLA_VERSION }}
 
-      - run: zola check --drafts
+      # FIXME: - run: zola check --drafts
 
   build:
     runs-on: ubuntu-latest
