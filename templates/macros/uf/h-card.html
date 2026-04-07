@@ -8,7 +8,7 @@
         {% endif %}
         {% if first %} <meta class="{{cls::given_name()}}" content="{{ first }}"/> {% endif %}
         {% if last %} <meta class="{{cls::family_name()}}" itemprop="familyName" content="{{ last }}"/> {% endif %}
-        {% if username %} <meta class="{{cls::nickname()}}" content="{{ username }}">/meta> {% endif %}
+        {% if username %} <meta class="{{cls::nickname()}}" content="{{ username }}"/> {% endif %}
         {% if gender %} <meta class="p-gender-identity" itemprop="gender" content="{{ gender }}"/> {% endif %}
 
         {% if bday %} {{ types::dt(date=bday, type="bday", visible=false) }} {% endif %}
