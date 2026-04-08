@@ -22,11 +22,11 @@
             {% set rel = "author" %}
         {% endif %}
 
-        <address class="{{cls::author()}} {{cls::profile()}}" property="author" typeof="Person">
+        <address class="{{-cls::author()}} {{cls::profile()-}}" property="author" typeof="Person">
             <a 
                 href="{{ url }}"
-                class="{{cls::url()}}
-                {% if visible and name %}{{cls::name()}}{% endif %}"
+                class="{{-cls::url()}}
+                {%- if visible and name -%}{{cls::name()}}{%- endif -%}"
                 rel="{{ rel }}"
                 property="url"
                 {% if not visible %}title="{{name}}"{% endif %}
@@ -38,7 +38,7 @@
     {% else %}
         <{% if visible %}span{% else %}data{% endif %}
             property="author name" typeof="Person"
-            class="{{cls::author()}} {{cls::profile()}} {{cls::name()}}"
+            class="{{-cls::author()}} {{cls::profile()}} {{cls::name()-}}"
         >
             {%- if visible -%}{{- name -}}{%- endif -%}
         </{% if visible %}span{% else %}data{% endif %}>

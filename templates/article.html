@@ -29,13 +29,13 @@
 
 {% block content %}
     <article
-        class="{{cls::entry()}}"
+        class="{{-cls::entry()-}}"
         property="mainEntity"
         {% block schema %} typeof="Article" {% endblock schema %}
     >
-        <h1 class="{{cls::title()}}" property="headline">
+        <h1 class="{{-cls::title()-}}" property="headline">
             <a
-                class="{{cls::url()}}"
+                class="{{-cls::url()-}}"
                 href="
                     {% block permalink %}
                     {{current_url}}
@@ -65,7 +65,7 @@
 
         {% block notes %} {% endblock notes %}
 
-        <p class="{{cls::summary()}}" property="abstract">
+        <p class="{{-cls::summary()-}}" property="abstract">
             {% block desc %}
                 {% if meta_desc is defined %}
                     {{ meta_desc }}
@@ -76,7 +76,7 @@
         {% block toc %}
         {% endblock toc %}
 
-        <div class="{{cls::content()}}" property="articleBody">
+        <div class="{{-cls::content()-}}" property="articleBody">
             {% block body %} {% endblock body %}
         </div>
 
