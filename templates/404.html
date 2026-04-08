@@ -1,0 +1,15 @@
+{% extends "article.html" %}
+
+{% block href %}{% endblock href %}
+
+{% block title %}
+Error 404: Page Not Found
+{% endblock title %}
+
+{% block desc %}
+    {{ "This page does not exist. It may have been cast into **the depths**." | markdown | safe}}
+    <a href="/">Home</a>
+    <button onclick="history.go(-1)">
+        Go back
+    </button>
+{% endblock desc %}
