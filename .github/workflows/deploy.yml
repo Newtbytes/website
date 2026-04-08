@@ -49,6 +49,8 @@ jobs:
 
       - name: Deploy to neocities
         uses: bcomnes/deploy-to-neocities@v3.0.5
+        env:
+          DEPLOY_TGT: "neocities"
         with:
           cleanup: true
           neocities_supporter: false

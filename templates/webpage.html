@@ -115,6 +115,10 @@
     {% block scripts %}
         <script type="text/javascript" src="/js/cursor.js"></script>
     {% endblock scripts %}
+
+    {% if get_env(name="DEPLOY_TGT", default="newtbytes.cc") == "neocities" %}
+        <meta http-equiv="Refresh" content="0; url='{{ config.base_url }}'" />
+    {% endif %}
 </head>
 
 <body class="wrapper-body" {% block webPageSchema %} typeof="WebPage" {% endblock webPageSchema %}>
