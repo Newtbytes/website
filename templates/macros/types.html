@@ -29,6 +29,7 @@
                 {% if visible and name %}{{cls::name()}}{% endif %}"
                 rel="{{ rel }}"
                 property="url"
+                {% if not visible %}title="{{name}}"{% endif %}
             >
                 {% if visible and name %}<span property="name">{{ name }}</span>{% endif %}
             </a>
