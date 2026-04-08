@@ -1,21 +1,5 @@
 {% import "macros/uf/classes.html" as cls %}
 
-{%- macro dt(date, type, visible=true) -%}
-    {%- if type == "bday" -%}
-        {% set property_name = "birthDate" %}
-    {% elif type == "death" %}
-        {% set property_name = "deathDate" %}
-    {%- endif -%}
-    <time
-        class="{{cls::dt(type=type)}}"
-        datetime="{{ date | date(format='%Y-%m-%dT%H:%M:%SZ') }}"
-        {% if property_name is defined %} property={{property_name}} {% endif %}
-    >
-        {%- if visible -%} {{ date }} {%- endif -%}
-    </time>
-{%- endmacro dt -%}
-
-
 {%- macro p(value, type) -%}
     <span class="p-{{type}} {{type}}">{{- value | safe -}}</span>,
 {%- endmacro p -%}

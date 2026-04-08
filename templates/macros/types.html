@@ -1,11 +1,30 @@
 {% import "macros/uf/types.html" as uf_types %}
 
 
-{% macro dt(date, type, visible=true) %}
-    <span property="date{{type|lower|replace(from='updated', to='modified')|capitalize}}">
-        {{- uf_types::dt(date=date, type=type, visible=visible) -}}
-    </span>
-{% endmacro dt %}
+{%- macro dt(date, type, visible=true) -%}
+    {% set type = type | lower %}
+
+    {%- if type == "bday" -%}
+        {% set prop = "birth" %}
+    {% elif type == "death" %}
+        {% set prop = "death" %}
+    {% elif type == "updated" %}
+        {% set prop = "modified" %}
+    {%- endif -%}
+
+    {% if prop is defined %}
+        {% set prop = prop | capitalize %}
+    {% endif %}
+
+    <time
+        class="{{cls::dt(type=type)}}"
+        datetime="{{ date | date(format='%Y-%m-%dT%H:%M:%SZ') }}"
+        {% if prop is defined %} property="{{prop}}Date" {% endif %}
+    >
+        {%- if visible -%} {{ date }} {%- endif -%}
+    </time>
+{%- endmacro dt -%}
+
 
 {% macro author(name="", url="", visible=true) %}
     {% if not name %} 
