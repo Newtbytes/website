@@ -9,7 +9,7 @@
 {% endblock title %}
 
 {% block href %}
-    href="{{ section.permalink }}"
+    href="{{ section.permalink | safe }}"
 {% endblock href %}
 
 {% block desc %}
@@ -64,7 +64,7 @@
             {% if section.extra | get(key="inline_pages", default=true) %}
                 {% if page.summary %}
                     <div class="{{-cls::summary()-}}" property="abstract">{{ page.summary | safe }}</div>
-                    <a class="continue-reading-link" href="{{ page.permalink }}#continue-reading">
+                    <a class="continue-reading-link" href="{{ page.permalink | safe }}#continue-reading">
                         Continue Reading...
                     </a>
                 {% endif %}

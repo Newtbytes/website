@@ -32,7 +32,7 @@
 
     {% block favicon %}
         {% set favicon = resize_image(path="img/goober.png", width=48, height=48, format="webp") %}
-        <link rel="icon" href="{{favicon.url}}">
+        <link rel="icon" href="{{favicon.url | safe}}">
     {% endblock favicon %}
 
     {% block meta %}
@@ -117,7 +117,7 @@
     {% endblock scripts %}
 
     {% if get_env(name="DEPLOY_TGT", default="newtbytes.cc") == "neocities" %}
-        <meta http-equiv="Refresh" content="0; url='{{ config.base_url }}'" />
+        <meta http-equiv="Refresh" content="0; url='{{ config.base_url | safe }}'" />
     {% endif %}
 </head>
 
@@ -160,7 +160,7 @@
                     <ol property="breadcrumb" typeof="BreadcrumbList">
                         {% set home = get_section(path="_index.md") %}
                         <li property="itemListElement" typeof="ListItem">
-                            <a  href="{{ home.permalink }}" class="menuitem button" 
+                            <a  href="{{ home.permalink | safe }}" class="menuitem button" 
                                 property="item" typeof="WebPage">
                                 <span property="name">{{ home.title }}</span>
                             </a>
@@ -171,7 +171,7 @@
                             {% set subsection = get_section(path=path) %}
                             {% if "button" in subsection.extra %}
                                 <li property="itemListElement" typeof="ListItem">
-                                    <a  href="{{ subsection.permalink }}" class="menuitem button" 
+                                    <a  href="{{ subsection.permalink | safe }}" class="menuitem button" 
                                         property="item" typeof="WebPage">
                                         <span property="name">{{ subsection.extra["button"] }}</span>
                                     </a>

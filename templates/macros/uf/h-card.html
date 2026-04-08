@@ -13,8 +13,8 @@
 
         {% if bday %} {{ types::dt(date=bday, type="bday", visible=false) }} {% endif %}
 
-        {% if url %}<meta class="{{-cls::url()-}} {{-cls::uid()-}}" property="url" content="{{ url }}"/>{% endif %}
-        {% if pfp %} <meta class="{{-cls::logo()-}}" property="image" content="{{ pfp }}"/> {% endif %}
+        {% if url %}<meta class="{{-cls::url()-}} {{-cls::uid()-}}" property="url" content="{{ url | safe }}"/>{% endif %}
+        {% if pfp %} <meta class="{{-cls::logo()-}}" property="image" content="{{ pfp | safe }}"/> {% endif %}
         {% if email %} <meta class="{{-cls::email()-}}" property="email" content="{{ email }}"/> {% endif %}
     </div>
 {% endmacro profile %}

@@ -38,9 +38,9 @@
                 class="{{-cls::url()-}}"
                 {% block href %}
                     {% if current_url is defined %}
-                        href="{{current_url}}"
+                        href="{{current_url | safe}}"
                     {% elif meta_url is defined %}
-                        href="{{meta_url}}"
+                        href="{{meta_url | safe}}"
                     {% endif %}
                 {% endblock href %}
                 property="url"

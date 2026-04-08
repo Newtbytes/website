@@ -43,7 +43,7 @@
 
         <address class="{{-cls::author()}} {{cls::profile()-}}" property="author" typeof="Person">
             <a 
-                href="{{ url }}"
+                href="{{ url | safe }}"
                 class="{{-cls::url()}}
                 {%- if visible and name -%}{{cls::name()}}{%- endif -%}"
                 rel="{{ rel }}"

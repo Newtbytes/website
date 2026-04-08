@@ -35,7 +35,7 @@
 {% endblock updated %}
 
 {% block href %}
-    href="{{ page.permalink }}"
+    href="{{ page.permalink | safe }}"
 {% endblock href %}
 
 {% block notes %}
