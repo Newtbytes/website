@@ -34,9 +34,9 @@
     {% endif %}
 {% endblock updated %}
 
-{% block permalink %}
-    {{ page.permalink }}
-{% endblock permalink %}
+{% block href %}
+    href="{{ page.permalink }}"
+{% endblock href %}
 
 {% block notes %}
     {% if page.draft %}

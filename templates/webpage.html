@@ -36,7 +36,11 @@
     {% endblock favicon %}
 
     {% block meta %}
-        {% set meta_url = current_url %}
+        {% if current_url is defined %}
+            {% set meta_url = current_url %}
+        {% else %}
+            {% set meta_url = "" %}
+        {% endif %}
         {% set meta_author = config.author %}
         {% set meta_title = utils::page_title() %}
         {% set meta_image = "img/logo.png" %}

@@ -36,11 +36,13 @@
         <h1 class="{{-cls::title()-}}" property="headline">
             <a
                 class="{{-cls::url()-}}"
-                href="
-                    {% block permalink %}
-                    {{current_url}}
-                    {% endblock permalink %}
-                "
+                {% block href %}
+                    {% if current_url is defined %}
+                        href="{{current_url}}"
+                    {% elif meta_url is defined %}
+                        href="{{meta_url}}"
+                    {% endif %}
+                {% endblock href %}
                 property="url"
             >
                 {% block title %} Unnamed Article {% endblock title %}

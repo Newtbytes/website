@@ -8,9 +8,9 @@
     {{ section.title }}
 {% endblock title %}
 
-{% block permalink %}
-    {{ section.permalink }}
-{% endblock permalink %}
+{% block href %}
+    href="{{ section.permalink }}"
+{% endblock href %}
 
 {% block desc %}
     {{ section.description }}
