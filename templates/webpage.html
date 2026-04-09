@@ -118,9 +118,6 @@
 
     {% if get_env(name="DEPLOY_TGT", default="newtbytes.cc") == "neocities" %}
         <meta http-equiv="Refresh" content="0; url='{{ config.base_url | safe }}'" />
-        <script>
-            window.location.replace("{{config.base_url}}");
-        </script>
     {% endif %}
 </head>
 
