@@ -117,7 +117,20 @@
     {% endblock scripts %}
 
     {% if get_env(name="DEPLOY_TGT", default="newtbytes.cc") == "neocities" %}
-        <meta http-equiv="Refresh" content="0; url='{{ config.base_url | safe }}'" />
+        {% if page is defined %}
+            {% set path = page.path %}
+        {% elif section is defined %}
+            {% set path = section.path %}
+        {% endif %}
+
+        {% set redirect_url = config.base_url %}
+        
+        {% if path is defined %}
+            {% if path %}
+                {% set redirect_url = redirect_url ~ path %}
+            {% endif %}
+            <meta http-equiv="Refresh" content="0; url='{{ redirect_url | safe }}'" />
+        {% endif %}
     {% endif %}
 </head>
 
