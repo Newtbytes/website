@@ -11,44 +11,75 @@ html {
 	background-image: url('/img/bg/space.gif');
 }
 
-main {
-	padding: 24px;
-	background: #FFF;
-	border: 0;
-	width: 100%;
-	margin-top: 0;
-	height: auto;
-	box-sizing: border-box;
-	flex-grow: 1;
+.wrapper-body {
+	background-image: url('/img/bg/space.gif');
+	background-repeat: repeat-x;
+	background-position: bottom;
+	display: flex;
+	justify-content: center;
+	height: fit-content;
 }
 
 .wrapper {
+	width: 90%;
 	border: 6px ridge;
-	width: 1000px;
-	margin: auto;
 	margin-top: 20px;
-	box-sizing: border-box;
 }
 
 header {
 	border-bottom: 6px ridge;
-	height: 160px;
-	box-sizing: border-box;
 	background-image: url('/img/bg/magic_lagoon.gif');
-	position: relative;
 }
 
 .page {
-	display: flex;
+	background-color: white;
+	overflow: auto;
+	display: flow-root;
+	gap: 24px;
+}
+
+// FIXME: if an image in the main content is too wide to fit next to the sidebar, it goes below the sidebar
+
+main {
+	padding: 24px;
+	margin-left: auto;
+	margin-right: auto;
+	width: fit-content;
+	max-width: 80ch;
+
+	// prevent lists from going behind the sidebar
+	ul {
+		overflow: hidden;
+	}
 }
 
 .side {
-	border-right: 6px ridge;
-	width: 20%;
 	padding: 12px;
-	box-sizing: border-box;
 	background: var(--blue-bg);
 	color: white;
+	width: 24ch;
+	height: fit-content;
+}
+
+.side-left {
+	float: left;
+	margin-right: 3ch;
+
+	border-right: 6px ridge;
+}
+
+.side-right {
+	float: right;
+	margin-left: 3ch;
+
+	border-left: 6px ridge;
+}
+
+.chatbox {
+	background-color: white;
+	border-style: groove;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
 }
 
 .button {
@@ -70,12 +101,6 @@ header {
 
 .button:hover {
 	text-decoration: underline;
-}
-
-.wrapper-body {
-	background-image: url('/img/bg/space.gif');
-	background-repeat: repeat-x;
-	background-position: bottom;
 }
 
 .character {
@@ -111,6 +136,7 @@ footer {
 footer {
 	color: aliceblue;
 	margin: 0;
+	clear: both;
 }
 
 footer::after {
