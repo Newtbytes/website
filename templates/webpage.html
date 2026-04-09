@@ -4,7 +4,7 @@
 {% import "macros/utils.html" as utils %}
 
 <!DOCTYPE html>
-<html lang="en" vocab="https://schema.org/">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -134,7 +134,7 @@
     {% endif %}
 </head>
 
-<body class="wrapper-body" {% block webPageSchema %} typeof="WebPage" {% endblock webPageSchema %}>
+<body class="wrapper-body" vocab="https://schema.org/" {% block webPageSchema %} typeof="WebPage" {% endblock webPageSchema %}>
     <div class="wrapper">
         <header>
             <div class="title">
