@@ -16,10 +16,42 @@ concurrency:
 
 env:
   ZOLA_VERSION: 0.22.1
+  BUILD_FLAGS: --drafts
 
 jobs:
-  test:
+  # test:
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - name: checkout
+  #       uses: actions/checkout@v6.0.2
+
+  #     - name: Install zola
+  #       uses: taiki-e/install-action@v2
+  #       with:
+  #         tool: zola@${{ env.ZOLA_VERSION }}
+
+  # FIXME: - run: zola check ${{ env.BUILD_FLAGS }}
+
+  build:
     runs-on: ubuntu-latest
+
+    # needs: [test]
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v6.0.2
+
+      - name: Build Zola + upload Pages artifact
+        uses: getzola/github-pages@435a833fd3f1edcb28d70576c89e30a6365cd8f7
+        with:
+          zola_version: v${{ env.ZOLA_VERSION }}
+          build_flags: ${{ env.BUILD_FLAGS }}
+
+  deploy-neocities:
+    runs-on: ubuntu-latest
+
+    # needs: [test]
 
     steps:
       - name: checkout
@@ -30,27 +62,13 @@ jobs:
         with:
           tool: zola@${{ env.ZOLA_VERSION }}
 
-      # FIXME: - run: zola check --drafts
-
-  build:
-    runs-on: ubuntu-latest
-
-    needs: [test]
-
-    steps:
-      - name: checkout
-        uses: actions/checkout@v6.0.2
-
-      - name: Build Zola + upload Pages artifact
-        uses: getzola/github-pages@435a833fd3f1edcb28d70576c89e30a6365cd8f7
-        with:
-          zola_version: v${{ env.ZOLA_VERSION }}
-          build_flags: --drafts
+      - name: Build site for neocities
+        env:
+          DEPLOY_TGT: neocities
+        run: zola build ${{ env.BUILD_FLAGS }}
 
       - name: Deploy to neocities
         uses: bcomnes/deploy-to-neocities@v3.0.5
-        env:
-          DEPLOY_TGT: "neocities"
         with:
           cleanup: true
           neocities_supporter: false
