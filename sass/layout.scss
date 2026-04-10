@@ -49,7 +49,7 @@ main {
 	max-width: 80ch;
 
 	// prevent lists from going behind the sidebar
-	ul, ol {
+	ul, ol, blockquote, aside {
 		overflow: hidden;
 	}
 }
