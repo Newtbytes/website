@@ -54,10 +54,10 @@
     {% for image in alts %}
         {% set scale = image.width / smallest_width %}
         {% if scale != 1 %}
-            {{image | get(key='url', default=image_url)}} {{image.width}}w,
+            {{image | get(key='url', default=image_url)}} {{scale | int}}x,
         {% endif %}
     {% endfor %}
-    {{image_url}} {{image_width}}w
+    {{image_url}} {{image_width / smallest_width | int}}x
 {% endmacro srcset %}
 
 {% macro image(path, alt="") %}
