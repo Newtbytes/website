@@ -1,9 +1,81 @@
 @font-face {
 	font-family: 'PixelOperator';
-	src: url("../fonts/PixelOperator.ttf");
+	src: 
+		local('PixelOperator'),
+		local('Pixel Operator'),
+		url("fonts/PixelOperator.ttf");
+}
+
+@font-face {
+	font-family: 'FS Pixel Sans Unicode Regular';
+	font-style: normal;
+	font-weight: normal;
+	src:
+		local("FS Pixel Sans Unicode"),
+		local('FS Pixel Sans Unicode Regular'),
+		local('FS Pixel Sans Unicode Regular Regular'),
+		url('fonttsfs-pixel-sans-unicode-regular.woff') format('woff'),
+		url("fonts/fs-pixel-sans-unicode-regular.regular.ttf"),
+		local("FS Pixel Sans");
+}
+
+@font-face {
+	font-family: 'FS Pixel Classic Regular';
+	font-style: normal;
+	font-weight: normal;
+	src:
+		local('FS Pixel Classic'),
+		local('FS Pixel Classic Regular'),
+		local('FS Pixel Classic Regular Regular'),
+		url('fs-pixel-classic-regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: '8BitOperator JVE';
+	src:
+		local("8BitOperator JVE"),
+		url("fonts/8bitoperator_jve.ttf");
+}
+
+@font-face {
+	font-family: 'Mojangles';
+	src:
+		local('Mojangles'),
+		url('fonts/Minecraft-Seven_v2.woff2');
 }
 
 @font-face {
 	font-family: 'DTM Sans';
-	src: url("../fonts/dtm-sans.ttf");
+	src: url("fonts/dtm-sans.ttf");
 }
+
+@font-face {
+	font-family: 'DotumChe Pixel';
+	src:
+		local('DotumChe Pixel'),
+		url("fonts/dtm-sans.ttf"),
+		local('DotumChe');
+}
+
+@font-face {
+	font-family: 'Pixelated Elegance';
+	src: url("fonts/PixelatedEleganceRegular-ovawB.ttf");
+}
+
+@font-face {
+	font-family: 'PixelCode';
+	src:
+		local('PixelCode'),
+		url('fonts/PixelCode/PixelCode.ttf') format('ttf'),
+		url('fonts/PixelCode/PixelCode.otf') format('otf'),
+		url('fonts/PixelCode/PixelCode.woff2') format('woff2'),
+		local('PixelCode Regular');
+}
+
+$primary-font: 'FS Pixel Sans Unicode Regular', 'FS Pixel Classic Regular', '8BitOperator JVE', 'Mojangles', 'Georgia', system-ui;
+$secondary-font: 'DTM Sans', 'DotumChe Pixel', system-ui;
+
+$body-font: $primary-font;
+$header-font: $secondary-font;
+$fancy-font: 'Pixelated Elegance';
+$mono-font: 'PixelCode', $body-font, monospace;

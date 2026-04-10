@@ -55,6 +55,7 @@ Other resource pages that could be useful!!
 - <http://www.planet.dk/fonts/>
 - [J. Vill's fonts](https://jvill.gumroad.com): Some really cool looking free Y2K fonts
 - [Velvetyne Libre Friends](https://velvetyne.fr/velvetyne-libre-friends/): List of free and open source fonts/font collections
+- [PixelCode (font)](https://qwerasd205.github.io/PixelCode/)
 
 ### Backgrounds
 
@@ -82,6 +83,7 @@ Pre-made themes, layouts, CSS, etc.
 
 - [CSS Tricks](https://css-tricks.com/)
 - [Josh W Comeau](https://www.joshwcomeau.com)
+- [Preserving the Pixel Art Look in Web Content](https://www.kirupa.com/hodgepodge/preserving_pixel_art_aesthetics.htm)
 
 ### Static Site Generators
 

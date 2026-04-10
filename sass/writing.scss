@@ -1,45 +1,41 @@
 @import "colors";
 @import "fonts";
 
+html {
+    font-size: clamp(8pt, 12pt + 1vw, 48pt);
+}
+
 body {
-    font-family: var(--primary-font);
+    font-family: $body-font;
     font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    font-size: larger;
+    font-kerning: auto;
+
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    font-smooth: none;
+}
+
+main {
+    line-height: 1.3;
+    letter-spacing: 0.025;
+    word-spacing: 0.16;
+
+    p {
+        text-wrap: pretty;
+    }
+
+    hyphens: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--header-col);
+    font-family: $header-font;
+    hyphens: none;
 }
 
 h1 {
-	color: var(--header-col);
-	border-bottom: 1px dashed;
-}
-
-h2 {
-	color: var(--header-col);
-}
-
-h1 {
-    color: var(--header-col);
-    border-bottom: 1px dashed;
-
-    font-family: var(--secondary-font);
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    font-variation-settings:
-        "wdth" 100;
-}
-
-h2 {
-    color: var(--header-col);
-
-    font-family: var(--secondary-font);
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-    font-variation-settings:
-        "wdth" 100;
-
+    padding-bottom: 1pt;
+	border-bottom: 2px dashed;
 }
 
 a {
@@ -58,6 +54,12 @@ blockquote {
     padding-left: 1em;
     padding-top: 1px;
     padding-bottom: 1px;
+}
+
+.buttons {
+    a {
+        font-size: 0.7em;
+    }
 }
 
 @mixin icon {
@@ -238,6 +240,8 @@ code,
 pre,
 kbd,
 samp {
+    font-family: $mono-font;
+    font-size-adjust: 0.35;
     font-size: 1.05em;
     /* slightly larger than the surrounding text */
     line-height: 1.6;

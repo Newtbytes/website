@@ -3,12 +3,13 @@
 
 body,
 html {
-	font-family: var(--primary-font);
 	padding: 0;
 	margin: 0;
 	height: 100%;
-	image-rendering: pixelated;
 	background-image: url('/img/bg/space.gif');
+
+	// pixelated rendering
+	image-rendering: pixelated;
 }
 
 .wrapper-body {
@@ -48,7 +49,7 @@ main {
 	max-width: 80ch;
 
 	// prevent lists from going behind the sidebar
-	ul {
+	ul, ol {
 		overflow: hidden;
 	}
 }
@@ -87,7 +88,7 @@ main {
 	line-height: 40px;
 	text-align: center;
 	font-weight: bold;
-	font-family: var(--secondary-font);
+	font-family: $secondary-font;
 	font-size: 16px;
 	background-color: var(--button-col);
 	background-image: url("/img/bg/happy_stars.png");
