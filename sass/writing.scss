@@ -1,10 +1,6 @@
 @import "colors";
 @import "fonts";
 
-html {
-    font-size: clamp(8pt, 12pt + 1vw, 48pt);
-}
-
 body {
     font-family: $body-font;
     font-optical-sizing: auto;
@@ -15,22 +11,8 @@ body {
     font-smooth: none;
 }
 
-main {
-    line-height: 1.3;
-    letter-spacing: 0.025;
-    word-spacing: 0.16;
-
-    p {
-        text-wrap: pretty;
-    }
-
-    hyphens: auto;
-}
-
 h1, h2, h3, h4, h5, h6 {
     color: var(--header-col);
-    font-family: $header-font;
-    hyphens: none;
 }
 
 h1 {
@@ -234,17 +216,6 @@ a {
 
 code {
     background-color: var(#282828);
-}
-
-code,
-pre,
-kbd,
-samp {
-    font-family: $mono-font;
-    font-size-adjust: 0.35;
-    font-size: 1.05em;
-    /* slightly larger than the surrounding text */
-    line-height: 1.6;
 }
 
 a.ref-link {
