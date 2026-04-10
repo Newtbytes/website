@@ -92,7 +92,7 @@
         alt=meta_image_alt
         ) }}
 
-        {% if meta_author == "newtbytes" %}
+        {% if meta_author == "newtbytes" and not utils::censored() %}
             <meta name="fediverse:creator" content="newtbytes@transfem.social" />
         {% endif %}
     {% endblock meta %}
@@ -200,14 +200,18 @@
                         <script type="text/javascript" src="https://furryring.neocities.org/onionring-variables.js"></script>
                         <script type="text/javascript" src="https://furryring.neocities.org/onionring-widget.js"></script>
                     </div>
-                    <div id="transring" class="menuitem webring">
-                        <script src="https://transring.neocities.org/ring.js"></script>
-                    </div>
+                    {% if not utils::censored() %}
+                        <div id="transring" class="menuitem webring">
+                            <script src="https://transring.neocities.org/ring.js"></script>
+                        </div>
+                    {% endif %}
                 </div>
 
-                <div class="chatbox">
-                    <iframe src="https://www3.cbox.ws/box/?boxid=3554028&boxtag=6sFI3N" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
-                </div>	
+                {% if not utils::censored() %}
+                    <div class="chatbox">
+                        <iframe src="https://www3.cbox.ws/box/?boxid=3554028&boxtag=6sFI3N" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+                    </div>
+                {% endif %}
             </div>
 
             <main class="content">

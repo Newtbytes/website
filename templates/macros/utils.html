@@ -33,3 +33,15 @@
         </div>
     {% endif %}
 {% endmacro toc %}
+
+{% macro censored() %}
+    {{ get_env(name="CENSORED", default=false) == "true" }}
+{% endmacro censored %}
+
+{% macro ness_gender() %}
+    {%- if utils::censored() -%}
+        {{- "male" -}}
+    {%- else %}
+        {{- "female" -}}
+    {%- endif -%}
+{% endmacro ness_gender %}

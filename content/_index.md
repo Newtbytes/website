@@ -33,7 +33,7 @@ Here's a very short and overly vague list of my interests:
 - Wikipedia: <a rel="me" href="https://en.wikipedia.org/wiki/User:newtbytes">User:Newtbytes</a>
 - Discord: newtbytes
 - Github: <a rel="me" href="https://github.com/newtbytes">newtbytes</a>
-<!-- FIXME: {{ cond_family(real='- transfem.social: <a rel="me" href="https://transfem.social/@newtbytes">@newtbytes@transfem.social</a>', fake='') }} -->
+<!-- FIXME: {{ censor(orig='- transfem.social: <a rel="me" href="https://transfem.social/@newtbytes">@newtbytes@transfem.social</a>') }} -->
 
 {{divider(name="happy-star")}}
 
@@ -43,7 +43,7 @@ this site is super duper ***WIP***!!
 oh also i have no idea what i'm doing
 
 there's literally no content here yet. maybe one day i'll actually write something.
-For now, just know that somewhere, a nerdy {{ cond_family(real="girly", fake="guy") }} that yearns to express {{ cond_family(real="her", fake="his") }} passions online exists.
+For now, just know that somewhere, a nerdy {{ censor(orig="girly", repl="guy") }} that yearns to express {{ censor(orig="her", repl="his") }} passions online exists.
 
 ![Caution! This site under construction!](img/stamp/site_under_construction.gif)
 

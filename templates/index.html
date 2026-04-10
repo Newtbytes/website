@@ -1,5 +1,6 @@
 {% import "macros/opengraph.html" as og %}
 {% import "macros/uf/h-card.html" as h_card %}
+{% import "macros/utils.html" as utils %}
 
 {% extends "webpage.html" %}
 
@@ -12,7 +13,7 @@
     first="Ness",
     last="Shannon",
     username="newtbytes",
-    gender="female")
+    gender=utils::ness_gender())
     }}
 {% endblock meta %}
 
@@ -25,7 +26,7 @@
     first="Ness",
     last="Shannon",
     username="newtbytes",
-    gender="female",
+    gender=utils::ness_gender(),
     email="ness@newtbytes.cc",
     url="https://newtbytes.cc/",
     pfp=get_url(path="img/pfp.png"),
